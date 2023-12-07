@@ -65,7 +65,7 @@ NS:   The processor responsible for the simulation of neural networks |
 M:    Memory manager, helps ML to read and write data to NN and DS |
       Менеджер памяти, помогает ML читать и записывать данные в NN и DS
 
-NSMC: This is a block for communicating with NS and M |
+NSMc: This is a block for communicating with NS and M |
       Это блок для общения с NS и M
 
 MLc:  This is a block for communicating with ML |
