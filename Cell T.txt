@@ -1,6 +1,0 @@
-I = cell1
-NSc = cell2; cell3
-MLc = cell4
-O = cell5
-NN1/16 = cell6
-DS1/32 =cell7
