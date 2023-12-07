@@ -1,0 +1,74 @@
+read on cell1 0
+jump 0 notEqual on 1
+read group cell1 1
+read command cell1 2
+jump 42 equal group 2
+jump 16 equal group 1
+jump 51 equal group 3
+jump 64 equal group 4
+print "Ошибка ввода (T)"
+print "[]\n"
+print "Неправильно указан "
+print "[]\n"
+print "Номер группы команд"
+printflush message1
+write 500 cell1 0
+end
+jump -1 equal command 1
+jump -1 equal command 2
+jump -1 equal command 3
+jump -1 equal command 4
+jump -1 equal command 5
+jump -1 equal command 6
+jump -1 equal command 7
+jump -1 equal command 8
+jump -1 equal command 9
+jump -1 equal command 10
+jump -1 equal command 11
+jump -1 equal command 12
+jump -1 equal command 13
+jump -1 equal command 14
+jump -1 equal command 15
+jump -1 equal command 16
+jump -1 equal command 17
+jump -1 equal command 18
+print "Ошибка ввода (T)"
+print "[]\n"
+print "Неправильно указан "
+print "[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+end
+jump -1 equal command 1
+print "Ошибка ввода (T)"
+print "[]\n"
+print "Неправильно указан "
+print "[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+end
+jump -1 equal command 1
+jump -1 equal command 2
+jump -1 equal command 3
+jump -1 equal command 4
+jump -1 equal command 5
+print "Ошибка ввода (T)"
+print "[]\n"
+print "Неправильно указан "
+print "[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+end
+jump -1 equal command 1
+jump -1 equal command 2
+print "Ошибка ввода (T)"
+print "[]\n"
+print "Неправильно указан "
+print "[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+end
