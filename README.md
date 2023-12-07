@@ -34,33 +34,46 @@ NM:
 
 
 
-NN: The area where the neural network is stored |
-    Участок в котором хранится нейронная сеть
+NN:   The area where the neural network is stored |
+      Участок в котором хранится нейронная сеть
 
     
-DS: The area where the Dataset is stored |
-    Участок в котором хранится Датасет
+DS:   The area where the Dataset is stored |
+      Участок в котором хранится Датасет
 
     
-I:  The memory block into which the request is entered |
-    Блок памяти в который вводится запрос
+I:    The memory block into which the request is entered |
+      Блок памяти в который вводится запрос
 
     
-O:  A block of memory from which a massive response is usually output |
-    Блок памяти из которого обычно выводится массивный ответ
+O:    A block of memory from which a massive response is usually output |
+      Блок памяти из которого обычно выводится массивный ответ
 
 
-T:  The processor is a terminal that verifies the correctness of the request and automates the input of some variables for training|
-    Процессор терминал, проверяющий правильность запроса и автоматизирующий ввод некоторых переменных для обучения
+T:    The processor is a terminal that verifies the correctness of the request and automates the input of some variables for training|
+      Процессор терминал, проверяющий правильность запроса и автоматизирующий ввод некоторых переменных для обучения
 
 
-ML: The processor responsible for machine learning and working with data |
-    Процессор отвечающий за машинное обучение и работу с данными
+ML:   The processor responsible for machine learning and working with data |
+      Процессор отвечающий за машинное обучение и работу с данными
 
     
-NS: The processor responsible for the simulation of neural networks |
-    Процессор отвечающий за симуляцию нейронных сетей
+NS:   The processor responsible for the simulation of neural networks |
+      Процессор отвечающий за симуляцию нейронных сетей
 
 
-M:  Memory manager, helps ML to read and write data to NN and DS |
-    Менеджер памяти, помогает ML читать и записывать данные в NN и DS
+M:    Memory manager, helps ML to read and write data to NN and DS |
+      Менеджер памяти, помогает ML читать и записывать данные в NN и DS
+
+NSMC: This is a block for communicating with NS and M |
+      Это блок для общения с NS и M
+
+MLc:  This is a block for communicating with ML |
+      Это блок для общения с ML
+
+NSr:  This is NS RAM for neural network simulation |
+      Это оперативная память NS для симуляции нейронных сетей
+
+MLCB: This is the clipboard and RAM ML |
+      Это буфер обмена и оперативная память ML
+    
