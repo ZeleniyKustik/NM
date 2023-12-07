@@ -1,3 +1,0 @@
-NSc = cell1; cell2
-NSr = cell3; cell4; cell5; cell6; cell7
-NN = cell8-cell23
