@@ -1,4 +1,0 @@
-Mc = cell1
-MLm = cell2
-NN = cell3/cell18
-DS = cell19/cell51
