@@ -1,6 +1,0 @@
-MLc = cell1
-NSMc = cell2; cell3
-MLCB = cell4; cell5; cell6; cell7; cell8
-NSr = cell9; cell10; cell11; cell12; cell13
-NN1/16 = cell14
-DS1/32 = cell15
