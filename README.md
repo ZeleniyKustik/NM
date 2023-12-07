@@ -3,7 +3,7 @@
 !!!WARNING!!! 
 I don't write well in English (automatic translation)
 
-NM (Neural Module) or "Neural Module".
+NM (Neural Module) or "Нейронный модуль".
 It is a scheme for the mindustry game.
 It is a tool for simulation and training of neural networks (yes, right in the game).
 NM needs a mod (infinite Processor V7) to work. It adds faster processors and roomy memory blocks.
