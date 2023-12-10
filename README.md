@@ -56,3 +56,6 @@ NM:
 
 The description of the language for communicating with NM is in [NM-language.txt](https://github.com/Zeleniykustik/NM/blob/main/NM-language.txt) |
 Описание языка для общения с NM находится в [NM-language.txt](https://github.com/Zeleniykustik/NM/blob/main/NM-language.txt)
+
+The instructions will be updated as functions are added |
+Инструкция будет обновляться по мере добавления функций
