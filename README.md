@@ -34,7 +34,9 @@ NM:
 ![Без названия299_20231115181841](https://github.com/Zeleniykustik/NM/assets/126210243/cc54fe99-bfb1-4fdf-a64e-ecb5b8e76616)
 
 
+<details>
 
+<summary>Description of NM areas | Описание областей NM</summary>
 
 | | EN | RU |
 | --- | --- | --- |
@@ -51,6 +53,11 @@ NM:
 | ML | The processor responsible for machine learning and working with data | Процессор отвечающий за машинное обучение и работу с данными |
 | NS | The processor responsible for the simulation of neural networks  | Процессор отвечающий за симуляцию нейронных сетей |
 | M | Memory manager, helps ML to read and write data to NN and DS | Менеджер памяти, помогает ML читать и записывать данные в NN и DS | 
+
+</details>
+
+
+
 
 The description of the language for communicating with NM is in [NM-language.txt](https://github.com/Zeleniykustik/NM/blob/main/NM-language.txt) |
 Описание языка для общения с NM находится в [NM-language.txt](https://github.com/Zeleniykustik/NM/blob/main/NM-language.txt)
