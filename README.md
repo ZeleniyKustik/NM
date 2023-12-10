@@ -36,14 +36,12 @@ NM:
 
 
 
-
-
 | | EN | RU |
 | --- | --- | --- |
 | I | The memory block into which the request is entered | Блок памяти в который вводится запрос |
 | O | A block of memory from which a massive response is usually outpu | Блок памяти из которого обычно выводится массивный ответ |
 | NN | The array in which the neural network is stored | Массив в котором хранится нейронная сеть |
-| DS |The array in which the Dataset is stored | Массив в котором хранится Датасет |
+| DS | The array in which the Dataset is stored | Массив в котором хранится Датасет |
 | NSMc | This is a block for communicating with NS and M | Это блок для общения с NS и M |
 | MLc | This is a block for communicating with ML | Это блок для общения с ML |
 | NSr | This is NS RAM for neural network simulation | Это оперативная память NS для симуляции нейронных сетей |
