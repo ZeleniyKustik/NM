@@ -1,11 +1,25 @@
+set ses 0
+set AutoCS 0
+set AutoML 0
+set minscore 0
+set needscore 2
+set speed 0.005
+set minsignal 2
+set sesrange 0
+set goodnumg 1
+set goodnuml 1
+set badnumg 1
+set badnuml 1
+set badnuml 1
+set sqrt 0
 read on cell1 0
-jump 0 notEqual on 1
+jump 14 notEqual on 1
 read group cell1 1
 read command cell1 2
-jump 42 equal group 2
-jump 16 equal group 1
-jump 51 equal group 3
-jump 64 equal group 4
+jump 56 equal group 2
+jump 30 equal group 1
+jump 65 equal group 3
+jump 78 equal group 4
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Неправильно указан "
@@ -13,8 +27,8 @@ print "[]\n"
 print "Номер группы команд"
 printflush message1
 write 500 cell1 0
-end
-jump -1 equal command 1
+jump 14 always x false
+jump 88 equal command 1
 jump -1 equal command 2
 jump -1 equal command 3
 jump -1 equal command 4
@@ -39,7 +53,7 @@ print "[]\n"
 print "Номер команды"
 printflush message1
 write 500 cell1 0
-end
+jump 14 always x false
 jump -1 equal command 1
 print "Ошибка ввода (T)"
 print "[]\n"
@@ -48,7 +62,7 @@ print "[]\n"
 print "Номер команды"
 printflush message1
 write 500 cell1 0
-end
+jump 14 always x false
 jump -1 equal command 1
 jump -1 equal command 2
 jump -1 equal command 3
@@ -61,7 +75,7 @@ print "[]\n"
 print "Номер команды"
 printflush message1
 write 500 cell1 0
-end
+jump 14 always x false
 jump -1 equal command 1
 jump -1 equal command 2
 print "Ошибка ввода (T)"
@@ -71,4 +85,47 @@ print "[]\n"
 print "Номер команды"
 printflush message1
 write 500 cell1 0
+jump 14 always x false
+read rand cell1 3
+read layers cell1 4
+op floor flayers layers b
+jump 93 lessThan flayers 1
+jump 101 equal flayers layers
+print "Ошибка ввода (T)"
+print "[]\n"
+print "Неправильно указано"
+print "[]\n"
+print "Число слоёв"
+printflush message1
+write 500 cell1 0
 end
+write rand cell4 3
+write layers cell4 4
+set p 5
+read data cell1 p
+write data cell4 p
+op add p p 1
+op sub layers layers 1
+jump 110 lessThanEq layers 0
+jump 104 lessThan p 2048
+write 1 cell4 1
+write 1 cell4 2
+write 1 cell4 0
+read suc cell4 0
+jump 113 equal suc 1
+jump 119 equal suc 200
+jump 121 equal suc 300
+write 500 cell1 0
+jump 14 always x false
+write 200 cell1 0
+jump 14 always x false
+write 300 cell1 0
+read suc cell1 0
+jump 122 equal suc 300
+jump 103 equal suc 1
+print "Ошибка ввода (T)"
+print "[]\n"
+print "Вы не правильно ввели команду"
+printflush message1
+write 500 cell1 0
+jump 14 always x false
