@@ -1,0 +1,178 @@
+read on cell1 0
+jump 0 notEqual on 1
+read group cell1 1
+read command cell1 2
+jump 29 equal group 2
+jump 42 equal group 3
+jump 15 equal group 1
+print "Ошибка системы (ML)"
+print "[]\n"
+print "Неправельно указан"
+print "[]\n"
+print "Номер группы команд"
+printflush message1
+write 500 cell1 0
+end
+jump 52 equal command 1
+jump -1 equal command 2
+jump -1 equal command 3
+jump -1 equal command 4
+jump -1 equal command 5
+jump -1 equal command 6
+print "Ошибка системы (ML)"
+print "[]\n"
+print "Неправельно указан"
+print "[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+end
+jump -1 equal command 1
+jump -1 equal command 2
+jump -1 equal command 3
+jump -1 equal command 4
+jump -1 equal command 5
+print "Ошибка системы (ML)"
+print "[]\n"
+print "Неправельно указан"
+print "[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+end
+jump -1 equal command 1
+jump -1 equal command 2
+print "Ошибка системы (ML)"
+print "[]\n"
+print "Неправельно указан"
+print "[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+end
+read rand cell1 3
+jump 62 greaterThan rand 0
+print "Ошибка ввода (ML)"
+print "[]\n"
+print "Неправельно указано"
+print "[]\n"
+print "Число для рандомизации"
+printflush message1
+write 500 cell1 0
+end
+set srand rand
+op mul rand rand 2
+read layers cell1 3
+op floor flayers layers b
+jump 68 lessThan flayers 1
+jump 76 equal flayers layers
+print "Ошибка системы (ML)"
+print "[]\n"
+print "Неправельно указано"
+print "[]\n"
+print "Число слоёв"
+printflush message1
+write 500 cell1 0
+end
+set qlayers layers
+set i 0
+set size 0
+set pi 4
+set pr 6
+read n1 cell1 4
+op floor fn n1 b
+jump 85 lessThan fn 1
+jump 93 equal fn n1
+print "Ошибка ввода (ML)"
+print "[]\n"
+print "Неправельно указано"
+print "[]\n"
+print "Чиcло нейронов в слое"
+printflush message1
+write 500 cell1 0
+end
+write n1 cell4 5
+op add pi pi 1
+jump 100 lessThan pi 2047
+write 300 cell1 0
+set pi 0
+read suc cell1 0
+jump 98 equal suc 300
+read n2 cell1 pi
+op floor fn n2 b
+jump 85 lessThan fn 1
+jump 85 notEqual fn n2
+jump 109 lessThan pr 2048
+jump 111 lessThan pr 4096
+jump 114 lessThan pr 6144
+jump 117 lessThan pr 8192
+jump 122 always x false
+write n2 cell4 pr
+jump 122 always x false
+op sub pv pr 2048
+write n2 cell5 pv
+jump 122 always x false
+op sub pv pr 4096
+write n2 cell6 pv
+jump 122 always x false
+op sub pv pr 6144
+write n2 cell7 pv
+jump 122 always x false
+op sub pv pr 8192
+write n2 cell8 pv
+op mul ws n1 n2
+op add pr pr 1
+jump 132 lessThan pr 10239
+write 1 cell2 1
+write 10240 cell2 2
+write size cell2 3
+op add size size 10240
+write 2 cell2 4
+write 1 cell2 5
+set pr 0
+op rand w rand b
+op sub w w srand
+jump 139 lessThan pr 2048
+jump 141 lessThan pr 4096
+jump 144 lessThan pr 6144
+jump 147 lessThan pr 8192
+jump 150 always pr 10240
+write w cell4 pr
+jump 152 always x false
+op sub pv pr 2048
+write w cell5 pv
+jump 152 always x false
+op sub pv pr 4096
+write w cell6 pv
+jump 152 always x false
+op sub pv pr 6144
+write w cell7 pv
+jump 152 always x false
+op sub pv pr 8192
+write w cell8 pv
+op sub ws ws 1
+jump 123 greaterThan ws 0
+op add pr pr 1
+op sub layers layers 1
+set n1 n2
+jump 94 greaterThan layers 1
+set w -1
+op add i i 1
+jump 134 notEqual i 2
+op add size size pr
+write size cell4 2
+op sub pr pr 1
+write 2 cell4 0
+write 0 cell4 1
+write qlayers cell4 3
+write n2 cell4 4
+write 0 cell2 1
+write pr cell2 2
+write 0 cell2 3
+write 2 cell2 4
+write 1 cell2 5
+write 1 cell2 0
+read suc cell2 0
+jump 174 equal suc 1
+write suc cell1 0
+end
