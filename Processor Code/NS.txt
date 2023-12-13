@@ -1,0 +1,68 @@
+set pram 0
+read suc cell1 6
+jump 1 notEqual suc 1
+read suc cell8 0
+jump 11 equal suc 2
+print "Ошибка системы (NS)"
+print "[]\n"
+print "Нейронная сеть сломана :("
+printflush message1
+write 500 cell1 6
+end
+read layers cell8 3
+op floor floor layers b
+jump 5 lessThan floor 1
+jump 5 notEqual floor layers
+read n1 cell8 5
+op floor floor n1 b
+jump 5 lessThan floor 1
+jump 5 notEqual floor n1
+set pram 0
+set q n1
+set pi 8
+jump 26 lessThan pi 2048
+op sub pv pi 2048
+read input cell2 pv
+jump 27 always x false
+read input cell1 pi
+jump 32 lessThan pram 2048
+jump 34 lessThan pram 4096
+jump 37 lessThan pram 6144
+jump 40 lessThan pram 8192
+jump 43 always pram 10240
+write input cell3 pram
+jump 45 always pram 10240
+op sub pramv pram 2048
+write input cell4 pramv
+jump 45 always pram 10240
+op sub pramv pram 4096
+write input cell5 pramv
+jump 45 always pram 10240
+op sub pramv pram 6144
+write input cell6 pramv
+jump 45 always pram 10240
+op sub pramv pram 8192
+write input cell7 pramv
+op add pram pram 1
+op add pi pi 1
+jump 51 greaterThan pram 10239
+jump 57 greaterThan pi 4095
+jump 22 notEqual pram q
+jump 67 always pram q
+print "Ошибка ввода (NS)"
+print "[]\n"
+print "Слишком много входных значений"
+printflush message1
+write 500 cell1 6
+end
+write 300 cell1 6
+read suc cell1 6
+jump 58 equal suc 300
+jump 21 equal suc 1
+print "Ошибка ввода (NS)"
+print "[]\n"
+print "Вы не правильно ответили на запрос"
+printflush message1
+write 500 cell1 6
+end
+write 200 cell1 6
