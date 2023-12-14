@@ -53,8 +53,8 @@ print "Блок"
 printflush message1
 write 500 cell1 0
 end
-jump -1 equal block 1
-jump -1 equal block 2
+jump 344 equal block 1
+jump 448 equal block 2
 print "Ошибка системы (M)"
 print "[]\n"
 print "Не правельный запрос"
@@ -112,7 +112,7 @@ jump 140 always x false
 op sub pv p 12288
 read data cell13 pv
 jump 140 always x false
-op sub pv p 14366
+op sub pv p 14336
 read data cell14 pv
 jump 140 always x false
 op sub pv p 16384
@@ -239,7 +239,7 @@ jump 315 always x false
 op sub pv p 12288
 read data cell29 pv
 jump 315 always x false
-op sub pv p 14366
+op sub pv p 14336
 read data cell30 pv
 jump 315 always x false
 op sub pv p 16384
@@ -415,7 +415,7 @@ jump 443 always x false
 op sub pv p 12288
 write data cell13 pv
 jump 443 always x false
-op sub pv p 14366
+op sub pv p 14336
 write data cell14 pv
 jump 443 always x false
 op sub pv p 16384
@@ -542,7 +542,7 @@ jump 618 always x false
 op sub pv p 12288
 write data cell29 pv
 jump 618 always x false
-op sub pv p 14366
+op sub pv p 14336
 write data cell30 pv
 jump 618 always x false
 op sub pv p 16384
