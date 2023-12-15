@@ -124,7 +124,7 @@ op sub pv pr 8192
 write n2 cell8 pv
 op mul ws n1 n2
 op add pr pr 1
-jump 137 lessThan pr 10239
+jump 137 lessThan pr 10240
 write size cell2 1
 write 10240 cell2 2
 write 0 cell2 3
@@ -156,9 +156,9 @@ jump 157 always x false
 op sub pv pr 8192
 write w cell8 pv
 op sub ws ws 1
-jump 125 greaterThan ws 0
+jump 125 greaterThan ws 1
 op add pr pr 1
-jump 171 lessThan pr 10239
+jump 171 lessThan pr 10240
 write size cell2 1
 write 10240 cell2 2
 write 0 cell2 3
@@ -175,20 +175,20 @@ jump 96 greaterThan layers 1
 set w -1
 op add i i 1
 jump 139 notEqual i 2
-op add size size pr
-write size cell4 2
-write 2 cell4 0
-write 0 cell4 1
-write qlayers cell4 3
-write n2 cell4 4
-write 0 cell2 1
+op add sizei size pr
+write size cell2 1
 write pr cell2 2
 write 0 cell2 3
 write 2 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 189 equal suc 1
+jump 184 equal suc 1
+write 2 cell14 0
+write 0 cell14 1
+write sizei cell14 2
+write qlayers cell14 3
+write n2 cell14 4
 write suc cell1 0
 end
 read i cell1 2
@@ -219,7 +219,7 @@ write 0 cell4 p
 op add p p 1
 jump 217 lessThan p 2048
 write q cell2 1
-write 2048 cell2 2
+write 10240 cell2 2
 write 0 cell2 3
 write 2 cell2 4
 write a cell2 5
@@ -230,10 +230,10 @@ jump 231 equal suc 200
 write 500 cell1 0
 end
 jump 234 greaterThanEq q 10240
-op add q q 2048
+op add q q 10240
 jump 220 always x false
 write 1 cell2 2
 op add a a 1
-jump 220 lessThan a 3
+jump 216 lessThan a 3
 write 200 cell1 0
 end
