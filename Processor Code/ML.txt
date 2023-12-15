@@ -156,7 +156,7 @@ jump 157 always x false
 op sub pv pr 8192
 write w cell8 pv
 op sub ws ws 1
-jump 125 greaterThan ws 1
+jump 125 greaterThan ws 0
 op add pr pr 1
 jump 171 lessThan pr 10240
 write size cell2 1
