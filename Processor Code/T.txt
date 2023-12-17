@@ -426,3 +426,89 @@ write 500 cell1 0
 end
 write 200 cell1 0
 end
+read suc cell6 0
+jump 436 equal suc 2
+print "Ошибка системы (T)"
+print "[]\n"
+print "Нейросеть сломана :("
+printflush message1
+write 500 cell1 0
+end
+read inp cell6 5
+op floor floor inp b
+jump 430 lessThan floor 1
+jump 430 notEqual floor i
+set po 8
+set pi 3
+read data cell1 pi
+jump 445 lessThan po 2048
+jump 447 always po 4096
+write data cell2 po
+jump 449 always x false
+op sub pv po 2048
+write data cell3 pv
+op add pi pi 1
+op add po po 1
+op sub inp inp 1
+jump 456 greaterThan pi 2047
+jump 468 greaterThan po 4095
+jump 468 lessThan inp 1
+jump 442 always po 4095
+write 300 cell1 0
+read suc cell1 0
+jump 457 equal suc 300
+jump 462 notEqual suc 1
+set pi 3
+jump 453 always x false
+print "Ошибка ввода (T)"
+print "[]\n"
+print "Вы не правильно ответили на запрос"
+printflush message1
+write 500 cell1 0
+end
+write 1 cell2 6
+write 0 cell2 7
+read suc cell2 6
+jump 470 equal suc 1
+jump 441 equal suc 300
+jump 477 equal suc 200
+jump 477 equal suc 400
+write 500 cell1 0
+end
+set po 8
+set poo 3
+read out cell6 4
+jump 484 lessThan po 2048
+op sub pv po 2048
+read data cell3 pv
+jump 485 always x false
+read data cell2 po
+write data cell1 poo
+op add po po 1
+op add poo poo 1
+op sub out out 1
+jump 493 greaterThan poo 2047
+jump 504 greaterThan po 4095
+jump 512 lessThan out 1
+jump 480 always x false
+write 400 cell1 0
+read suc cell1 0
+jump 494 equal suc 400
+set poo 3
+jump 490 equal suc 1
+print "Ошибка ввода (T)"
+print "[]\n"
+print "Вы не правильно ответили на запрос"
+printflush message1
+write 500 cell1 0
+end
+write 1 cell2 6
+read suc cell2 6
+jump 505 equal suc 1
+set po 8
+jump 480 equal suc 200
+jump 480 equal suc 400
+write 500 cell1 0
+end
+write 200 cell1 0
+end
