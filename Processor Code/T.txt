@@ -58,7 +58,7 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 end
-jump -1 equal command 1
+jump 428 equal command 1
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Неправильно указан "
