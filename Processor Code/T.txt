@@ -477,7 +477,7 @@ jump 478 equal suc 400
 write 500 cell1 0
 end
 set po 8
-set poo 3
+set poo 0
 read out cell6 4
 jump 485 lessThan po 2048
 op sub pv po 2048
@@ -495,7 +495,7 @@ jump 481 always x false
 write 400 cell1 0
 read suc cell1 0
 jump 495 equal suc 400
-set poo 3
+set poo 0
 jump 491 equal suc 1
 print "Ошибка ввода (T)"
 print "[]\n"
