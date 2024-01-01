@@ -1,6 +1,6 @@
-set pram 0
 read suc cell1 6
-jump 1 notEqual suc 1
+jump 0 notEqual suc 1
+read mode cell1 7
 read suc cell8 0
 jump 11 equal suc 2
 print "Ошибка системы (NS)"
@@ -17,8 +17,8 @@ read n1 cell8 5
 op floor floor n1 b
 jump 5 lessThan floor 1
 jump 5 notEqual floor n1
-set pram 0
-set q n1
+set pram 2
+op add q n1 pram
 set pi 8
 jump 26 lessThan pi 2048
 op sub pv pi 2048
@@ -32,17 +32,17 @@ jump 40 lessThan pram 8192
 jump 43 always pram 10240
 write input cell3 pram
 jump 45 always pram 10240
-op sub pramv pram 2048
-write input cell4 pramv
+op sub pv pram 2048
+write input cell4 pv
 jump 45 always pram 10240
-op sub pramv pram 4096
-write input cell5 pramv
+op sub pv pram 4096
+write input cell5 pv
 jump 45 always pram 10240
-op sub pramv pram 6144
-write input cell6 pramv
+op sub pv pram 6144
+write input cell6 pv
 jump 45 always pram 10240
-op sub pramv pram 8192
-write input cell7 pramv
+op sub pv pram 8192
+write input cell7 pv
 op add pram pram 1
 op add pi pi 1
 jump 51 greaterThan pram 10239
@@ -65,4 +65,41 @@ print "Вы не правильно ответили на запрос"
 printflush message1
 write 500 cell1 6
 end
-write 200 cell1 6
+set p 6
+read n2 cell8 p
+op add p p 1
+op add pramo n1 2
+set pramol pramo
+op add pramos pramo n2
+set pramols pramos
+set s2 0
+set pram 2
+set lons 0
+op add outpln pram n1
+read input cell3 pram
+op add pram pram 1
+read w cell8 p
+op add p p 1
+op mul i input w
+op add lons lons i
+jump 78 greaterThan outpln pram
+op mul lons2 2 lons
+op pow e2 2.7182818284 lons2
+op sub em e2 1
+op add ep e2 1
+op div outn em ep
+op pow s2l outn 2
+op add s2 s2 s2l
+write outn cell3 pramo
+op add pramo pramo 1
+jump 75 lessThan pramo pramos
+set pram 2
+read signal cell3 pramol
+op add pramol pramol 1
+write signal cell3 pram
+op add pram pram 1
+jump 96 lessThan pramol pramols
+op sub layers layers 1
+set n1 n2
+jump 68 greaterThan layers 1
+stop
