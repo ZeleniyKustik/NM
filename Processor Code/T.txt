@@ -484,7 +484,7 @@ op sub pv po 2048
 read data cell3 pv
 jump 486 always x false
 read data cell2 po
-write data cell1 poo
+write data cell5 poo
 op add po po 1
 op add poo poo 1
 op sub out out 1
