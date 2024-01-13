@@ -249,11 +249,93 @@ jump 227 lessThan a 3
 write 200 cell1 0
 end
 read suc cell15 0
-jump 257 equal suc 8
-write 0 cell15 1
+set seson 1
 read inputs cell14 5
+read num cell14 6
+jump 260 equal suc 8
+set num 0
+write 0 cell15 1
 write inputs cell15 2
 write 0 cell15 3
 write 8 cell15 0
+read suc cell15 0
+jump 264 equal suc 8
+write 500 cell1 0
+end
+read i cell14 5
+jump 268 equal i inputs
+write 500 cell1 0
+end
+write 200 cell1 0
+set k 1
+op add q inputs 3
+op mul pdata q num
+op sub i inputs 2
+read suc cell1 0
+jump 273 notEqual suc 1
+read suc cell1 1
+jump 333 equal suc 2
+jump 275 notEqual suc 6
+set p 1
+set pram 0
+jump 285 lessThan p 2048
+jump 287 lessThan p 4096
+jump 290 lessThan p 6144
+jump 293 lessThan p 8192
+jump 296 always p 10240
+read data cell9 p
+jump 298 always x false
+op sub pv p 2048
+read data cell10 pv
+jump 298 always x false
+op sub pv p 4096
+read data cell11 pv
+jump 298 always x false
+op sub pv p 6144
+read data cell12 pv
+jump 298 always x false
+op sub pv p 8192
+read data cell13 pv
+op add p p 1
+jump 304 lessThan pram 2048
+jump 308 lessThan pram 4096
+jump 313 lessThan pram 6144
+jump 318 lessThan pram 8192
+jump 323 always p 10240
+read ldata cell4 pram
+op add data ldata data
+write data cell4 pram
+jump 327 always p 10240
+op sub pv pram 2048
+read ldata cell5 pv
+op add data ldata data
+write data cell5 pv
+jump 327 always p 10240
+op sub pv pram 4096
+read ldata cell6 pv
+op add data ldata data
+write data cell6 pv
+jump 327 always p 10240
+op sub pv pram 6144
+read ldata cell7 pv
+op add data ldata data
+write data cell7 pv
+jump 327 always p 10240
+op sub pv pram 8192
+read ldata cell8 pv
+op add data ldata data
+write data cell8 pv
+op add pram pram 1
+jump 280 lessThan p i
+set seson 1
+write 200 cell1 0
+op add k k 1
+jump 273 always x false
+read suc cell1 2
+jump 338 equal suc 2
+set seson 0
+write 500 cell1 0
+end
+read score cell1 3
 write 200 cell1 0
 end
