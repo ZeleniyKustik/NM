@@ -45,10 +45,19 @@ op sub pv pram 8192
 write input cell7 pv
 op add pram pram 1
 op add pi pi 1
-jump 51 greaterThan pram 10239
-jump 57 greaterThan pi 4095
+jump 60 greaterThan pram 10239
+jump 66 greaterThan pi 4095
 jump 22 notEqual pram q
-jump 67 always pram q
+write 100 cell1 6
+read suc cell1 6
+jump 51 equal suc 100
+jump 76 equal suc 150
+print "Ошибка ввода (NS)"
+print "[]\n"
+print "Неожиданый ответ от системы"
+printflush message1
+write 500 cell1 6
+end
 print "Ошибка ввода (NS)"
 print "[]\n"
 print "Слишком много входных значений"
@@ -57,7 +66,7 @@ write 500 cell1 6
 end
 write 300 cell1 6
 read suc cell1 6
-jump 58 equal suc 300
+jump 67 equal suc 300
 jump 21 equal suc 1
 print "Ошибка ввода (NS)"
 print "[]\n"
@@ -66,9 +75,19 @@ printflush message1
 write 500 cell1 6
 end
 set p 6
-jump 70 always suc 3
+jump 79 always mode 3
 set p pm
+jump 83 lessThan p 2048
+jump 85 lessThan p 4096
+jump 88 lessThan p 6144
+stop
 read n2 cell8 p
+jump 90 always p 6144
+op sub pv p 2048
+read n2 cell9 pv
+jump 90 always p 6144
+op sub pv p 4096
+read n2 cell10 pv
 set pm p
 op add p p 1
 op add pramo n1 2
@@ -81,85 +100,21 @@ set lons 0
 op add outpln pram n1
 read input cell3 pram
 op add pram pram 1
-jump 86 lessThan p 16384
-jump 88 always p 32768
-jump 90 always x false
-jump 90 lessThan p 8192
-jump 94 always x false
-jump 98 lessThan p 24576
-jump 102 always x false
-jump 112 lessThan p 2048
-jump 114 lessThan p 4096
-jump 117 lessThan p 6144
-jump 120 lessThan p 8192
-jump 123 lessThan p 10240
-jump 126 lessThan p 12288
-jump 129 lessThan p 14336
-jump 132 lessThan p 16384
-jump 135 lessThan p 18432
-jump 138 lessThan p 20480
-jump 141 lessThan p 22528
-jump 144 lessThan p 24576
-jump 147 lessThan p 26624
-jump 150 lessThan p 28672
-jump 153 lessThan p 30720
-jump 156 lessThan p 32768
-print "Ошибка системы (NS)"
-print "[]\n"
-print "Ошибка сортировки"
-printflush message1
-write 500 cell1 6
-end
+jump 106 lessThan p 2048
+jump 108 lessThan p 4096
+jump 111 lessThan p 6144
+stop
 read w cell8 p
-jump 158 always x false
+jump 113 always w 6144
 op sub pv p 2048
 read w cell9 pv
-jump 158 always x false
+jump 113 always w 6144
 op sub pv p 4096
 read w cell10 pv
-jump 158 always x false
-op sub pv p 6144
-read w cell11 pv
-jump 158 always x false
-op sub pv p 8192
-read w cell12 pv
-jump 158 always x false
-op sub pv p 10240
-read w cell13 pv
-jump 158 always x false
-op sub pv p 12288
-read w cell14 pv
-jump 158 always x false
-op sub pv p 14336
-read w cell15 pv
-jump 158 always x false
-op sub pv p 16384
-read w cell16 pv
-jump 158 always x false
-op sub pv p 18432
-read w cell17 pv
-jump 158 always x false
-op sub pv p 20480
-read w cell18 pv
-jump 158 always x false
-op sub pv p 22528
-read w cell19 pv
-jump 158 always x false
-op sub pv p 24576
-read w cell20 pv
-jump 158 always x false
-op sub pv p 26624
-read w cell21 pv
-jump 158 always x false
-op sub pv p 28672
-read w cell22 pv
-jump 158 always x false
-op sub pv p 30720
-read w cell23 pv
 op add p p 1
 op mul i input w
 op add lons lons i
-jump 81 greaterThan outpln pram
+jump 100 greaterThan outpln pram
 op mul lons2 2 lons
 op pow e2 2.71828 lons2
 op sub em e2 1
@@ -169,16 +124,16 @@ op pow s2l lons 2
 op add s2 s2 s2l
 write lons cell3 pramo
 op add pramo pramo 1
-jump 78 lessThan pramo pramos
+jump 97 lessThan pramo pramos
 write s2 cell3 0
 op sqrt s2 s2 1
 op add pramo pramo 1
-jump 181 equal mode 0
+jump 136 equal mode 0
 write 2 cell1 7
-read suc cell1 7
-jump 177 equal suc 2
-jump 181 equal suc 1
-jump 78 equal suc 3
+read mode cell1 7
+jump 132 equal mode 2
+jump 136 equal mode 1
+jump 78 equal mode 3
 set pram 1
 op add prams pram n2
 op sub prams prams 1
@@ -187,10 +142,10 @@ op add pramol pramol 1
 op div signal signal s2
 write signal cell3 pram
 op add pram pram 1
-jump 184 lessThanEq pram prams
+jump 139 lessThanEq pram prams
 op sub layers layers 1
 set n1 n2
-jump 70 greaterThan layers 1
+jump 79 greaterThan layers 1
 set pram 1
 set pout 8
 read out cell3 pram
@@ -198,10 +153,11 @@ op add pram pram 1
 write out cell1 pout
 op add pout pout 1
 op sub n1 n1 1
-jump 203 greaterThan pout 2047
-jump 195 greaterThan n1 0
-jump 206 always x false
+jump 158 greaterThan pout 2047
+jump 150 greaterThan n1 0
+jump 161 always x false
 write 400 cell1 6
 set pout 8
-jump 195 greaterThan n1 0
+jump 150 greaterThan n1 0
 write 200 cell1 6
+end
