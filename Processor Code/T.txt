@@ -72,7 +72,7 @@ printflush message1
 write 500 cell1 0
 end
 jump 477 equal command 1
-jump -1 equal command 2
+jump 488 equal command 2
 jump -1 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
@@ -484,5 +484,17 @@ jump 485 equal suc 200
 write 500 cell1 0
 end
 set seson 1
+write 200 cell1 0
+end
+read score cell1 3
+write score cell4 3
+write 2 cell4 2
+write 2 cell4 1
+write 1 cell4 0
+read suc cell4 0
+jump 493 equal suc 1
+jump 498 equal suc 200
+write 500 cell1 0
+end
 write 200 cell1 0
 end
