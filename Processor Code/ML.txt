@@ -1,10 +1,15 @@
+jump 4 equal seson 1
 read on cell1 0
-jump 0 notEqual on 1
+jump 1 equal on 0
+jump 7 always seson 1
+read on cell1 0
+jump 7 equal on 1
+jump 280 equal seson 1
 read group cell1 1
 read command cell1 2
-jump 27 equal group 2
-jump 40 equal group 3
-jump 15 equal group 1
+jump 32 equal group 2
+jump 45 equal group 3
+jump 20 equal group 1
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Неправельно указан"
@@ -13,10 +18,10 @@ print "Номер группы команд"
 printflush message1
 write 500 cell1 0
 end
-jump 50 equal command 1
-jump 204 equal command 2
-jump 219 equal command 3
-jump 223 equal command 4
+jump 55 equal command 1
+jump 209 equal command 2
+jump 224 equal command 3
+jump 228 equal command 4
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Неправельно указан"
@@ -25,8 +30,8 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 end
-jump 250 equal command 1
-jump -1 equal command 2
+jump 255 equal command 1
+jump 337 equal command 2
 jump -1 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
@@ -49,7 +54,7 @@ printflush message1
 write 500 cell1 0
 end
 read rand cell1 3
-jump 60 greaterThan rand 0
+jump 65 greaterThan rand 0
 print "Ошибка ввода (ML)"
 print "[]\n"
 print "Неправельно указано"
@@ -62,8 +67,8 @@ set srand rand
 op mul rand rand 2
 read layers cell1 4
 op floor flayers layers b
-jump 66 lessThan flayers 1
-jump 74 equal flayers layers
+jump 71 lessThan flayers 1
+jump 79 equal flayers layers
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Неправельно указано"
@@ -82,8 +87,8 @@ set pi 5
 set pr 6
 read n1 cell1 5
 op floor fn n1 b
-jump 86 lessThan fn 1
-jump 94 equal fn n1
+jump 91 lessThan fn 1
+jump 99 equal fn n1
 print "Ошибка ввода (ML)"
 print "[]\n"
 print "Неправельно указано"
@@ -94,39 +99,39 @@ write 500 cell1 0
 end
 write n1 cell4 5
 op add pi pi 1
-jump 104 lessThan pi 2047
+jump 109 lessThan pi 2047
 write 300 cell1 0
 set pi 4
 read suc cell1 0
-jump 99 equal suc 300
-jump 104 equal suc 1
+jump 104 equal suc 300
+jump 109 equal suc 1
 write 500 cell1 0
 end
 read n2 cell1 pi
 op floor fn n2 b
-jump 86 lessThan fn 1
-jump 86 notEqual fn n2
-jump 113 lessThan pr 2048
-jump 115 lessThan pr 4096
-jump 118 lessThan pr 6144
-jump 121 lessThan pr 8192
-jump 126 always x false
+jump 91 lessThan fn 1
+jump 91 notEqual fn n2
+jump 118 lessThan pr 2048
+jump 120 lessThan pr 4096
+jump 123 lessThan pr 6144
+jump 126 lessThan pr 8192
+jump 131 always x false
 write n2 cell4 pr
-jump 126 always x false
+jump 131 always x false
 op sub pv pr 2048
 write n2 cell5 pv
-jump 126 always x false
+jump 131 always x false
 op sub pv pr 4096
 write n2 cell6 pv
-jump 126 always x false
+jump 131 always x false
 op sub pv pr 6144
 write n2 cell7 pv
-jump 126 always x false
+jump 131 always x false
 op sub pv pr 8192
 write n2 cell8 pv
 op mul ws n1 n2
 op add pr pr 1
-jump 142 lessThan pr 10240
+jump 147 lessThan pr 10240
 write size cell2 1
 write 10240 cell2 2
 write 0 cell2 3
@@ -135,34 +140,34 @@ write 2 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 136 equal suc 1
-jump 141 equal suc 200
+jump 141 equal suc 1
+jump 146 equal suc 200
 write 500 cell1 0
 end
 set pr 0
 op rand w rand b
 op sub w w srand
-jump 149 lessThan pr 2048
-jump 151 lessThan pr 4096
-jump 154 lessThan pr 6144
-jump 157 lessThan pr 8192
-jump 160 always pr 10240
+jump 154 lessThan pr 2048
+jump 156 lessThan pr 4096
+jump 159 lessThan pr 6144
+jump 162 lessThan pr 8192
+jump 165 always pr 10240
 write w cell4 pr
-jump 162 always x false
+jump 167 always x false
 op sub pv pr 2048
 write w cell5 pv
-jump 162 always x false
+jump 167 always x false
 op sub pv pr 4096
 write w cell6 pv
-jump 162 always x false
+jump 167 always x false
 op sub pv pr 6144
 write w cell7 pv
-jump 162 always x false
+jump 167 always x false
 op sub pv pr 8192
 write w cell8 pv
 op sub ws ws 1
-jump 127 greaterThanEq ws 0
-jump 178 lessThan pr 10240
+jump 132 greaterThanEq ws 0
+jump 183 lessThan pr 10240
 write size cell2 1
 write 10240 cell2 2
 write 0 cell2 3
@@ -171,17 +176,17 @@ write 2 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 172 equal suc 1
-jump 177 equal suc 200
+jump 177 equal suc 1
+jump 182 equal suc 200
 write 500 cell1 0
 end
 set pr 0
 op sub layers layers 1
 set n1 n2
-jump 95 greaterThan layers 1
+jump 100 greaterThan layers 1
 set w -1
 op add i i 1
-jump 144 notEqual i 2
+jump 149 notEqual i 2
 op add pr pr 1
 op add sizei size pr
 write size cell2 1
@@ -191,8 +196,8 @@ write 2 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 192 equal suc 1
-jump 197 equal suc 200
+jump 197 equal suc 1
+jump 202 equal suc 200
 write 500 cell1 0
 end
 write 2 cell14 0
@@ -204,7 +209,7 @@ write 200 cell1 0
 end
 read i cell1 3
 op floor floor i b
-jump 215 equal floor i
+jump 220 equal floor i
 print "Ошибка ввода (ML)"
 print "[]\n"
 print "Неправельно введено"
@@ -228,7 +233,7 @@ set a 1
 set q 0
 write 0 cell4 p
 op add p p 1
-jump 228 lessThan p 2048
+jump 233 lessThan p 2048
 write q cell2 1
 write 10240 cell2 2
 write 0 cell2 3
@@ -236,34 +241,34 @@ write 2 cell2 4
 write a cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 237 equal suc 1
-jump 242 equal suc 200
+jump 242 equal suc 1
+jump 247 equal suc 200
 write 500 cell1 0
 end
-jump 245 greaterThanEq q 10240
+jump 250 greaterThanEq q 10240
 op add q q 10240
-jump 231 always x false
+jump 236 always x false
 write 1 cell2 2
 op add a a 1
-jump 227 lessThan a 3
+jump 232 lessThan a 3
 write 200 cell1 0
 end
 read suc cell15 0
 set seson 1
 read inputs cell14 5
 read num cell14 6
-jump 260 equal suc 8
+jump 265 equal suc 8
 set num 0
 write 0 cell15 1
 write inputs cell15 2
 write 0 cell15 3
 write 8 cell15 0
 read suc cell15 0
-jump 264 equal suc 8
+jump 269 equal suc 8
 write 500 cell1 0
 end
 read i cell14 5
-jump 268 equal i inputs
+jump 273 equal i inputs
 write 500 cell1 0
 end
 write 200 cell1 0
@@ -271,72 +276,65 @@ set k 1
 op add q inputs 3
 op mul pdata q num
 op sub i inputs 2
-read suc cell1 0
-jump 273 notEqual suc 1
-read suc cell1 1
-jump 333 equal suc 2
-jump 275 notEqual suc 6
+read on cell1 0
+jump 7 equal on 1
+read suc cell2 6
+jump 278 notEqual suc 100
 set p 1
 set pram 0
-jump 285 lessThan p 2048
-jump 287 lessThan p 4096
-jump 290 lessThan p 6144
-jump 293 lessThan p 8192
-jump 296 always p 10240
+jump 289 lessThan p 2048
+jump 291 lessThan p 4096
+jump 294 lessThan p 6144
+jump 297 lessThan p 8192
+jump 300 always p 10240
 read data cell9 p
-jump 298 always x false
+jump 302 always x false
 op sub pv p 2048
 read data cell10 pv
-jump 298 always x false
+jump 302 always x false
 op sub pv p 4096
 read data cell11 pv
-jump 298 always x false
+jump 302 always x false
 op sub pv p 6144
 read data cell12 pv
-jump 298 always x false
+jump 302 always x false
 op sub pv p 8192
 read data cell13 pv
 op add p p 1
-jump 304 lessThan pram 2048
-jump 308 lessThan pram 4096
-jump 313 lessThan pram 6144
-jump 318 lessThan pram 8192
-jump 323 always p 10240
+jump 308 lessThan pram 2048
+jump 312 lessThan pram 4096
+jump 317 lessThan pram 6144
+jump 322 lessThan pram 8192
+jump 327 always p 10240
 read ldata cell4 pram
 op add data ldata data
 write data cell4 pram
-jump 327 always p 10240
+jump 331 always p 10240
 op sub pv pram 2048
 read ldata cell5 pv
 op add data ldata data
 write data cell5 pv
-jump 327 always p 10240
+jump 331 always p 10240
 op sub pv pram 4096
 read ldata cell6 pv
 op add data ldata data
 write data cell6 pv
-jump 327 always p 10240
+jump 331 always p 10240
 op sub pv pram 6144
 read ldata cell7 pv
 op add data ldata data
 write data cell7 pv
-jump 327 always p 10240
+jump 331 always p 10240
 op sub pv pram 8192
 read ldata cell8 pv
 op add data ldata data
 write data cell8 pv
 op add pram pram 1
-jump 280 lessThan p i
+jump 284 lessThan p i
 set seson 1
-write 200 cell1 0
+write 150 cell2 6
 op add k k 1
-jump 273 always x false
-read suc cell1 2
-jump 338 equal suc 2
+jump 280 always x false
 set seson 0
-write 500 cell1 0
-end
-read score cell1 3
 write 200 cell1 0
 end
-
