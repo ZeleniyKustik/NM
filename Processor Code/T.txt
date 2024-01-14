@@ -71,8 +71,8 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 end
-jump 477 equal command 1
-jump 488 equal command 2
+jump 473 equal command 1
+jump 484 equal command 2
 jump -1 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
@@ -425,40 +425,36 @@ jump 393 equal suc 300
 jump 427 equal suc 100
 write 500 cell1 0
 end
-jump 432 equal seson 0
-write 6 cell4 1
-write 1 cell4 0
-read suc cell4 0
-jump 430 notEqual suc 200
+jump 429 equal seson 1
 write 150 cell2 6
 read suc cell2 6
-jump 433 equal suc 100
-jump 433 equal suc 150
-jump 440 equal suc 200
-jump 440 equal suc 400
+jump 429 equal suc 100
+jump 429 equal suc 150
+jump 436 equal suc 200
+jump 436 equal suc 400
 write 500 cell1 0
 end
 set po 8
 set poo 0
 read out cell6 4
-jump 447 lessThan po 2048
+jump 443 lessThan po 2048
 op sub pv po 2048
 read data cell3 pv
-jump 448 always x false
+jump 444 always x false
 read data cell2 po
 write data cell5 poo
 op add po po 1
 op add poo poo 1
 op sub out out 1
-jump 456 greaterThan poo 2047
-jump 467 greaterThan po 4095
-jump 475 lessThan out 1
-jump 443 always x false
+jump 452 greaterThan poo 2047
+jump 463 greaterThan po 4095
+jump 471 lessThan out 1
+jump 439 always x false
 write 400 cell1 0
 read suc cell1 0
-jump 457 equal suc 400
+jump 453 equal suc 400
 set poo 0
-jump 453 equal suc 1
+jump 449 equal suc 1
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ответили на запрос"
@@ -467,10 +463,10 @@ write 500 cell1 0
 end
 write 1 cell2 6
 read suc cell2 6
-jump 468 equal suc 1
+jump 464 equal suc 1
 set po 8
-jump 443 equal suc 200
-jump 443 equal suc 400
+jump 439 equal suc 200
+jump 439 equal suc 400
 write 500 cell1 0
 end
 write 200 cell1 0
@@ -479,8 +475,8 @@ write 2 cell4 1
 write 1 cell4 2
 write 1 cell4 0
 read suc cell4 0
-jump 480 equal suc 1
-jump 485 equal suc 200
+jump 476 equal suc 1
+jump 481 equal suc 200
 write 500 cell1 0
 end
 set seson 1
@@ -491,9 +487,10 @@ write score cell4 3
 write 2 cell4 2
 write 2 cell4 1
 write 1 cell4 0
+set seson 0
 read suc cell4 0
-jump 493 equal suc 1
-jump 498 equal suc 200
+jump 490 equal suc 1
+jump 495 equal suc 200
 write 500 cell1 0
 end
 write 200 cell1 0
