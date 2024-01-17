@@ -4,7 +4,7 @@ jump 1 notEqual on 1
 jump 7 always seson 1
 read on cell1 0
 jump 7 equal on 1
-jump 315 equal seson 1
+jump 316 equal seson 1
 read group cell1 1
 read command cell1 2
 jump 32 equal group 2
@@ -31,7 +31,7 @@ printflush message1
 write 500 cell1 0
 stop
 jump 257 equal command 1
-jump 329 equal command 2
+jump 330 equal command 2
 jump -1 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
@@ -258,16 +258,17 @@ end
 read suc cell15 0
 read numdat cell15 1
 read inputsfordata cell14 5
-jump 267 equal suc 8
+jump 268 equal suc 8
 set numdat 0
 set numdl 0
+set hyper 0
 write 0 cell15 1
 write inputsfordata cell15 2
 write 0 cell15 1
 write 8 cell15 0
 read suc cell15 0
 read mode cell15 3
-jump 276 equal suc 8
+jump 277 equal suc 8
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Скорее всего что-то не так с DS"
@@ -275,7 +276,7 @@ write 500 cell1 0
 printflush message1
 stop
 read b cell14 5
-jump 286 equal b inputsfordata
+jump 287 equal b inputsfordata
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Количество входов в датасете"
@@ -288,8 +289,8 @@ write 200 cell1 0
 op add qqqi inputsfordata 2
 op mul qqq qqqi numdl
 op add qwsize qqq 6
-jump 302 lessThan qwsize 65536
-jump 298 greaterThan numdat 1
+jump 303 lessThan qwsize 65536
+jump 299 greaterThan numdat 1
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Переполнение DS"
@@ -299,10 +300,10 @@ stop
 set numdl 0
 set numdat sesrange
 set nopluse 1
-jump 287 always numdat 1
-jump 298 greaterThanEq numdl sesrange
+jump 288 always numdat 1
+jump 299 greaterThanEq numdl sesrange
 op add numdl numdl 1
-jump 306 equal nopluse 1
+jump 307 equal nopluse 1
 op add numdat numdat 1
 set seson 1
 set kfordata 0
@@ -310,30 +311,35 @@ set very_need inputsfordata
 set p 0
 write 0 cell4 p
 op add p p 1
-jump 310 lessThan p i
+jump 311 lessThan p i
 read on cell1 0
 jump 7 equal on 1
 read suc cell2 6
-jump 313 notEqual suc 100
+jump 314 notEqual suc 100
+op add kfordata kfordata 1
 set p 1
 set pram 0
 read data cell9 p
 op add p p 1
 read ldata cell4 pram
-op add data data ldata
-write data cell4 pram
+op add dataout data ldata
+write dataout cell4 pram
 op add pram pram 1
-jump 319 lessThanEq p very_need
-op add kfordata kfordata 1
+jump 321 lessThan p very_need
 write 150 cell2 6
-jump 315 always x false
+jump 316 always x false
 set seson 0
 set p 0
+op div kfl 1 kfordata
+jump 335 notEqual kfordata 0
+set kfl 1
 read data cell4 p
-op div data data kfordata
-write data cell4 p
+op mul dataout data kfl
+write dataout cell4 p
 op add p p 1
-jump 331 lessThan p pram
+jump 335 lessThan p pram
+jump 342 lessThan kfordata hyper
+set hyper kfordata
 write qwsize cell2 1
 write inputsfordata cell2 2
 write 0 cell2 3
@@ -341,8 +347,8 @@ write 2 cell2 4
 write 2 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 342 equal suc 1
-jump 347 equal suc 200
+jump 348 equal suc 1
+jump 353 equal suc 200
 write 500 cell1 0
 stop
 write mode cell4 0
@@ -356,8 +362,8 @@ write 2 cell2 4
 write 2 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 357 equal suc 1
-jump 362 equal suc 200
+jump 363 equal suc 1
+jump 368 equal suc 200
 write 500 cell1 0
 stop
 write numdat cell15 1
