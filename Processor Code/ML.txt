@@ -325,7 +325,7 @@ read ldata cell4 pram
 op add dataout data ldata
 write dataout cell4 pram
 op add pram pram 1
-jump 321 lessThan p very_need
+jump 321 lessThanEq p very_need
 write 150 cell2 6
 jump 316 always x false
 set seson 0
