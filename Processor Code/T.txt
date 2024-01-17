@@ -391,7 +391,7 @@ op floor floor inp b
 jump 382 lessThan floor 1
 jump 382 notEqual floor inp
 set po 8
-set pi 4
+set pi 3
 read data cell1 pi
 jump 398 greaterThanEq po 2048
 write data cell2 po
