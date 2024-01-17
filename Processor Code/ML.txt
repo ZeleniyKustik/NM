@@ -20,8 +20,8 @@ write 500 cell1 0
 stop
 jump 55 equal command 1
 jump 230 equal command 2
-jump 247 equal command 3
-jump 251 equal command 4
+jump 246 equal command 3
+jump 250 equal command 4
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Неправельно указан"
@@ -30,7 +30,7 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump 258 equal command 1
+jump 257 equal command 1
 jump 329 equal command 2
 jump -1 equal command 3
 jump -1 equal command 4
@@ -239,9 +239,8 @@ print "Ограничение по сессиям"
 printflush message1
 write 500 cell1 0
 stop
-op sub sesrange i 1
+set sesrange i
 set numdl 0
-set sesnum 0
 set nopluse 0
 write 200 cell1 0
 end
@@ -259,7 +258,7 @@ end
 read suc cell15 0
 read numdat cell15 1
 read inputsfordata cell14 5
-jump 268 equal suc 8
+jump 267 equal suc 8
 set numdat 0
 set numdl 0
 write 0 cell15 1
@@ -268,7 +267,7 @@ write 0 cell15 1
 write 8 cell15 0
 read suc cell15 0
 read mode cell15 3
-jump 277 equal suc 8
+jump 276 equal suc 8
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Скорее всего что-то не так с DS"
@@ -276,7 +275,7 @@ write 500 cell1 0
 printflush message1
 stop
 read b cell14 5
-jump 287 equal b inputsfordata
+jump 286 equal b inputsfordata
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Количество входов в датасете"
@@ -286,11 +285,11 @@ write 500 cell1 0
 write 500 cell1 0
 stop
 write 200 cell1 0
-op add qqq inputsfordata 2
-op mul qqq qqq numdl
+op add qqqi inputsfordata 2
+op mul qqq qqqi numdl
 op add qwsize qqq 6
 jump 302 lessThan qwsize 65536
-jump 299 greaterThan numdat 1
+jump 298 greaterThan numdat 1
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Переполнение DS"
@@ -298,9 +297,10 @@ printflush message1
 write 500 cell1 0
 stop
 set numdl 0
+set numdat sesrange
 set nopluse 1
-jump 288 always numdat 1
-jump 299 greaterThanEq numdl sesrange
+jump 287 always numdat 1
+jump 298 greaterThanEq numdl sesrange
 op add numdl numdl 1
 jump 306 equal nopluse 1
 op add numdat numdat 1
