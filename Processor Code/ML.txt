@@ -32,7 +32,7 @@ write 500 cell1 0
 stop
 jump 257 equal command 1
 jump 330 equal command 2
-jump -1 equal command 3
+jump 371 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
 print "Ошибка системы (ML)"
@@ -367,5 +367,8 @@ jump 368 equal suc 200
 write 500 cell1 0
 stop
 write numdat cell15 1
+write 200 cell1 0
+end
+set seson 0
 write 200 cell1 0
 end
