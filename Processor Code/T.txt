@@ -74,8 +74,8 @@ write 500 cell1 0
 stop
 jump 475 equal command 1
 jump 486 equal command 2
-jump 500 equal command 3
-jump -1 equal command 4
+jump 502 equal command 3
+jump 513 equal command 4
 jump -1 equal command 5
 print "Ошибка ввода (T)"
 print "[]\n"
@@ -492,10 +492,12 @@ write 1 cell4 0
 set seson 0
 read suc cell4 0
 jump 492 equal suc 1
-jump 498 equal suc 200
+jump 500 equal suc 200
 write 500 cell1 0
 stop
 op sub automlnum automlnum 1
+jump 500 equal automl 0
+jump 513 lessThanEq automlnum 0
 write 200 cell1 0
 end
 write 2 cell4 1
@@ -503,9 +505,26 @@ write 3 cell4 2
 write 1 cell4 0
 set seson 0
 read suc cell4 0
-jump 504 equal suc 1
-jump 509 equal suc 200
+jump 506 equal suc 1
+jump 511 equal suc 200
 write 500 cell1 0
 end
+write 200 cell1 0
+end
+write 2 cell4 1
+write 4 cell4 2
+write minscore cell4 3
+write need cell4 4
+write speed cell4 5
+write minsignal cell4 6
+write goodnuml cell4 7
+write badnuml cell4 8
+write sqrt cell4 9
+write 1 cell4 0
+read suc cell4 0
+jump 523 equal suc 1
+jump 528 equal suc 200
+write 500 cell1 0
+stop
 write 200 cell1 0
 end
