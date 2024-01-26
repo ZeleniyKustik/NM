@@ -1,4 +1,4 @@
-jump 23 equal start 1
+jump 24 equal start 1
 set seson 0
 set sesrange 1
 set minscore 0
@@ -10,6 +10,7 @@ set badnuml 1
 set sqrt 0
 set automl 0
 set automlr 0
+set automlnum automlr
 set autocses 0
 set start 1
 write 1 cell4 1
@@ -17,18 +18,18 @@ write 2 cell4 2
 write sesrange cell4 3
 write 1 cell4 0
 read suc cell4 0
-jump 18 equal suc 1
-jump 23 equal suc 200
+jump 19 equal suc 1
+jump 24 equal suc 200
 write 500 cell1 0
 stop
 read on cell1 0
-jump 23 notEqual on 1
+jump 24 notEqual on 1
 read group cell1 1
 read command cell1 2
-jump 65 equal group 2
-jump 39 equal group 1
-jump 74 equal group 3
-jump 87 equal group 4
+jump 66 equal group 2
+jump 40 equal group 1
+jump 75 equal group 3
+jump 88 equal group 4
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Неправильно указан "
@@ -37,24 +38,24 @@ print "Номер группы команд"
 printflush message1
 write 500 cell1 0
 stop
-jump 97 equal command 1
-jump 140 equal command 2
-jump 143 equal command 3
-jump 146 equal command 4
-jump 149 equal command 5
-jump 152 equal command 6
-jump 164 equal command 7
-jump 181 equal command 8
-jump 198 equal command 9
-jump 212 equal command 10
-jump 227 equal command 11
-jump 255 equal command 12
-jump 291 equal command 13
-jump 308 equal command 14
-jump 319 equal command 15
-jump 365 equal command 16
-jump 368 equal command 17
-jump 371 equal command 18
+jump 98 equal command 1
+jump 141 equal command 2
+jump 144 equal command 3
+jump 147 equal command 4
+jump 150 equal command 5
+jump 153 equal command 6
+jump 165 equal command 7
+jump 182 equal command 8
+jump 199 equal command 9
+jump 213 equal command 10
+jump 228 equal command 11
+jump 253 equal command 12
+jump 289 equal command 13
+jump 306 equal command 14
+jump 317 equal command 15
+jump 369 equal command 16
+jump 372 equal command 17
+jump 375 equal command 18
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Неправильно указан "
@@ -63,7 +64,7 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump 382 equal command 1
+jump 386 equal command 1
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Неправильно указан "
@@ -72,10 +73,10 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump 475 equal command 1
-jump 486 equal command 2
-jump 502 equal command 3
-jump 513 equal command 4
+jump 479 equal command 1
+jump 490 equal command 2
+jump 506 equal command 3
+jump 517 equal command 4
 jump -1 equal command 5
 print "Ошибка ввода (T)"
 print "[]\n"
@@ -98,8 +99,8 @@ stop
 read rand cell1 3
 read layers cell1 4
 op floor floor layers b
-jump 102 lessThan floor 1
-jump 110 equal floor layers
+jump 103 lessThan floor 1
+jump 111 equal floor layers
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Неправильно указано"
@@ -115,23 +116,23 @@ read data cell1 p
 write data cell4 p
 op add p p 1
 op sub layers layers 1
-jump 119 lessThan layers 1
-jump 113 lessThan p 2048
+jump 120 lessThan layers 1
+jump 114 lessThan p 2048
 write 1 cell4 1
 write 1 cell4 2
 write 1 cell4 0
 read suc cell4 0
-jump 122 equal suc 1
-jump 128 equal suc 200
-jump 130 equal suc 300
+jump 123 equal suc 1
+jump 129 equal suc 200
+jump 131 equal suc 300
 write 500 cell1 0
 stop
 write 200 cell1 0
 end
 write 300 cell1 0
 read suc cell1 0
-jump 131 equal suc 300
-jump 112 equal suc 1
+jump 132 equal suc 300
+jump 113 equal suc 1
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ввели команду"
@@ -156,16 +157,16 @@ write 2 cell4 2
 write sesrange cell4 3
 write 1 cell4 0
 read suc cell4 0
-jump 157 equal suc 1
-jump 162 equal suc 200
+jump 158 equal suc 1
+jump 163 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
 end
 read i cell1 3
 op floor floor i b
-jump 168 lessThan floor 0
-jump 178 equal floor i
+jump 169 lessThan floor 0
+jump 179 equal floor i
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ввели Количество"
@@ -181,8 +182,8 @@ write 200 cell1 0
 end
 read i cell1 3
 op floor floor i b
-jump 185 lessThan floor 0
-jump 195 equal floor i
+jump 186 lessThan floor 0
+jump 196 equal floor i
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ввели Количество"
@@ -197,8 +198,8 @@ set badnuml i
 write 200 cell1 0
 end
 read i cell1 3
-jump 209 equal i 1
-jump 209 equal i 0
+jump 210 equal i 1
+jump 210 equal i 0
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ввели"
@@ -211,8 +212,8 @@ set sqrt i
 write 200 cell1 0
 end
 read i cell1 3
-jump 223 equal i 1
-jump 223 equal i 0
+jump 224 equal i 1
+jump 224 equal i 0
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ввели"
@@ -226,8 +227,8 @@ set automlnum automl
 write 200 cell1 0
 end
 read i cell1 3
-jump 238 equal i 1
-jump 238 equal i 0
+jump 239 equal i 1
+jump 239 equal i 0
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ввели режим"
@@ -236,21 +237,18 @@ print "автоматического создания сессии"
 printflush message1
 write 500 cell1 0
 stop
-set b i
-read i cell1 4
 op floor floor i b
-jump 243 lessThan floor 0
-jump 251 equal floor i
+jump 242 lessThan floor 0
+jump 250 equal floor i
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ввели режим"
 print "[]\n"
-print "автоматического обучения"
+print "автоматического создания сессии"
 printflush message1
 write 500 cell1 0
 stop
-set automl b
-set automlr i
+set autocses i
 write 200 cell1 0
 end
 write 1 cell4 1
@@ -269,18 +267,18 @@ write badnuml cell5 12
 write automlr cell5 13
 write automlnum cell5 14
 read i cell6 0
-jump 274 equal i 2
+jump 272 equal i 2
 write 0 cell5 0
-jump 275 always x false
+jump 273 always x false
 write 1 cell5 0
 read i cell7 0
-jump 279 equal i 8
+jump 277 equal i 8
 write 0 cell5 1
-jump 280 always i 8
+jump 278 always i 8
 write 1 cell5 1
 read suc cell4 0
-jump 280 equal suc 1
-jump 285 equal suc 200
+jump 278 equal suc 1
+jump 283 equal suc 200
 write 500 cell1 0
 stop
 read seson cell4 1
@@ -290,9 +288,9 @@ write sesrange cell5 10
 write 200 cell1 0
 end
 read suc cell6 0
-jump 295 equal suc 2
+jump 293 equal suc 2
 write 0 cell5 0
-jump 296 always suc 2
+jump 294 always suc 2
 write 1 cell5 0
 read i cell6 1
 write i cell5 1
@@ -307,9 +305,9 @@ write i cell5 5
 write 200 cell1 0
 end
 read i cell7 0
-jump 312 equal suc 8
+jump 310 equal suc 8
 write 0 cell5 0
-jump 313 always suc 8
+jump 311 always suc 8
 write 1 cell5 0
 read i cell7 1
 write i cell5 1
@@ -318,19 +316,19 @@ write i cell5 2
 write 200 cell1 0
 end
 read i cell1 3
-jump 323 equal i 1
-jump 323 equal i 0
-jump 354 always x false
+jump 321 equal i 1
+jump 321 equal i 0
+jump 352 always x false
 set autocses i
 read i cell1 4
-jump 328 equal i 1
-jump 328 equal i 0
-jump 354 always x false
+jump 326 equal i 1
+jump 326 equal i 0
+jump 352 always x false
 set automl i
 read i cell1 5
-jump 333 equal i 1
-jump 333 equal i 0
-jump 354 always x false
+jump 331 equal i 1
+jump 331 equal i 0
+jump 352 always x false
 set sqrt i
 read minscore cell1 6
 read needscore cell1 7
@@ -338,20 +336,20 @@ read speed cell1 8
 read minsignal cell1 9
 read i cell1 10
 op floor floor i b
-jump 354 lessThan i 0
-jump 343 equal floor i
-jump 354 always x false
+jump 352 lessThan i 0
+jump 341 equal floor i
+jump 352 always x false
 set sesrange i
 read i cell1 11
 op floor floor i b
-jump 354 lessThan i 0
-jump 349 equal floor i
-jump 354 always x false
+jump 352 lessThan i 0
+jump 347 equal floor i
+jump 352 always x false
 set goodnuml i
 read i cell1 12
 op floor floor i b
-jump 354 lessThan i 0
-jump 362 equal floor i
+jump 352 lessThan i 0
+jump 360 equal floor i
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ввели"
@@ -361,6 +359,12 @@ printflush message1
 write 500 cell1 0
 stop
 set badnuml i
+read i cell1 13
+op floor floor i b
+jump 352 lessThan i 0
+jump 352 notEqual floor i
+set automlr i
+set automlnum automlr
 write 200 cell1 0
 end
 write 0 cell6 0
@@ -374,14 +378,14 @@ write 1 cell4 1
 write 4 cell4 2
 write 1 cell4 0
 read suc cell4 0
-jump 375 equal suc 1
-jump 380 equal suc 200
+jump 379 equal suc 1
+jump 384 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
 end
 read suc cell6 0
-jump 390 equal suc 2
+jump 394 equal suc 2
 print "Ошибка системы (T)"
 print "[]\n"
 print "Нейросеть сломана :("
@@ -390,29 +394,29 @@ write 500 cell1 0
 stop
 read inp cell6 5
 op floor floor inp b
-jump 384 lessThan floor 1
-jump 384 notEqual floor inp
+jump 388 lessThan floor 1
+jump 388 notEqual floor inp
 set po 8
 set pi 3
 read data cell1 pi
-jump 400 greaterThanEq po 2048
+jump 404 greaterThanEq po 2048
 write data cell2 po
-jump 402 always x false
+jump 406 always x false
 op sub pv po 2048
 write data cell3 pv
 op add pi pi 1
 op add po po 1
 op sub inp inp 1
-jump 409 greaterThan pi 2047
-jump 422 greaterThan po 4095
-jump 422 lessThan inp 1
-jump 396 always po 4095
+jump 413 greaterThan pi 2047
+jump 426 greaterThan po 4095
+jump 426 lessThan inp 1
+jump 400 always po 4095
 write 300 cell1 0
 read suc cell1 0
-jump 410 equal suc 300
-jump 415 notEqual suc 1
+jump 414 equal suc 300
+jump 419 notEqual suc 1
 set pi 3
-jump 406 always x false
+jump 410 always x false
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ответили на запрос"
@@ -422,41 +426,41 @@ stop
 write 0 cell2 7
 write 1 cell2 6
 read suc cell2 6
-jump 423 equal suc 1
-jump 395 equal suc 300
-jump 429 equal suc 100
+jump 427 equal suc 1
+jump 399 equal suc 300
+jump 433 equal suc 100
 write 500 cell1 0
 stop
-jump 431 equal seson 1
+jump 435 equal seson 1
 write 150 cell2 6
 read suc cell2 6
-jump 431 equal suc 100
-jump 431 equal suc 150
-jump 438 equal suc 200
-jump 438 equal suc 400
+jump 435 equal suc 100
+jump 435 equal suc 150
+jump 442 equal suc 200
+jump 442 equal suc 400
 write 500 cell1 0
 stop
 set po 8
 set poo 0
 read out cell6 4
-jump 445 lessThan po 2048
+jump 449 lessThan po 2048
 op sub pv po 2048
 read data cell3 pv
-jump 446 always x false
+jump 450 always x false
 read data cell2 po
 write data cell5 poo
 op add po po 1
 op add poo poo 1
 op sub out out 1
-jump 454 greaterThan poo 2047
-jump 465 greaterThan po 4095
-jump 473 lessThan out 1
-jump 441 always x false
+jump 458 greaterThan poo 2047
+jump 469 greaterThan po 4095
+jump 477 lessThan out 1
+jump 445 always x false
 write 400 cell1 0
 read suc cell1 0
-jump 455 equal suc 400
+jump 459 equal suc 400
 set poo 0
-jump 451 equal suc 1
+jump 455 equal suc 1
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ответили на запрос"
@@ -465,10 +469,10 @@ write 500 cell1 0
 stop
 write 1 cell2 6
 read suc cell2 6
-jump 466 equal suc 1
+jump 470 equal suc 1
 set po 8
-jump 441 equal suc 200
-jump 441 equal suc 400
+jump 445 equal suc 200
+jump 445 equal suc 400
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -477,8 +481,8 @@ write 2 cell4 1
 write 1 cell4 2
 write 1 cell4 0
 read suc cell4 0
-jump 478 equal suc 1
-jump 483 equal suc 200
+jump 482 equal suc 1
+jump 487 equal suc 200
 write 500 cell1 0
 stop
 set seson 1
@@ -491,13 +495,13 @@ write 2 cell4 1
 write 1 cell4 0
 set seson 0
 read suc cell4 0
-jump 492 equal suc 1
-jump 500 equal suc 200
+jump 496 equal suc 1
+jump 504 equal suc 200
 write 500 cell1 0
 stop
 op sub automlnum automlnum 1
-jump 500 equal automl 0
-jump 513 lessThanEq automlnum 0
+jump 504 equal automl 0
+jump 517 lessThanEq automlnum 0
 write 200 cell1 0
 end
 write 2 cell4 1
@@ -505,8 +509,8 @@ write 3 cell4 2
 write 1 cell4 0
 set seson 0
 read suc cell4 0
-jump 506 equal suc 1
-jump 511 equal suc 200
+jump 510 equal suc 1
+jump 515 equal suc 200
 write 500 cell1 0
 end
 write 200 cell1 0
@@ -514,7 +518,7 @@ end
 write 2 cell4 1
 write 4 cell4 2
 write minscore cell4 3
-write need cell4 4
+write needscore cell4 4
 write speed cell4 5
 write minsignal cell4 6
 write goodnuml cell4 7
@@ -522,8 +526,8 @@ write badnuml cell4 8
 write sqrt cell4 9
 write 1 cell4 0
 read suc cell4 0
-jump 523 equal suc 1
-jump 528 equal suc 200
+jump 527 equal suc 1
+jump 532 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
