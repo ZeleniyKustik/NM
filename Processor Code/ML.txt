@@ -427,31 +427,33 @@ jump 428 equal suc 200
 write 500 cell1 0
 stop
 set pins 2
-read i cell4 4
+read i cell4 0
+read score cell4 1
+op sub error score needscore
 jump 413 equal i jump
 set pinp 8
 read data cell4 pins
 op add pins pins 1
-jump 436 lessThan pinp 2048
-jump 438 always pinp 2048
-write data cell2 pinp
+jump 438 lessThan pinp 2048
 jump 440 always pinp 2048
+write data cell2 pinp
+jump 442 always pinp 2048
 op sub pv pinp 2048
 write data cell3 pv
 op add pinp pinp 1
-jump 443 greaterThanEq pinp 4096
-jump 432 lessThan pins sizeoneses
+jump 445 greaterThanEq pinp 4096
+jump 434 lessThan pins sizeoneses
 write 1 cell2 7
 write 1 cell2 6
 read suc cell2 6
-jump 445 equal suc 1
-jump 451 equal suc 100
-jump 431 equal suc 300
+jump 447 equal suc 1
+jump 453 equal suc 100
+jump 433 equal suc 300
 write 500 cell1 0
 stop
 write 150 cell2 6
 read suc cell2 7
-jump 452 equal suc 1
+jump 454 equal suc 1
 jump -1 equal suc 2
 write 500 cell1 0
 stop
