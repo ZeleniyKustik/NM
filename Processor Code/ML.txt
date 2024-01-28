@@ -469,5 +469,7 @@ jump 470 equal suc 2
 write 500 cell1 0
 stop
 read signal cell9 0
+jump 473 equal sqrt 0
+op sqrt signal signal minsignal
 op sub layererror signal minsignal
 op add layererror layererror adkg
