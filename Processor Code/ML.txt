@@ -289,7 +289,7 @@ stop
 write 200 cell1 0
 op add qqqi inputsfordata 2
 op mul qqq qqqi numdl
-op add qwsize qqq 6
+op add qwsize qqq 4
 jump 304 lessThan qwsize 65536
 jump 300 greaterThan numdat 1
 print "Ошибка системы (ML)"
@@ -318,7 +318,7 @@ jump 7 equal on 1
 read suc cell2 6
 jump 315 notEqual suc 100
 op add kfordata kfordata 1
-set p 1
+set p 3
 set pram 0
 read data cell9 p
 op add p p 1
@@ -381,7 +381,13 @@ read goodnuml cell1 7
 read badnuml cell1 8
 read sqrt cell1 9
 read suc cell14 0
-jump 390 equal suc 2
+jump 390 notEqual suc 2
+read nninputs cell15 2
+read suc cell14 5
+op floor i nninputs b
+jump 390 notEqual i nninputs
+jump 390 lessThan i 1
+jump 396 equal suc nninputs
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Нейросеть сломана"
@@ -389,87 +395,41 @@ printflush message1
 write 500 cell1 0
 stop
 read suc cell15 0
-jump 402 notEqual suc 8
-read datasetnum cell15 1
-op floor floor datasetnum b
-jump 402 lessThan floor 1
-jump 402 notEqual floor datasetnum
-read inputsdml cell15 2
-read inputsnnml cell14 5
-jump 402 notEqual inputsdml inputsnnml
-read datamode cell15 3
-jump 408 equal datamode 0
-jump 410 equal datamode 4
+jump 406 notEqual suc 8
+read files cell15 1
+op floor i files b
+jump 406 notEqual i files
+jump 406 lessThanEq i 0
+read condition cell15 3
+jump 412 equal condition 0
+jump 412 equal condition 4
+jump 406 always condition 0
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Датасет сломан"
 printflush message1
 write 500 cell1 0
 stop
-set jump 4
-jump 411 always x false
-set jump 0
-set dataseti 0
-set if 0
-jump 419 always x false
-set dataseti 0
-set if 1
-jump 419 always x false
-op add dataseti dataseti 1
-jump 414 greaterThan dataseti datasetnum
-op add sizeoneses inputsdml 2
-op mul i sizeoneses dataseti
-op add pdataset i 6
-write pdataset cell2 1
-write sizeoneses cell2 2
+set fileuse 0
+op add inp2 nninputs 2
+op mul i inp2 fileuse
+op add p i 4
+jump 419 lessThanEq fileuse files
+write 200 cell1 0
+end
+write p cell2 1
+write inp2 cell2 2
 write 0 cell2 3
 write 1 cell2 4
 write 2 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 428 equal suc 1
-jump 433 equal suc 200
-write 500 cell1 0
+jump 425 equal suc 1
+jump 429 equal suc 200
 stop
-set pins 2
-read i cell4 0
-jump 417 equal i jump
-read score cell4 1
-jump 439 equal if 0
-jump 440 lessThan score minscore
-jump 417 lessThan score minscore
-read layersml cell14 3
-op sub error score needscore
-op div adkg error layersml
-op mul adkg adkg speed
-set pinp 8
-read data cell4 pins
-op add pins pins 1
-jump 449 lessThan pinp 2048
-jump 451 always pinp 2048
-write data cell2 pinp
-jump 453 always pinp 2048
-op sub pv pinp 2048
-write data cell3 pv
-op add pinp pinp 1
-jump 456 greaterThanEq pinp 4096
-jump 445 lessThan pins sizeoneses
-write 1 cell2 7
-write 1 cell2 6
-read suc cell2 6
-jump 458 equal suc 1
-jump 464 equal suc 100
-jump 444 equal suc 300
-write 500 cell1 0
-stop
-write 150 cell2 6
-read suc cell2 7
-jump 465 equal suc 1
-jump 470 equal suc 2
-write 500 cell1 0
-stop
-read signal cell9 0
-jump 473 equal sqrt 0
-op sqrt signal signal minsignal
-op sub layererror signal minsignal
-op add layererror layererror adkg
+read filemode cell4 0
+jump 433 equal filemode condition
+op add fileuse fileuse 1
+jump 414 always x false
+read filemode cell4 0
+set p 2
