@@ -433,3 +433,37 @@ op add fileuse fileuse 1
 jump 414 always x false
 read filemode cell4 0
 set p 2
+set i 0
+read signal cell4 p
+op add pi p 6
+jump 441 greaterThan pi 2048
+write signal cell2 pi
+jump 443 always pi 2048
+op sub piv pi 2048
+write signal cell3 piv
+op sub i i 1
+jump 446 greaterThan pi 4096
+jump 436 lessThan i nninputs
+write 1 cell2 7
+write 1 cell2 6
+read suc cell2 6
+jump 452 equal suc 100
+write 500 cell1 0
+stop
+write 150 cell2 6
+read suc cell2 7
+jump 453 notEqual suc 2
+read wpage cell9 1
+read n1 cell9 2
+write wpage cell2 1
+write 1 cell2 2
+write 0 cell2 3
+write 1 cell2 4
+write 1 cell2 5
+write 1 cell2 0
+read suc cell2 0
+jump 463 equal suc 1
+jump 468 equal suc 200
+write 500 cell1 0
+stop
+read n2 cell4 0
