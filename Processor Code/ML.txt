@@ -486,6 +486,40 @@ op add power power globale
 op sub error power minsignal
 read suc cell2 0
 jump 486 equal suc 1
-jump -1 equal suc 200
+jump 515 equal suc 200
 write 500 cell1 0
 stop
+set pwl 0
+set psl 2
+set i1 n1
+set i2 n2
+jump 500 lessThan pwl 2048
+jump 502 lessThan pwl 4096
+jump 508 lessThan pwl 4096
+jump 511 lessThan pwl 4096
+jump -1 always pwl 4096
+read w cell4 pwl
+jump 513 always pwl 2048
+op sub pwlv pwl 2048
+read w cell5 pwlv
+jump 513 always pwl 2048
+op sub pwlv pwl 4096
+read w cell6 pwlv
+jump 513 always pwl 2048
+op sub pwlv pwl 6144
+read w cell7 pwlv
+jump 513 always pwl 2048
+op sub pwlv pwl 8192
+read w cell8 pwlv
+jump -1 always pwl 2048
+read signal cell9 psl
+op mul delta error signal
+op mul delta delta speed
+op add w w delta
+write w cell4 pwl
+op add pwl pwl 1
+op add psl psl 1
+op sub i2 i2 1
+jump 495 greaterThan i2 0
+op sub i1 i1 1
+jump 494 greaterThan i1 0
