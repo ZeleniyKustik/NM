@@ -17,7 +17,7 @@ write 1 cell4 1
 write 2 cell4 2
 write sesrange cell4 3
 write 1 cell4 0
-wait 10
+wait 7
 read suc cell4 0
 jump 20 equal suc 1
 jump 25 equal suc 200
