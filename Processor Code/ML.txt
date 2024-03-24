@@ -395,15 +395,16 @@ printflush message1
 write 500 cell1 0
 stop
 read suc cell15 0
-jump 406 notEqual suc 8
+read nnlayers cell15 3
+jump 407 notEqual suc 8
 read files cell15 1
 op floor i files b
-jump 406 notEqual i files
-jump 406 lessThanEq i 0
+jump 407 notEqual i files
+jump 407 lessThanEq i 0
 read condition cell15 3
-jump 412 equal condition 0
-jump 412 equal condition 4
-jump 406 always condition 0
+jump 413 equal condition 0
+jump 413 equal condition 4
+jump 407 always condition 0
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Датасет сломан"
@@ -414,7 +415,7 @@ set fileuse 0
 op add inp2 nninputs 2
 op mul i inp2 fileuse
 op add p i 4
-jump 419 lessThanEq fileuse files
+jump 420 lessThanEq fileuse files
 write 200 cell1 0
 end
 write p cell2 1
@@ -424,35 +425,38 @@ write 1 cell2 4
 write 2 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 425 equal suc 1
-jump 429 equal suc 200
+jump 426 equal suc 1
+jump 430 equal suc 200
 stop
 read filemode cell4 0
-jump 433 equal filemode condition
+jump 434 equal filemode condition
 op add fileuse fileuse 1
-jump 414 always x false
+jump 415 always x false
 read filemode cell4 0
+read globale cell4 1
+op mul globale globale speed
+op div globale globale nnlayers
 set p 2
 set i 0
 read signal cell4 p
 op add pi p 6
-jump 441 greaterThan pi 2048
+jump 445 greaterThan pi 2048
 write signal cell2 pi
-jump 443 always pi 2048
+jump 447 always pi 2048
 op sub piv pi 2048
 write signal cell3 piv
 op sub i i 1
-jump 446 greaterThan pi 4096
-jump 436 lessThan i nninputs
+jump 450 greaterThan pi 4096
+jump 440 lessThan i nninputs
 write 1 cell2 7
 write 1 cell2 6
 read suc cell2 6
-jump 452 equal suc 100
+jump 456 equal suc 100
 write 500 cell1 0
 stop
 write 150 cell2 6
 read suc cell2 7
-jump 453 notEqual suc 2
+jump 457 notEqual suc 2
 read wpage cell9 1
 read n1 cell9 2
 write wpage cell2 1
@@ -462,8 +466,26 @@ write 1 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 463 equal suc 1
-jump 468 equal suc 200
+jump 467 equal suc 1
+jump 472 equal suc 200
 write 500 cell1 0
 stop
 read n2 cell4 0
+op mul wnum n1 n2
+op add wpage wpage 1
+write wpage cell2 1
+write wnum cell2 2
+write 0 cell2 3
+write 1 cell2 4
+write 1 cell2 5
+write 1 cell2 0
+read power cell9 0
+jump 484 notEqual sqrt 1
+op sqrt power power b
+op add power power globale
+op sub error power minsignal
+read suc cell2 0
+jump 486 equal suc 1
+jump -1 equal suc 200
+write 500 cell1 0
+stop
