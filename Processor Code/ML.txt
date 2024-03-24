@@ -532,7 +532,24 @@ read signal cell13 pslv
 op mul delta error signal
 op mul delta delta speed
 op add w w delta
+jump 539 lessThan pwl 2048
+jump 541 lessThan pwl 4096
+jump 544 lessThan pwl 6144
+jump 547 lessThan pwl 8192
+jump 550 always pwl 2048
 write w cell4 pwl
+jump 552 always pwl 2048
+op sub pwlv pwl 2048
+write w cell5 pwlv
+jump 552 always pwl 2048
+op sub pwlv pwl 4096
+write w cell6 pwlv
+jump 552 always pwl 2048
+op sub pwlv pwl 6144
+write w cell7 pwlv
+jump 552 always pwl 2048
+op sub pwlv pwl 8192
+write w cell8 pwlv
 op add pwl pwl 1
 op add psl psl 1
 op sub i2 i2 1
