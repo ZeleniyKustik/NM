@@ -2,12 +2,12 @@ jump 25 equal start 1
 set seson 0
 set sesrange 1
 set minscore 0
-set needscore 2
-set speed 0.005
+set needscore 0
+set speed 0.01
 set minsignal 2
-set goodnuml 1
-set badnuml 1
-set sqrt 0
+set goodnuml 2
+set badnuml 2
+set sqrt 1
 set automl 0
 set automlr 0
 set automlnum automlr
