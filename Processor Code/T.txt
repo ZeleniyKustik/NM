@@ -74,10 +74,10 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump 480 equal command 1
-jump 491 equal command 2
-jump 507 equal command 3
-jump 518 equal command 4
+jump 481 equal command 1
+jump 492 equal command 2
+jump 510 equal command 3
+jump 521 equal command 4
 jump -1 equal command 5
 print "Ошибка ввода (T)"
 print "[]\n"
@@ -477,13 +477,14 @@ jump 446 equal suc 400
 write 500 cell1 0
 stop
 write 200 cell1 0
+jump 503 always suc 400
 end
 write 2 cell4 1
 write 1 cell4 2
 write 1 cell4 0
 read suc cell4 0
-jump 483 equal suc 1
-jump 488 equal suc 200
+jump 484 equal suc 1
+jump 489 equal suc 200
 write 500 cell1 0
 stop
 set seson 1
@@ -496,13 +497,15 @@ write 2 cell4 1
 write 1 cell4 0
 set seson 0
 read suc cell4 0
-jump 497 equal suc 1
-jump 502 equal suc 200
+jump 498 equal suc 1
+jump 503 equal suc 200
 write 500 cell1 0
 stop
 op sub automlnum automlnum 1
-jump 505 equal automl 0
-jump 518 greaterThan automlnum 0
+jump 508 equal automl 0
+jump 508 greaterThan automlnum 0
+set automlnum automlr
+jump 521 always automlnum 0
 write 200 cell1 0
 end
 write 2 cell4 1
@@ -510,8 +513,8 @@ write 3 cell4 2
 write 1 cell4 0
 set seson 0
 read suc cell4 0
-jump 511 equal suc 1
-jump 516 equal suc 200
+jump 514 equal suc 1
+jump 519 equal suc 200
 write 500 cell1 0
 end
 write 200 cell1 0
@@ -527,8 +530,8 @@ write badnuml cell4 8
 write sqrt cell4 9
 write 1 cell4 0
 read suc cell4 0
-jump 528 equal suc 1
-jump 533 equal suc 200
+jump 531 equal suc 1
+jump 536 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
