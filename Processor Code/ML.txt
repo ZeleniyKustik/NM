@@ -283,7 +283,7 @@ print "[]\n"
 print "Количество входов в датасете"
 print "[]\n"
 print "и модели сети отличается"
-write 500 cell1 0
+printflush message1
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -397,15 +397,14 @@ stop
 read suc cell15 0
 read nnlayers cell15 3
 set nnl nnlayers
-jump 408 notEqual suc 8
+jump 407 notEqual suc 8
 read files cell15 1
 op floor i files b
-jump 408 notEqual i files
-jump 408 lessThanEq i 0
+jump 407 notEqual i files
+jump 407 lessThanEq i 0
 read condition cell15 3
-jump 414 equal condition 0
-jump 414 equal condition 4
-jump 408 always condition 0
+jump 413 equal condition 0
+jump 413 equal condition 4
 print "Ошибка системы (ML)"
 print "[]\n"
 print "Датасет сломан"
@@ -416,7 +415,7 @@ set fileuse 0
 op add inp2 nninputs 2
 op mul i inp2 fileuse
 op add p i 4
-jump 421 lessThanEq fileuse files
+jump 420 lessThanEq fileuse files
 write 200 cell1 0
 end
 write p cell2 1
@@ -426,17 +425,17 @@ write 1 cell2 4
 write 2 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 427 equal suc 1
-jump 431 equal suc 200
+jump 426 equal suc 1
+jump 430 equal suc 200
 stop
 read filemode cell4 0
-jump 435 equal filemode condition
+jump 434 equal filemode condition
 op add fileuse fileuse 1
-jump 416 always x false
+jump 415 always x false
 read globals cell4 1
-jump 439 greaterThanEq minscore globals
+jump 438 greaterThanEq minscore globals
 set whiles badnuml
-jump 440 always minscore globals
+jump 439 always minscore globals
 set whiles goodnuml
 op mul globals globals speed
 op div globals globals nnlayers
@@ -444,23 +443,23 @@ set p 2
 set i 0
 read signal cell4 p
 op add pi p 6
-jump 449 greaterThan pi 2048
+jump 448 greaterThan pi 2048
 write signal cell2 pi
-jump 451 always pi 2048
+jump 450 always pi 2048
 op sub piv pi 2048
 write signal cell3 piv
 op sub i i 1
-jump 454 greaterThan pi 4096
-jump 444 lessThan i nninputs
+jump 453 greaterThan pi 4096
+jump 443 lessThan i nninputs
 write 1 cell2 7
 write 1 cell2 6
 read suc cell2 6
-jump 460 equal suc 100
+jump 459 equal suc 100
 write 500 cell1 0
 stop
 write 150 cell2 6
 read suc cell2 7
-jump 461 notEqual suc 2
+jump 460 notEqual suc 2
 read wpage cell9 1
 read n1 cell9 2
 write wpage cell2 1
@@ -470,8 +469,8 @@ write 1 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 471 equal suc 1
-jump 476 equal suc 200
+jump 470 equal suc 1
+jump 475 equal suc 200
 write 500 cell1 0
 stop
 read n2 cell4 0
@@ -484,15 +483,15 @@ write 1 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read power cell9 0
-jump 488 notEqual sqrt 1
+jump 487 notEqual sqrt 1
 op sqrt power power b
 op add power power globals
 op sub error power needscore
-jump 492 greaterThan minscore globals
+jump 491 greaterThan minscore globals
 op mul error error -1
 read suc cell2 0
-jump 492 equal suc 1
-jump 538 equal suc 200
+jump 491 equal suc 1
+jump 537 equal suc 200
 write 500 cell1 0
 stop
 set whil whiles
@@ -500,69 +499,69 @@ set pwl 0
 set psl 2
 set i1 n1
 set i2 n2
-jump 507 lessThan pwl 2048
-jump 509 lessThan pwl 4096
-jump 515 lessThan pwl 4096
-jump 518 lessThan pwl 4096
+jump 506 lessThan pwl 2048
+jump 508 lessThan pwl 4096
+jump 514 lessThan pwl 4096
+jump 517 lessThan pwl 4096
 jump -1 always pwl 4096
 read w cell4 pwl
-jump 520 always pwl 2048
+jump 519 always pwl 2048
 op sub pwlv pwl 2048
 read w cell5 pwlv
-jump 520 always pwl 2048
+jump 519 always pwl 2048
 op sub pwlv pwl 4096
 read w cell6 pwlv
-jump 520 always pwl 2048
+jump 519 always pwl 2048
 op sub pwlv pwl 6144
 read w cell7 pwlv
-jump 520 always pwl 2048
+jump 519 always pwl 2048
 op sub pwlv pwl 8192
 read w cell8 pwlv
-jump 525 lessThan psl 2048
-jump 527 lessThan psl 4096
-jump 530 lessThan psl 6144
-jump 533 lessThan psl 8192
-jump 536 always psl 8192
+jump 524 lessThan psl 2048
+jump 526 lessThan psl 4096
+jump 529 lessThan psl 6144
+jump 532 lessThan psl 8192
+jump 535 always psl 8192
 read signal cell9 psl
-jump 538 always psl 8192
+jump 537 always psl 8192
 op sub pslv psl 2048
 read signal cell10 pslv
-jump 538 always psl 8192
+jump 537 always psl 8192
 op sub pslv psl 4096
 read signal cell11 pslv
-jump 538 always psl 8192
+jump 537 always psl 8192
 op sub pslv psl 6144
 read signal cell12 pslv
-jump 538 always psl 8192
+jump 537 always psl 8192
 op sub pslv psl 8192
 read signal cell13 pslv
 op mul delta error signal
 op mul delta delta speed
 op add w w delta
-jump 546 lessThan pwl 2048
-jump 548 lessThan pwl 4096
-jump 551 lessThan pwl 6144
-jump 554 lessThan pwl 8192
-jump 557 always pwl 2048
+jump 545 lessThan pwl 2048
+jump 547 lessThan pwl 4096
+jump 550 lessThan pwl 6144
+jump 553 lessThan pwl 8192
+jump 556 always pwl 2048
 write w cell4 pwl
-jump 559 always pwl 2048
+jump 558 always pwl 2048
 op sub pwlv pwl 2048
 write w cell5 pwlv
-jump 559 always pwl 2048
+jump 558 always pwl 2048
 op sub pwlv pwl 4096
 write w cell6 pwlv
-jump 559 always pwl 2048
+jump 558 always pwl 2048
 op sub pwlv pwl 6144
 write w cell7 pwlv
-jump 559 always pwl 2048
+jump 558 always pwl 2048
 op sub pwlv pwl 8192
 write w cell8 pwlv
 op add pwl pwl 1
 op add psl psl 1
 op sub i2 i2 1
-jump 502 greaterThan i2 0
+jump 501 greaterThan i2 0
 op sub i1 i1 1
-jump 501 greaterThan i1 0
+jump 500 greaterThan i1 0
 write wpage cell2 1
 write wnum cell2 2
 write 0 cell2 3
@@ -570,27 +569,27 @@ write 2 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 571 equal suc 1
-jump 576 equal suc 200
+jump 570 equal suc 1
+jump 575 equal suc 200
 write 500 cell1 0
 stop
 op sub whil whil 1
-jump 589 greaterThan whil 0
+jump 588 greaterThan whil 0
 write 1 cell2 7
 read suc cell2 7
-jump 579 equal suc 1
-jump 587 notEqual suc 2
+jump 578 equal suc 1
+jump 586 notEqual suc 2
 op sub nnl nnl 1
-jump 586 greaterThan nnl 0
+jump 585 greaterThan nnl 0
 op add fileuse fileuse 1
-jump 416 always nnl 0
-jump 463 always x false
+jump 415 always nnl 0
+jump 462 always x false
 write 500 cell1 0
 stop
 write 3 cell2 7
 read suc cell2 7
-jump 590 equal suc 3
-jump 594 notEqual suc 2
-jump 498 always x false
+jump 589 equal suc 3
+jump 593 notEqual suc 2
+jump 497 always x false
 write 500 cell1 0
 stop
