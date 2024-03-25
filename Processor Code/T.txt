@@ -13,11 +13,11 @@ set automlr 0
 set automlnum automlr
 set autocses 0
 set start 1
+wait 5
 write 1 cell4 1
 write 2 cell4 2
 write sesrange cell4 3
 write 1 cell4 0
-wait 7
 read suc cell4 0
 jump 20 equal suc 1
 jump 25 equal suc 200
@@ -497,12 +497,12 @@ write 1 cell4 0
 set seson 0
 read suc cell4 0
 jump 497 equal suc 1
-jump 505 equal suc 200
+jump 502 equal suc 200
 write 500 cell1 0
 stop
 op sub automlnum automlnum 1
 jump 505 equal automl 0
-jump 518 lessThanEq automlnum 0
+jump 518 greaterThan automlnum 0
 write 200 cell1 0
 end
 write 2 cell4 1
