@@ -59,7 +59,7 @@ jump 259 equal command 11
 jump 274 equal command 12
 jump 310 equal command 13
 jump 327 equal command 14
-jump -1 equal command 15
+jump 338 equal command 15
 jump 347 equal command 16
 jump 350 equal command 17
 jump 353 equal command 18
