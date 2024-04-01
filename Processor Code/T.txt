@@ -80,10 +80,10 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump 458 equal command 1
-jump 469 equal command 2
-jump 487 equal command 3
-jump 498 equal command 4
+jump 457 equal command 1
+jump 468 equal command 2
+jump 486 equal command 3
+jump 497 equal command 4
 jump -1 equal command 5
 print "Ошибка ввода (T)"
 print "[]\n"
@@ -409,36 +409,35 @@ jump 377 equal suc 300
 jump 411 equal suc 100
 write 500 cell1 0
 stop
-jump 413 equal seson 1
 write 150 cell2 6
 read suc cell2 6
-jump 413 equal suc 100
-jump 413 equal suc 150
-jump 420 equal suc 200
-jump 420 equal suc 400
+jump 412 equal suc 100
+jump 412 equal suc 150
+jump 419 equal suc 200
+jump 419 equal suc 400
 write 500 cell1 0
 stop
 set po 8
 set poo 0
 read out cell6 4
-jump 427 lessThan po 2048
+jump 426 lessThan po 2048
 op sub pv po 2048
 read data cell3 pv
-jump 428 always x false
+jump 427 always x false
 read data cell2 po
 write data cell5 poo
 op add po po 1
 op add poo poo 1
 op sub out out 1
-jump 436 greaterThan poo 2047
-jump 447 greaterThan po 4095
-jump 455 lessThan out 1
-jump 423 always x false
+jump 435 greaterThan poo 2047
+jump 446 greaterThan po 4095
+jump 454 lessThan out 1
+jump 422 always x false
 write 400 cell1 0
 read suc cell1 0
-jump 437 equal suc 400
+jump 436 equal suc 400
 set poo 0
-jump 433 equal suc 1
+jump 432 equal suc 1
 print "Ошибка ввода (T)"
 print "[]\n"
 print "Вы не правильно ответили на запрос"
@@ -447,21 +446,21 @@ write 500 cell1 0
 stop
 write 1 cell2 6
 read suc cell2 6
-jump 448 equal suc 1
+jump 447 equal suc 1
 set po 8
-jump 423 equal suc 200
-jump 423 equal suc 400
+jump 422 equal suc 200
+jump 422 equal suc 400
 write 500 cell1 0
 stop
 write 200 cell1 0
-jump 480 always suc 400
+jump 479 always suc 400
 end
 write 2 cell4 1
 write 1 cell4 2
 write 1 cell4 0
 read suc cell4 0
-jump 461 equal suc 1
-jump 466 equal suc 200
+jump 460 equal suc 1
+jump 465 equal suc 200
 write 500 cell1 0
 stop
 set seson 1
@@ -474,15 +473,15 @@ write 2 cell4 1
 write 1 cell4 0
 set seson 0
 read suc cell4 0
-jump 475 equal suc 1
-jump 480 equal suc 200
+jump 474 equal suc 1
+jump 479 equal suc 200
 write 500 cell1 0
 stop
 op sub automlnum automlnum 1
-jump 485 equal automl 0
-jump 485 greaterThan automlnum 0
+jump 484 equal automl 0
+jump 484 greaterThan automlnum 0
 set automlnum automlr
-jump 498 always automlnum 0
+jump 497 always automlnum 0
 write 200 cell1 0
 end
 write 2 cell4 1
@@ -490,8 +489,8 @@ write 3 cell4 2
 write 1 cell4 0
 set seson 0
 read suc cell4 0
-jump 491 equal suc 1
-jump 496 equal suc 200
+jump 490 equal suc 1
+jump 495 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -507,8 +506,8 @@ write badnuml cell4 8
 write sqrt cell4 9
 write 1 cell4 0
 read suc cell4 0
-jump 508 equal suc 1
-jump 513 equal suc 200
+jump 507 equal suc 1
+jump 512 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
