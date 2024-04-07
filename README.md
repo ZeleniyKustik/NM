@@ -19,7 +19,7 @@ In the future, it is planned to make NM2 With RNN support, Back propagation. Als
 NM (Neural Module) или же "Нейронный модуль".
 Является схемой для игры mindustry.
 Это инструмент для симуляции и обучения нейронных сетей (да прям в игре).
-Для работы NM нужен мод [infinite Processor V7](https://github.com/freezemandu/infinite-processor) он добавляет более быстрые процессоры и вместительные блоки памяти.
+Для работы NM нужен мод [infinite Processor V7](https://github.com/freezemandu/infinite-processor), он добавляет более быстрые процессоры и вместительные блоки памяти.
 У NM есть свой язык типа запрос - ответ, благодаря которому можно управлять и настраивать NM.
 NM использует алгорит Forward-Forward ([алгоритм представленный Джеффри Хинтоном, на конференции NeurIPS 2022](https://arxiv.org/abs/2212.13345))
 для обучения нейронных сетей, так как его более популярный аналог back propogation
