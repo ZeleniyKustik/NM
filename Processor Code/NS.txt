@@ -148,7 +148,7 @@ op sub em e2 1
 op add ep e2 1
 op div lons em ep
 op pow s2l lons 2
-op add s2 s2 s2l
+op max s2 s2 s2l
 write lons cell3 pramo
 op add pramo pramo 1
 jump 116 lessThan pramo pramos
@@ -187,4 +187,3 @@ write 400 cell1 6
 set pout 8
 jump 177 greaterThan n1 0
 write 200 cell1 6
-end
