@@ -164,12 +164,13 @@ jump 95 equal mode 3
 set pram 3
 op add prams pram n2
 op sub prams prams 1
+op div s2 1 s2
 read signal cell3 pramol
 op add pramol pramol 1
-op div signal signal s2
+op mul signal signal s2
 write signal cell3 pram
 op add pram pram 1
-jump 166 lessThanEq pram prams
+jump 167 lessThanEq pram prams
 op sub layers layers 1
 set n1 n2
 jump 96 greaterThan layers 1
@@ -180,10 +181,10 @@ op add pram pram 1
 write out cell1 pout
 op add pout pout 1
 op sub n1 n1 1
-jump 185 greaterThan pout 2047
-jump 177 greaterThan n1 0
-jump 188 always x false
+jump 186 greaterThan pout 2047
+jump 178 greaterThan n1 0
+jump 189 always x false
 write 400 cell1 6
 set pout 8
-jump 177 greaterThan n1 0
+jump 178 greaterThan n1 0
 write 200 cell1 6
