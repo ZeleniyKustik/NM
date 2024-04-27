@@ -75,9 +75,9 @@ printflush message1
 write 500 cell1 0
 stop
 jump 430 equal command 1
-jump 441 equal command 2
-jump 459 equal command 3
-jump 470 equal command 4
+jump 442 equal command 2
+jump 460 equal command 3
+jump 471 equal command 4
 jump -1 equal command 5
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
@@ -345,10 +345,10 @@ print "Нейросеть сломана :("
 printflush message1
 write 500 cell1 0
 stop
-read inp cell6 5
-op floor floor inp b
+read inputs cell6 5
+op floor floor inputs b
 jump 342 lessThan floor 1
-jump 342 notEqual floor inp
+jump 342 notEqual floor inputs
 set po 8
 set pi 3
 read data cell1 pi
@@ -359,10 +359,10 @@ op sub pv po 2048
 write data cell3 pv
 op add pi pi 1
 op add po po 1
-op sub inp inp 1
-jump 366 greaterThan pi 2047
-jump 378 greaterThan po 4095
-jump 378 lessThan inp 1
+op sub inputs inputs 1
+jump 366 greaterThanEq pi 2048
+jump 378 greaterThanEq po 4096
+jump 378 lessThan inputs 1
 jump 353 always po 4095
 write 300 cell1 0
 read suc cell1 0
@@ -426,7 +426,7 @@ jump 396 equal suc 400
 write 500 cell1 0
 stop
 write 200 cell1 0
-jump 452 always suc 400
+jump 453 always suc 400
 end
 write 2 cell4 1
 write 1 cell4 2
@@ -436,8 +436,9 @@ jump 433 equal suc 1
 jump 438 equal suc 200
 write 500 cell1 0
 stop
-set seson 1
 write 200 cell1 0
+jump 441 notEqual autocses 1
+set seson 1
 end
 read score cell1 3
 write score cell4 3
@@ -446,15 +447,15 @@ write 2 cell4 1
 write 1 cell4 0
 set seson 0
 read suc cell4 0
-jump 447 equal suc 1
-jump 452 equal suc 200
+jump 448 equal suc 1
+jump 453 equal suc 200
 write 500 cell1 0
 stop
 op sub automlnum automlnum 1
-jump 457 equal automl 0
-jump 457 greaterThan automlnum 0
+jump 458 equal automl 0
+jump 458 greaterThan automlnum 0
 set automlnum automlr
-jump 470 always automlnum 0
+jump 471 always automlnum 0
 write 200 cell1 0
 end
 write 2 cell4 1
@@ -462,8 +463,8 @@ write 3 cell4 2
 write 1 cell4 0
 set seson 0
 read suc cell4 0
-jump 463 equal suc 1
-jump 468 equal suc 200
+jump 464 equal suc 1
+jump 469 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -479,8 +480,8 @@ write badnuml cell4 8
 write sqrt cell4 9
 write 1 cell4 0
 read suc cell4 0
-jump 480 equal suc 1
-jump 485 equal suc 200
+jump 481 equal suc 1
+jump 486 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
