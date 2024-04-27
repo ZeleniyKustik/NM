@@ -30,33 +30,38 @@ op sub pv pi 2048
 read input cell2 pv
 jump 32 always x false
 read input cell1 pi
-jump 37 lessThan pram 2048
-jump 39 lessThan pram 4096
-jump 42 lessThan pram 6144
-jump 45 lessThan pram 8192
-jump 48 always pram 10240
+jump 42 lessThan pram 2048
+jump 44 lessThan pram 4096
+jump 47 lessThan pram 6144
+jump 50 lessThan pram 8192
+jump 53 lessThan pram 10240
+print "Ошибка системы (NS)[]\n"
+print "Выход за пределы памяти NSr"
+printflush message1
+write 500 cell1 6
+stop
 write input cell3 pram
-jump 50 always pram 10240
+jump 55 always pram 10240
 op sub pv pram 2048
 write input cell4 pv
-jump 50 always pram 10240
+jump 55 always pram 10240
 op sub pv pram 4096
 write input cell5 pv
-jump 50 always pram 10240
+jump 55 always pram 10240
 op sub pv pram 6144
 write input cell6 pv
-jump 50 always pram 10240
+jump 55 always pram 10240
 op sub pv pram 8192
 write input cell7 pv
 op add pram pram 1
 op add pi pi 1
-jump 66 greaterThan pram 10239
-jump 72 greaterThan pi 4095
+jump 71 greaterThan pram 10239
+jump 77 greaterThan pi 4095
 jump 27 notEqual pram q
 write 100 cell1 6
 read suc cell1 6
-jump 56 equal suc 100
-jump 84 equal suc 150
+jump 61 equal suc 100
+jump 89 equal suc 150
 print "Ошибка ввода (NS)[]\n"
 print "Неожиданый ответ от системы[]\n"
 print "NSMc: ожидалось 150[]\n"
@@ -72,7 +77,7 @@ write 500 cell1 6
 stop
 write 300 cell1 6
 read suc cell1 6
-jump 73 equal suc 300
+jump 78 equal suc 300
 jump 26 equal suc 1
 print "Ошибка ввода (NS)[]\n"
 print "Вы не правильно ответили на запрос"
@@ -83,19 +88,35 @@ printflush message1
 write 500 cell1 6
 stop
 set p 6
-jump 87 always mode 3
+jump 92 always mode 3
 set p pm
-jump 91 lessThan p 2048
-jump 93 lessThan p 4096
-jump 96 lessThan p 6144
+jump 103 lessThan p 2048
+jump 105 lessThan p 4096
+jump 108 lessThan p 6144
+jump 111 lessThan p 8192
+jump 114 lessThan p 10240
+jump 117 lessThan p 12288
+print "Ошибка системы (NS)[]\n"
+print "Выход за пределы памяти NN"
+printflush message1
+write 500 cell1 6
 stop
 read n2 cell8 p
-jump 98 always p 6144
+jump 119 always p 6144
 op sub pv p 2048
 read n2 cell9 pv
-jump 98 always p 6144
+jump 119 always p 6144
 op sub pv p 4096
 read n2 cell10 pv
+jump 119 always p 6144
+op sub pv p 6144
+read n2 cell11 pv
+jump 119 always p 6144
+op sub pv p 8192
+read n2 cell12 pv
+jump 119 always p 6144
+op sub pv p 10240
+read n2 cell13 pv
 set pm p
 write p cell3 1
 write n1 cell3 2
@@ -110,29 +131,33 @@ set lons 0
 op add outpln pram n1
 read input cell3 pram
 op add pram pram 1
-jump 118 lessThan p 2048
-jump 120 lessThan p 4096
-jump 123 lessThan p 6144
-jump 126 lessThan p 8192
-jump 129 lessThan p 10240
+jump 143 lessThan p 2048
+jump 145 lessThan p 4096
+jump 148 lessThan p 6144
+jump 151 lessThan p 8192
+jump 154 lessThan p 10240
+print "Ошибка системы (NS)[]\n"
+print "Выход за пределы памяти NSr"
+printflush message1
+write 500 cell1 6
 stop
 read w cell8 p
-jump 131 always w 6144
+jump 156 always w 6144
 op sub pv p 2048
 read w cell9 pv
-jump 131 always w 6144
+jump 156 always w 6144
 op sub pv p 4096
 read w cell10 pv
-jump 131 always w 6144
+jump 156 always w 6144
 op sub pv p 6144
 read w cell11 pv
-jump 131 always w 6144
+jump 156 always w 6144
 op sub pv p 8192
 read w cell12 pv
 op add p p 1
 op mul i input w
 op add lons lons i
-jump 110 greaterThan outpln pram
+jump 131 greaterThan outpln pram
 op mul lons2 2 lons
 op pow e2 2.71828 lons2
 op sub em e2 1
@@ -142,16 +167,16 @@ op pow s2l lons 2
 op max s2 s2 s2l
 write lons cell3 pramo
 op add pramo pramo 1
-jump 107 lessThan pramo pramos
+jump 128 lessThan pramo pramos
 write s2 cell3 0
 op sqrt s2 s2 1
 op add pramo pramo 1
-jump 154 equal mode 0
+jump 179 equal mode 0
 write 2 cell1 7
 read mode cell1 7
-jump 150 equal mode 2
-jump 154 equal mode 1
-jump 86 equal mode 3
+jump 175 equal mode 2
+jump 179 equal mode 1
+jump 91 equal mode 3
 set pram 3
 op add prams pram n2
 op sub prams prams 1
@@ -161,10 +186,10 @@ op add pramol pramol 1
 op mul signal signal s2
 write signal cell3 pram
 op add pram pram 1
-jump 158 lessThanEq pram prams
+jump 183 lessThanEq pram prams
 op sub layers layers 1
 set n1 n2
-jump 87 greaterThan layers 1
+jump 92 greaterThan layers 1
 set pram 3
 set pout 8
 read out cell3 pram
@@ -172,10 +197,10 @@ op add pram pram 1
 write out cell1 pout
 op add pout pout 1
 op sub n1 n1 1
-jump 177 greaterThan pout 2047
-jump 169 greaterThan n1 0
-jump 180 always x false
+jump 202 greaterThan pout 2047
+jump 194 greaterThan n1 0
+jump 205 always x false
 write 400 cell1 6
 set pout 8
-jump 169 greaterThan n1 0
+jump 194 greaterThan n1 0
 write 200 cell1 6
