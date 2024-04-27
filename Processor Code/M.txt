@@ -6,617 +6,597 @@ read point cell1 3
 op add q point pages
 read ask cell1 4
 read block cell1 5
-jump 17 greaterThanEq p 0
-print "Ошибка системы (M)"
-print "[]\n"
-print "Неправельный запрос"
-print "[]\n"
+jump 15 greaterThanEq p 0
+print "Ошибка системы (M)[]\n"
+print "Неправельный запрос[]\n"
 print "Начальная страница"
 printflush message1
 write 500 cell1 0
-end
-jump 26 greaterThanEq pages 1
-print "Ошибка системы (M)"
-print "[]\n"
-print "Неправельный запрос"
-print "[]\n"
+stop
+jump 22 greaterThanEq pages 1
+print "Ошибка системы (M)[]\n"
+print "Неправельный запрос[]\n"
 print "Количество страниц"
 printflush message1
 write 500 cell1 0
-end
-jump 35 greaterThanEq point 0
-print "Ошибка системы (M)"
-print "[]\n"
-print "Неправельный запрос"
-print "[]\n"
+stop
+jump 29 greaterThanEq point 0
+print "Ошибка системы (M)[]\n"
+print "Неправельный запрос[]\n"
 print "Точка записи"
 printflush message1
 write 500 cell1 0
-end
-jump 45 equal ask 1
-jump 55 equal ask 2
-print "Ошибка системы (M)"
-print "[]\n"
-print "Неправельный запрос"
-print "[]\n"
+stop
+jump 37 equal ask 1
+jump 45 equal ask 2
+print "Ошибка системы (M)[]\n"
+print "Неправельный запрос[]\n"
 print "Действие"
 printflush message1
 write 500 cell1 0
-end
-jump 65 equal block 1
-jump 169 equal block 2
-print "Ошибка системы (M)"
-print "[]\n"
-print "Не правельный запрос"
-print "[]\n"
+stop
+jump 53 equal block 1
+jump 155 equal block 2
+print "Ошибка системы (M)[]\n"
+print "Не правельный запрос[]\n"
 print "Блок"
 printflush message1
 write 500 cell1 0
-end
-jump 344 equal block 1
-jump 448 equal block 2
-print "Ошибка системы (M)"
-print "[]\n"
-print "Не правельный запрос"
-print "[]\n"
+stop
+jump 328 equal block 1
+jump 430 equal block 2
+print "Ошибка системы (M)[]\n"
+print "Не правельный запрос[]\n"
 print "Блок"
 printflush message1
 write 500 cell1 0
-end
-jump 68 lessThan p 16384
-jump 70 always p 32768
+stop
+jump 56 lessThan p 16384
+jump 58 always p 32768
+jump 60 always x false
+jump 60 lessThan p 8192
+jump 64 always x false
+jump 68 lessThan p 24576
 jump 72 always x false
-jump 72 lessThan p 8192
-jump 76 always x false
-jump 80 lessThan p 24576
-jump 84 always x false
-jump 94 lessThan p 2048
-jump 96 lessThan p 4096
-jump 99 lessThan p 6144
-jump 102 lessThan p 8192
-jump 105 lessThan p 10240
-jump 108 lessThan p 12288
-jump 111 lessThan p 14336
-jump 114 lessThan p 16384
-jump 117 lessThan p 18432
-jump 120 lessThan p 20480
-jump 123 lessThan p 22528
-jump 126 lessThan p 24576
-jump 129 lessThan p 26624
-jump 132 lessThan p 28672
-jump 135 lessThan p 30720
-jump 138 lessThan p 32768
-print "Ошибка системы (M)"
-print "[]\n"
+jump 81 lessThan p 2048
+jump 83 lessThan p 4096
+jump 86 lessThan p 6144
+jump 89 lessThan p 8192
+jump 92 lessThan p 10240
+jump 95 lessThan p 12288
+jump 98 lessThan p 14336
+jump 101 lessThan p 16384
+jump 104 lessThan p 18432
+jump 107 lessThan p 20480
+jump 110 lessThan p 22528
+jump 113 lessThan p 24576
+jump 116 lessThan p 26624
+jump 119 lessThan p 28672
+jump 122 lessThan p 30720
+jump 125 lessThan p 32768
+print "Ошибка системы (M)[]\n"
 print "Ошибка сортировки"
 printflush message1
 write 500 cell1 0
-end
+stop
 read data cell7 p
-jump 140 always x false
+jump 127 always x false
 op sub pv p 2048
 read data cell8 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 4096
 read data cell9 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 6144
 read data cell10 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 8192
 read data cell11 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 10240
 read data cell12 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 12288
 read data cell13 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 14336
 read data cell14 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 16384
 read data cell15 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 18432
 read data cell16 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 20480
 read data cell17 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 22528
 read data cell18 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 24576
 read data cell19 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 26624
 read data cell20 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 28672
 read data cell21 pv
-jump 140 always x false
+jump 127 always x false
 op sub pv p 30720
 read data cell22 pv
-jump 151 lessThan point 2048
-jump 153 lessThan point 4096
-jump 156 lessThan point 6144
-jump 159 lessThan point 8192
-jump 162 lessThan point 10240
-print "Ошибка системы(M)"
-print "[]\n"
+jump 137 lessThan point 2048
+jump 139 lessThan point 4096
+jump 142 lessThan point 6144
+jump 145 lessThan point 8192
+jump 148 lessThan point 10240
+print "Ошибка системы(M)[]\n"
 print "Выход из диапазона буфера обмена"
 printflush message1
 write 500 cell1 0
-end
+stop
 write data cell2 point
-jump 164 always x false
+jump 150 always x false
 op sub pv point 2048
 write data cell3 pv
-jump 164 always x false
+jump 150 always x false
 op sub pv point 4096
 write data cell4 pv
-jump 164 always x false
+jump 150 always x false
 op sub pv point 6144
 write data cell5 pv
-jump 164 always x false
+jump 150 always x false
 op sub pv point 8192
 write data cell6 pv
 op add point point 1
 op add p p 1
-jump 65 lessThan point q
+jump 53 lessThan point q
 write 200 cell1 0
 end
-jump 171 lessThan p 32768
-jump 177 always p 32768
-jump 173 lessThan p 16384
-jump 175 always p 16384
-jump 183 lessThan p 8192
-jump 187 always p 16384
-jump 191 lessThan p 24576
-jump 195 always p 16384
-jump 179 lessThan p 49152
+jump 157 lessThan p 32768
+jump 163 always p 32768
+jump 159 lessThan p 16384
+jump 161 always p 16384
+jump 169 lessThan p 8192
+jump 173 always p 16384
+jump 177 lessThan p 24576
 jump 181 always p 16384
-jump 199 lessThan p 40960
-jump 203 always p 16384
-jump 207 lessThan p 57344
-jump 211 always p 16384
-jump 221 lessThan p 2048
-jump 223 lessThan p 4096
-jump 226 lessThan p 6144
-jump 229 lessThan p 8192
-jump 232 lessThan p 10240
-jump 235 lessThan p 12288
-jump 238 lessThan p 14336
-jump 241 lessThan p 16384
-jump 244 lessThan p 18432
-jump 247 lessThan p 20480
-jump 250 lessThan p 22528
-jump 253 lessThan p 24576
-jump 256 lessThan p 26624
-jump 259 lessThan p 28672
-jump 262 lessThan p 30720
-jump 265 lessThan p 32768
-jump 268 lessThan p 34816
-jump 271 lessThan p 36864
-jump 274 lessThan p 38912
-jump 277 lessThan p 40960
-jump 280 lessThan p 43008
-jump 283 lessThan p 45056
-jump 286 lessThan p 47104
-jump 289 lessThan p 49152
-jump 292 lessThan p 51200
-jump 295 lessThan p 53248
-jump 298 lessThan p 55296
-jump 301 lessThan p 57344
-jump 304 lessThan p 59392
-jump 307 lessThan p 61440
-jump 310 lessThan p 63488
-jump 313 lessThan p 65536
-print "Ошибка системы (M)"
-print "[]\n"
+jump 165 lessThan p 49152
+jump 167 always p 16384
+jump 185 lessThan p 40960
+jump 189 always p 16384
+jump 193 lessThan p 57344
+jump 197 always p 16384
+jump 206 lessThan p 2048
+jump 208 lessThan p 4096
+jump 211 lessThan p 6144
+jump 214 lessThan p 8192
+jump 217 lessThan p 10240
+jump 220 lessThan p 12288
+jump 223 lessThan p 14336
+jump 226 lessThan p 16384
+jump 229 lessThan p 18432
+jump 232 lessThan p 20480
+jump 235 lessThan p 22528
+jump 238 lessThan p 24576
+jump 241 lessThan p 26624
+jump 244 lessThan p 28672
+jump 247 lessThan p 30720
+jump 250 lessThan p 32768
+jump 253 lessThan p 34816
+jump 256 lessThan p 36864
+jump 259 lessThan p 38912
+jump 262 lessThan p 40960
+jump 265 lessThan p 43008
+jump 268 lessThan p 45056
+jump 271 lessThan p 47104
+jump 274 lessThan p 49152
+jump 277 lessThan p 51200
+jump 280 lessThan p 53248
+jump 283 lessThan p 55296
+jump 286 lessThan p 57344
+jump 289 lessThan p 59392
+jump 292 lessThan p 61440
+jump 295 lessThan p 63488
+jump 298 lessThan p 65536
+print "Ошибка системы (M)[]\n"
 print "Ошибка сортировки"
 printflush message1
 write 500 cell1 0
-end
+stop
 read data cell23 p
-jump 315 always x false
+jump 300 always x false
 op sub pv p 2048
 read data cell24 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 4096
 read data cell25 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 6144
 read data cell26 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 8192
 read data cell27 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 10240
 read data cell28 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 12288
 read data cell29 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 14336
 read data cell30 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 16384
 read data cell31 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 18432
 read data cell32 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 20480
 read data cell33 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 22528
 read data cell34 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 24576
 read data cell35 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 26624
 read data cell36 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 28672
 read data cell37 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 30720
 read data cell38 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 32768
 read data cell39 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 34816
 read data cell40 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 36864
 read data cell41 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 38912
 read data cell42 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 40960
 read data cell43 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 43008
 read data cell44 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 45056
 read data cell45 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 47104
 read data cell46 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 49152
 read data cell47 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 51200
 read data cell48 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 53248
 read data cell49 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 55296
 read data cell50 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 57344
 read data cell51 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 59392
 read data cell52 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 61440
 read data cell53 pv
-jump 315 always x false
+jump 300 always x false
 op sub pv p 63488
 read data cell54 pv
-jump 326 lessThan point 2048
-jump 328 lessThan point 4096
-jump 331 lessThan point 6144
-jump 334 lessThan point 8192
-jump 337 lessThan point 10240
-print "Ошибка системы(M)"
-print "[]\n"
+jump 310 lessThan point 2048
+jump 312 lessThan point 4096
+jump 315 lessThan point 6144
+jump 318 lessThan point 8192
+jump 321 lessThan point 10240
+print "Ошибка системы(M)[]\n"
 print "Выход из диапазона буфера обмена"
 printflush message1
 write 500 cell1 0
-end
+stop
 write data cell2 point
-jump 339 always x false
+jump 323 always x false
 op sub pvo point 2048
 write data cell3 pvo
-jump 339 always x false
+jump 323 always x false
 op sub pvo point 4096
 write data cell4 pvo
-jump 339 always x false
+jump 323 always x false
 op sub pvo point 6144
 write data cell5 pvo
-jump 339 always x false
+jump 323 always x false
 op sub pvo point 8192
 write data cell6 pvo
 op add point point 1
 op add p p 1
-jump 169 lessThan point q
+jump 155 lessThan point q
 write 200 cell1 0
 end
-jump 355 lessThan point 2048
-jump 357 lessThan point 4096
-jump 360 lessThan point 6144
-jump 363 lessThan point 8192
-jump 366 lessThan point 10240
-print "Ошибка системы(M)"
-print "[]\n"
+jump 338 lessThan point 2048
+jump 340 lessThan point 4096
+jump 343 lessThan point 6144
+jump 346 lessThan point 8192
+jump 349 lessThan point 10240
+print "Ошибка системы(M)[]\n"
 print "Выход из диапазона буфера обмена"
 printflush message1
 write 500 cell1 0
-end
+stop
 read data cell2 point
-jump 368 always x false
+jump 351 always x false
 op sub pvo point 2048
 read data cell3 pvo
-jump 368 always x false
+jump 351 always x false
 op sub pvo point 4096
 read data cell4 pvo
-jump 368 always x false
+jump 351 always x false
 op sub pvo point 6144
 read data cell5 pvo
-jump 368 always x false
+jump 351 always x false
 op sub pvo point 8192
 read data cell6 pvo
-jump 371 lessThan p 16384
-jump 373 always p 32768
-jump 375 always x false
-jump 375 lessThan p 8192
-jump 379 always x false
-jump 383 lessThan p 24576
-jump 387 always x false
-jump 397 lessThan p 2048
-jump 399 lessThan p 4096
-jump 402 lessThan p 6144
-jump 405 lessThan p 8192
-jump 408 lessThan p 10240
-jump 411 lessThan p 12288
-jump 414 lessThan p 14336
-jump 417 lessThan p 16384
-jump 420 lessThan p 18432
-jump 423 lessThan p 20480
-jump 426 lessThan p 22528
-jump 429 lessThan p 24576
-jump 432 lessThan p 26624
-jump 435 lessThan p 28672
-jump 438 lessThan p 30720
-jump 441 lessThan p 32768
-print "Ошибка системы (M)"
-print "[]\n"
+jump 354 lessThan p 16384
+jump 356 always p 32768
+jump 358 always x false
+jump 358 lessThan p 8192
+jump 362 always x false
+jump 366 lessThan p 24576
+jump 370 always x false
+jump 379 lessThan p 2048
+jump 381 lessThan p 4096
+jump 384 lessThan p 6144
+jump 387 lessThan p 8192
+jump 390 lessThan p 10240
+jump 393 lessThan p 12288
+jump 396 lessThan p 14336
+jump 399 lessThan p 16384
+jump 402 lessThan p 18432
+jump 405 lessThan p 20480
+jump 408 lessThan p 22528
+jump 411 lessThan p 24576
+jump 414 lessThan p 26624
+jump 417 lessThan p 28672
+jump 420 lessThan p 30720
+jump 423 lessThan p 32768
+print "Ошибка системы (M)[]\n"
 print "Ошибка сортировки"
 printflush message1
 write 500 cell1 0
-end
+stop
 write data cell7 p
-jump 443 always x false
+jump 425 always x false
 op sub pv p 2048
 write data cell8 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 4096
 write data cell9 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 6144
 write data cell10 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 8192
 write data cell11 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 10240
 write data cell12 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 12288
 write data cell13 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 14336
 write data cell14 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 16384
 write data cell15 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 18432
 write data cell16 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 20480
 write data cell17 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 22528
 write data cell18 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 24576
 write data cell19 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 26624
 write data cell20 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 28672
 write data cell21 pv
-jump 443 always x false
+jump 425 always x false
 op sub pv p 30720
 write data cell22 pv
 op add point point 1
 op add p p 1
-jump 344 lessThan point q
+jump 328 lessThan point q
 write 200 cell1 0
 end
-jump 459 lessThan point 2048
-jump 461 lessThan point 4096
-jump 464 lessThan point 6144
-jump 467 lessThan point 8192
-jump 470 lessThan point 10240
-print "Ошибка системы(M)"
-print "[]\n"
+jump 440 lessThan point 2048
+jump 442 lessThan point 4096
+jump 445 lessThan point 6144
+jump 448 lessThan point 8192
+jump 451 lessThan point 10240
+print "Ошибка системы(M)[]\n"
 print "Выход из диапазона буфера обмена"
 printflush message1
 write 500 cell1 0
-end
+stop
 read data cell2 point
-jump 472 always x false
+jump 453 always x false
 op sub pvo point 2048
 read data cell3 pvo
-jump 472 always x false
+jump 453 always x false
 op sub pvo point 4096
 read data cell4 pvo
-jump 472 always x false
+jump 453 always x false
 op sub pvo point 6144
 read data cell5 pvo
-jump 472 always x false
+jump 453 always x false
 op sub pvo point 8192
 read data cell6 pvo
-jump 474 lessThan p 32768
-jump 480 always p 32768
-jump 476 lessThan p 16384
-jump 478 always p 16384
-jump 486 lessThan p 8192
-jump 490 always p 16384
-jump 494 lessThan p 24576
-jump 498 always p 16384
-jump 482 lessThan p 49152
-jump 484 always p 16384
-jump 502 lessThan p 40960
-jump 506 always p 16384
-jump 510 lessThan p 57344
-jump 514 always p 16384
-jump 524 lessThan p 2048
-jump 526 lessThan p 4096
-jump 529 lessThan p 6144
-jump 532 lessThan p 8192
-jump 535 lessThan p 10240
-jump 538 lessThan p 12288
-jump 541 lessThan p 14336
-jump 544 lessThan p 16384
-jump 547 lessThan p 18432
-jump 550 lessThan p 20480
-jump 553 lessThan p 22528
-jump 556 lessThan p 24576
-jump 559 lessThan p 26624
-jump 562 lessThan p 28672
-jump 565 lessThan p 30720
-jump 568 lessThan p 32768
-jump 571 lessThan p 34816
-jump 574 lessThan p 36864
-jump 577 lessThan p 38912
-jump 580 lessThan p 40960
-jump 583 lessThan p 43008
-jump 586 lessThan p 45056
-jump 589 lessThan p 47104
-jump 592 lessThan p 49152
-jump 595 lessThan p 51200
-jump 598 lessThan p 53248
-jump 601 lessThan p 55296
-jump 604 lessThan p 57344
-jump 607 lessThan p 59392
-jump 610 lessThan p 61440
-jump 613 lessThan p 63488
-jump 616 lessThan p 65536
-print "Ошибка системы (M)"
-print "[]\n"
+jump 455 lessThan p 32768
+jump 461 always p 32768
+jump 457 lessThan p 16384
+jump 459 always p 16384
+jump 467 lessThan p 8192
+jump 471 always p 16384
+jump 475 lessThan p 24576
+jump 479 always p 16384
+jump 463 lessThan p 49152
+jump 465 always p 16384
+jump 483 lessThan p 40960
+jump 487 always p 16384
+jump 491 lessThan p 57344
+jump 495 always p 16384
+jump 504 lessThan p 2048
+jump 506 lessThan p 4096
+jump 509 lessThan p 6144
+jump 512 lessThan p 8192
+jump 515 lessThan p 10240
+jump 518 lessThan p 12288
+jump 521 lessThan p 14336
+jump 524 lessThan p 16384
+jump 527 lessThan p 18432
+jump 530 lessThan p 20480
+jump 533 lessThan p 22528
+jump 536 lessThan p 24576
+jump 539 lessThan p 26624
+jump 542 lessThan p 28672
+jump 545 lessThan p 30720
+jump 548 lessThan p 32768
+jump 551 lessThan p 34816
+jump 554 lessThan p 36864
+jump 557 lessThan p 38912
+jump 560 lessThan p 40960
+jump 563 lessThan p 43008
+jump 566 lessThan p 45056
+jump 569 lessThan p 47104
+jump 572 lessThan p 49152
+jump 575 lessThan p 51200
+jump 578 lessThan p 53248
+jump 581 lessThan p 55296
+jump 584 lessThan p 57344
+jump 587 lessThan p 59392
+jump 590 lessThan p 61440
+jump 593 lessThan p 63488
+jump 596 lessThan p 65536
+print "Ошибка системы (M)[]\n"
 print "Ошибка сортировки"
 printflush message1
 write 500 cell1 0
-end
+stop
 write data cell23 p
-jump 618 always x false
+jump 598 always x false
 op sub pv p 2048
 write data cell24 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 4096
 write data cell25 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 6144
 write data cell26 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 8192
 write data cell27 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 10240
 write data cell28 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 12288
 write data cell29 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 14336
 write data cell30 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 16384
 write data cell31 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 18432
 write data cell32 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 20480
 write data cell33 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 22528
 write data cell34 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 24576
 write data cell35 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 26624
 write data cell36 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 28672
 write data cell37 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 30720
 write data cell38 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 32768
 write data cell39 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 34816
 write data cell40 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 36864
 write data cell41 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 38912
 write data cell42 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 40960
 write data cell43 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 43008
 write data cell44 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 45056
 write data cell45 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 47104
 write data cell46 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 49152
 write data cell47 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 51200
 write data cell48 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 53248
 write data cell49 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 55296
 write data cell50 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 57344
 write data cell51 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 59392
 write data cell52 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 61440
 write data cell53 pv
-jump 618 always x false
+jump 598 always x false
 op sub pv p 63488
 write data cell54 pv
 op add point point 1
 op add p p 1
-jump 448 lessThan point q
+jump 430 lessThan point q
 write 200 cell1 0
