@@ -2,8 +2,8 @@ M:{
 
 Mc = cell1
 MLCB = cell2; cell3; cell4; cell5; cell6;
-NN = cell7-cell22
-DS = cell23-cell54
+NN = cell7 - cell22
+DS = cell23 - cell54
 
 }
 
@@ -12,7 +12,7 @@ NS;{
 
 NSc = cell1; cell2
 NSr = cell3; cell4; cell5; cell6; cell7
-NN = cell8-cell23
+NN = cell8 - cell23
 
 }
 
