@@ -3,14 +3,12 @@ read on cell1 6
 jump 1 notEqual on 1
 read mode cell1 7
 read suc cell8 0
-jump 18 equal suc 2
+jump 16 equal suc 2
 set errorpage 5
 jump 9 always suc 2
 set errorpage 3
-print "Ошибка системы (NS)"
-print "[]\n"
-print "Нейронная сеть сломана :("
-print "[]\n"
+print "Ошибка системы (NS)[]\n"
+print "Нейронная сеть сломана :([]\n"
 print "NN: "
 print errorpage
 printflush message1
@@ -27,82 +25,75 @@ jump 6 notEqual floor n1
 set pram 3
 op add q n1 pram
 set pi 8
-jump 33 lessThan pi 2048
+jump 31 lessThan pi 2048
 op sub pv pi 2048
 read input cell2 pv
-jump 34 always x false
+jump 32 always x false
 read input cell1 pi
-jump 39 lessThan pram 2048
-jump 41 lessThan pram 4096
-jump 44 lessThan pram 6144
-jump 47 lessThan pram 8192
-jump 50 always pram 10240
+jump 37 lessThan pram 2048
+jump 39 lessThan pram 4096
+jump 42 lessThan pram 6144
+jump 45 lessThan pram 8192
+jump 48 always pram 10240
 write input cell3 pram
-jump 52 always pram 10240
+jump 50 always pram 10240
 op sub pv pram 2048
 write input cell4 pv
-jump 52 always pram 10240
+jump 50 always pram 10240
 op sub pv pram 4096
 write input cell5 pv
-jump 52 always pram 10240
+jump 50 always pram 10240
 op sub pv pram 6144
 write input cell6 pv
-jump 52 always pram 10240
+jump 50 always pram 10240
 op sub pv pram 8192
 write input cell7 pv
 op add pram pram 1
 op add pi pi 1
-jump 71 greaterThan pram 10239
-jump 79 greaterThan pi 4095
-jump 29 notEqual pram q
+jump 66 greaterThan pram 10239
+jump 72 greaterThan pi 4095
+jump 27 notEqual pram q
 write 100 cell1 6
 read suc cell1 6
-jump 58 equal suc 100
-jump 93 equal suc 150
-print "Ошибка ввода (NS)"
-print "[]\n"
-print "Неожиданый ответ от системы"
-print "[]\n"
-print "NSMc: ожидалось 150"
-print "[]\n"
+jump 56 equal suc 100
+jump 84 equal suc 150
+print "Ошибка ввода (NS)[]\n"
+print "Неожиданый ответ от системы[]\n"
+print "NSMc: ожидалось 150[]\n"
 print "Ячейка: 6"
 printflush message1
 write 500 cell1 6
 stop
-print "Ошибка ввода (NS)"
-print "[]\n"
-print "Слишком много входных значений"
-print "[]\n"
+print "Ошибка ввода (NS)[]\n"
+print "Слишком много входных значений[]\n"
 print "Переполнение NSr"
 printflush message1
 write 500 cell1 6
 stop
 write 300 cell1 6
 read suc cell1 6
-jump 80 equal suc 300
-jump 28 equal suc 1
-print "Ошибка ввода (NS)"
-print "[]\n"
+jump 73 equal suc 300
+jump 26 equal suc 1
+print "Ошибка ввода (NS)[]\n"
 print "Вы не правильно ответили на запрос"
 print "[]\n"
-print "NSMc: ожидалось 300"
-print "[]\n"
+print "NSMc: ожидалось 300[]\n"
 print "Ячейка: 6"
 printflush message1
 write 500 cell1 6
 stop
 set p 6
-jump 96 always mode 3
+jump 87 always mode 3
 set p pm
-jump 100 lessThan p 2048
-jump 102 lessThan p 4096
-jump 105 lessThan p 6144
+jump 91 lessThan p 2048
+jump 93 lessThan p 4096
+jump 96 lessThan p 6144
 stop
 read n2 cell8 p
-jump 107 always p 6144
+jump 98 always p 6144
 op sub pv p 2048
 read n2 cell9 pv
-jump 107 always p 6144
+jump 98 always p 6144
 op sub pv p 4096
 read n2 cell10 pv
 set pm p
@@ -119,29 +110,29 @@ set lons 0
 op add outpln pram n1
 read input cell3 pram
 op add pram pram 1
-jump 127 lessThan p 2048
-jump 129 lessThan p 4096
-jump 132 lessThan p 6144
-jump 135 lessThan p 8192
-jump 138 lessThan p 10240
+jump 118 lessThan p 2048
+jump 120 lessThan p 4096
+jump 123 lessThan p 6144
+jump 126 lessThan p 8192
+jump 129 lessThan p 10240
 stop
 read w cell8 p
-jump 140 always w 6144
+jump 131 always w 6144
 op sub pv p 2048
 read w cell9 pv
-jump 140 always w 6144
+jump 131 always w 6144
 op sub pv p 4096
 read w cell10 pv
-jump 140 always w 6144
+jump 131 always w 6144
 op sub pv p 6144
 read w cell11 pv
-jump 140 always w 6144
+jump 131 always w 6144
 op sub pv p 8192
 read w cell12 pv
 op add p p 1
 op mul i input w
 op add lons lons i
-jump 119 greaterThan outpln pram
+jump 110 greaterThan outpln pram
 op mul lons2 2 lons
 op pow e2 2.71828 lons2
 op sub em e2 1
@@ -151,16 +142,16 @@ op pow s2l lons 2
 op max s2 s2 s2l
 write lons cell3 pramo
 op add pramo pramo 1
-jump 116 lessThan pramo pramos
+jump 107 lessThan pramo pramos
 write s2 cell3 0
 op sqrt s2 s2 1
 op add pramo pramo 1
-jump 163 equal mode 0
+jump 154 equal mode 0
 write 2 cell1 7
 read mode cell1 7
-jump 159 equal mode 2
-jump 163 equal mode 1
-jump 95 equal mode 3
+jump 150 equal mode 2
+jump 154 equal mode 1
+jump 86 equal mode 3
 set pram 3
 op add prams pram n2
 op sub prams prams 1
@@ -170,10 +161,10 @@ op add pramol pramol 1
 op mul signal signal s2
 write signal cell3 pram
 op add pram pram 1
-jump 167 lessThanEq pram prams
+jump 158 lessThanEq pram prams
 op sub layers layers 1
 set n1 n2
-jump 96 greaterThan layers 1
+jump 87 greaterThan layers 1
 set pram 3
 set pout 8
 read out cell3 pram
@@ -181,10 +172,10 @@ op add pram pram 1
 write out cell1 pout
 op add pout pout 1
 op sub n1 n1 1
-jump 186 greaterThan pout 2047
-jump 178 greaterThan n1 0
-jump 189 always x false
+jump 177 greaterThan pout 2047
+jump 169 greaterThan n1 0
+jump 180 always x false
 write 400 cell1 6
 set pout 8
-jump 178 greaterThan n1 0
+jump 169 greaterThan n1 0
 write 200 cell1 6
