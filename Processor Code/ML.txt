@@ -4,61 +4,51 @@ jump 1 notEqual on 1
 jump 7 always seson 1
 read on cell1 0
 jump 7 equal on 1
-jump 317 equal seson 1
+jump 291 equal seson 1
 read group cell1 1
 read command cell1 2
-jump 32 equal group 2
-jump 45 equal group 3
-jump 20 equal group 1
-print "Ошибка системы (ML)"
-print "[]\n"
-print "Неправельно указан"
-print "[]\n"
+jump 28 equal group 2
+jump 39 equal group 3
+jump 18 equal group 1
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
 print "Номер группы команд"
 printflush message1
 write 500 cell1 0
 stop
-jump 55 equal command 1
-jump 231 equal command 2
-jump 247 equal command 3
-jump 251 equal command 4
-print "Ошибка системы (ML)"
-print "[]\n"
-print "Неправельно указан"
-print "[]\n"
+jump 47 equal command 1
+jump 211 equal command 2
+jump 225 equal command 3
+jump 229 equal command 4
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
 print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump 258 equal command 1
-jump 331 equal command 2
-jump 372 equal command 3
-jump 375 equal command 4
+jump 236 equal command 1
+jump 305 equal command 2
+jump 346 equal command 3
+jump 349 equal command 4
 jump -1 equal command 5
-print "Ошибка системы (ML)"
-print "[]\n"
-print "Неправельно указан"
-print "[]\n"
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
 print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
 jump -1 equal command 1
 jump -1 equal command 2
-print "Ошибка системы (ML)"
-print "[]\n"
-print "Неправельно указан"
-print "[]\n"
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
 print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
 read rand cell1 3
-jump 65 greaterThan rand 0
-print "Ошибка ввода (ML)"
-print "[]\n"
-print "Неправельно указано"
-print "[]\n"
+jump 55 greaterThan rand 0
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указано[]\n"
 print "Число для рандомизации"
 printflush message1
 write 500 cell1 0
@@ -67,12 +57,10 @@ set srand rand
 op mul rand rand 2
 read layers cell1 4
 op floor floor layers b
-jump 71 lessThan floor 1
-jump 79 equal floor layers
-print "Ошибка системы (ML)"
-print "[]\n"
-print "Неправельно указано"
-print "[]\n"
+jump 61 lessThan floor 1
+jump 67 equal floor layers
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указано[]\n"
 print "Число слоёв для генерации"
 printflush message1
 write 500 cell1 0
@@ -87,73 +75,65 @@ set pi 5
 set pr 6
 read n1 cell1 5
 op floor fn n1 b
-jump 91 lessThan fn 1
-jump 101 equal fn n1
-print "Ошибка ввода (ML)"
-print "[]\n"
-print "Неправельно указано"
-print "[]\n"
-print "Чиcло нейронов в первом слое"
-print "[]\n"
+jump 79 lessThan fn 1
+jump 86 equal fn n1
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указано[]\n"
+print "Чиcло нейронов в первом слое[]\n"
 print "Ячейка: 5"
 printflush message1
 write 500 cell1 0
 stop
 write n1 cell4 5
 op add pi pi 1
-jump 111 lessThan pi 2047
+jump 96 lessThan pi 2047
 write 300 cell1 0
 set pi 4
 read suc cell1 0
-jump 106 equal suc 300
-jump 111 equal suc 1
+jump 91 equal suc 300
+jump 96 equal suc 1
 write 500 cell1 0
 stop
 read n2 cell1 pi
 op floor fn n2 b
-jump 115 lessThan fn 1
-jump 126 equal fn n2
-print "Ошибка ввода (ML)"
-print "[]\n"
-print "Неправельно указано"
-print "[]\n"
-print "Чиcло нейронов в слое"
-print "[]\n"
+jump 100 lessThan fn 1
+jump 108 equal fn n2
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указано[]\n"
+print "Чиcло нейронов в слое[]\n"
 print "Ячейка: "
 print pi
 printflush message1
 write 500 cell1 0
 stop
-jump 140 lessThan pr 2048
-jump 142 lessThan pr 4096
-jump 145 lessThan pr 6144
-jump 148 lessThan pr 8192
-jump 153 lessThan pr 10240
-print "Ошибка системы (ML)"
-print "[]\n"
-print "Переполнение MLCB"
-print "[]\n"
+jump 120 lessThan pr 2048
+jump 122 lessThan pr 4096
+jump 125 lessThan pr 6144
+jump 128 lessThan pr 8192
+jump 133 lessThan pr 10240
+print "Ошибка системы (ML)[]\n"
+print "Переполнение MLCB[]\n"
 print "Ячейка: "
 print pr
 printflush message1
 write 500 cell1 0
 stop
 write n2 cell4 pr
-jump 153 always x false
+jump 133 always x false
 op sub pv pr 2048
 write n2 cell5 pv
-jump 153 always x false
+jump 133 always x false
 op sub pv pr 4096
 write n2 cell6 pv
-jump 153 always x false
+jump 133 always x false
 op sub pv pr 6144
 write n2 cell7 pv
-jump 153 always x false
+jump 133 always x false
 op sub pv pr 8192
 write n2 cell8 pv
 op mul ws n1 n2
 op add pr pr 1
-jump 169 lessThan pr 10240
+jump 149 lessThan pr 10240
 write size cell2 1
 write 10240 cell2 2
 write 0 cell2 3
@@ -161,35 +141,35 @@ write 2 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 162 equal suc 1
-jump 167 equal suc 200
+jump 142 equal suc 1
+jump 147 equal suc 200
 write 500 cell1 0
 stop
 op add size size 10240
 set pr 0
 op rand w rand b
 op sub w w srand
-jump 176 lessThan pr 2048
-jump 178 lessThan pr 4096
-jump 181 lessThan pr 6144
-jump 184 lessThan pr 8192
-jump 187 always pr 10240
+jump 156 lessThan pr 2048
+jump 158 lessThan pr 4096
+jump 161 lessThan pr 6144
+jump 164 lessThan pr 8192
+jump 167 always pr 10240
 write w cell4 pr
-jump 189 always x false
+jump 169 always x false
 op sub pv pr 2048
 write w cell5 pv
-jump 189 always x false
+jump 169 always x false
 op sub pv pr 4096
 write w cell6 pv
-jump 189 always x false
+jump 169 always x false
 op sub pv pr 6144
 write w cell7 pv
-jump 189 always x false
+jump 169 always x false
 op sub pv pr 8192
 write w cell8 pv
 op sub ws ws 1
-jump 154 greaterThanEq ws 0
-jump 205 lessThan pr 10240
+jump 134 greaterThanEq ws 0
+jump 185 lessThan pr 10240
 write size cell2 1
 write 10240 cell2 2
 write 0 cell2 3
@@ -198,17 +178,17 @@ write 2 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 199 equal suc 1
-jump 204 equal suc 200
+jump 179 equal suc 1
+jump 184 equal suc 200
 write 500 cell1 0
 stop
 set pr 0
 op sub layers layers 1
 set n1 n2
-jump 102 greaterThan layers 1
+jump 87 greaterThan layers 1
 set w -1
 op add i i 1
-jump 171 notEqual i 2
+jump 151 notEqual i 2
 op add pr pr 1
 op add sizei size pr
 write size cell2 1
@@ -218,8 +198,8 @@ write 2 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 219 equal suc 1
-jump 224 equal suc 200
+jump 199 equal suc 1
+jump 204 equal suc 200
 write 500 cell1 0
 stop
 write 2 cell14 0
@@ -231,11 +211,9 @@ write 200 cell1 0
 end
 read i cell1 3
 op floor floor i b
-jump 242 equal floor i
-print "Ошибка ввода (ML)"
-print "[]\n"
-print "Неправельно введено"
-print "[]\n"
+jump 220 equal floor i
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно введено[]\n"
 print "Ограничение по сессиям"
 printflush message1
 write 500 cell1 0
@@ -259,7 +237,7 @@ end
 read suc cell15 0
 read numdat cell15 1
 read inputsfordata cell14 5
-jump 269 equal suc 8
+jump 247 equal suc 8
 set numdat 0
 set numdl 0
 set hyper 0
@@ -269,19 +247,16 @@ write 0 cell15 1
 write 8 cell15 0
 read suc cell15 0
 read mode cell15 3
-jump 278 equal suc 8
-print "Ошибка системы (ML)"
-print "[]\n"
+jump 255 equal suc 8
+print "Ошибка системы (ML)[]\n"
 print "Скорее всего что-то не так с DS"
 write 500 cell1 0
 printflush message1
 stop
 read b cell14 5
-jump 288 equal b inputsfordata
-print "Ошибка системы (ML)"
-print "[]\n"
-print "Количество входов в датасете"
-print "[]\n"
+jump 263 equal b inputsfordata
+print "Ошибка системы (ML)[]\n"
+print "Количество входов в датасете[]\n"
 print "и модели сети отличается"
 printflush message1
 write 500 cell1 0
@@ -290,10 +265,9 @@ write 200 cell1 0
 op add qqqi inputsfordata 2
 op mul qqq qqqi numdl
 op add qwsize qqq 4
-jump 304 lessThan qwsize 65536
-jump 300 greaterThan numdat 1
-print "Ошибка системы (ML)"
-print "[]\n"
+jump 278 lessThan qwsize 65536
+jump 274 greaterThan numdat 1
+print "Ошибка системы (ML)[]\n"
 print "Переполнение DS"
 printflush message1
 write 500 cell1 0
@@ -301,10 +275,10 @@ stop
 set numdl 0
 set numdat sesrange
 set nopluse 1
-jump 289 always numdat 1
-jump 300 greaterThanEq numdl sesrange
+jump 264 always numdat 1
+jump 274 greaterThanEq numdl sesrange
 op add numdl numdl 1
-jump 308 equal nopluse 1
+jump 282 equal nopluse 1
 op add numdat numdat 1
 set seson 1
 set kfordata 0
@@ -312,11 +286,11 @@ set very_need inputsfordata
 set p 0
 write 0 cell4 p
 op add p p 1
-jump 312 lessThan p i
+jump 286 lessThan p i
 read on cell1 0
 jump 7 equal on 1
 read suc cell2 6
-jump 315 notEqual suc 100
+jump 289 notEqual suc 100
 op add kfordata kfordata 1
 set p 3
 set pram 0
@@ -326,20 +300,20 @@ read ldata cell4 pram
 op add dataout data ldata
 write dataout cell4 pram
 op add pram pram 1
-jump 322 lessThanEq p very_need
+jump 296 lessThanEq p very_need
 write 150 cell2 6
-jump 317 always x false
+jump 291 always x false
 set seson 0
 set p 0
 op div kfl 1 kfordata
-jump 336 notEqual kfordata 0
+jump 310 notEqual kfordata 0
 set kfl 1
 read data cell4 p
 op mul dataout data kfl
 write dataout cell4 p
 op add p p 1
-jump 336 lessThan p pram
-jump 343 lessThan kfordata hyper
+jump 310 lessThan p pram
+jump 317 lessThan kfordata hyper
 set hyper kfordata
 write qwsize cell2 1
 write inputsfordata cell2 2
@@ -348,8 +322,8 @@ write 2 cell2 4
 write 2 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 349 equal suc 1
-jump 354 equal suc 200
+jump 323 equal suc 1
+jump 328 equal suc 200
 write 500 cell1 0
 stop
 write mode cell4 0
@@ -363,8 +337,8 @@ write 2 cell2 4
 write 2 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 364 equal suc 1
-jump 369 equal suc 200
+jump 338 equal suc 1
+jump 343 equal suc 200
 write 500 cell1 0
 stop
 write numdat cell15 1
@@ -381,15 +355,14 @@ read goodnuml cell1 7
 read badnuml cell1 8
 read sqrt cell1 9
 read suc cell14 0
-jump 390 notEqual suc 2
+jump 364 notEqual suc 2
 read nninputs cell15 2
 read suc cell14 5
 op floor i nninputs b
-jump 390 notEqual i nninputs
-jump 390 lessThan i 1
-jump 396 equal suc nninputs
-print "Ошибка системы (ML)"
-print "[]\n"
+jump 364 notEqual i nninputs
+jump 364 lessThan i 1
+jump 369 equal suc nninputs
+print "Ошибка системы (ML)[]\n"
 print "Нейросеть сломана"
 printflush message1
 write 500 cell1 0
@@ -397,16 +370,15 @@ stop
 read suc cell15 0
 read nnlayers cell15 3
 set nnl nnlayers
-jump 407 notEqual suc 8
+jump 380 notEqual suc 8
 read files cell15 1
 op floor i files b
-jump 407 notEqual i files
-jump 407 lessThanEq i 0
+jump 380 notEqual i files
+jump 380 lessThanEq i 0
 read condition cell15 3
-jump 413 equal condition 0
-jump 413 equal condition 4
-print "Ошибка системы (ML)"
-print "[]\n"
+jump 385 equal condition 0
+jump 385 equal condition 4
+print "Ошибка системы (ML)[]\n"
 print "Датасет сломан"
 printflush message1
 write 500 cell1 0
@@ -415,7 +387,7 @@ set fileuse 0
 op add inp2 nninputs 2
 op mul i inp2 fileuse
 op add p i 4
-jump 420 lessThanEq fileuse files
+jump 392 lessThanEq fileuse files
 write 200 cell1 0
 end
 write p cell2 1
@@ -425,17 +397,17 @@ write 1 cell2 4
 write 2 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 426 equal suc 1
-jump 430 equal suc 200
+jump 398 equal suc 1
+jump 402 equal suc 200
 stop
 read filemode cell4 0
-jump 434 equal filemode condition
+jump 406 equal filemode condition
 op add fileuse fileuse 1
-jump 415 always x false
+jump 387 always x false
 read globals cell4 1
-jump 438 greaterThanEq minscore globals
+jump 410 greaterThanEq minscore globals
 set whiles badnuml
-jump 439 always minscore globals
+jump 411 always minscore globals
 set whiles goodnuml
 op mul globals globals speed
 op div globals globals nnlayers
@@ -443,23 +415,23 @@ set p 2
 set i 0
 read signal cell4 p
 op add pi p 6
-jump 448 greaterThan pi 2048
+jump 420 greaterThan pi 2048
 write signal cell2 pi
-jump 450 always pi 2048
+jump 422 always pi 2048
 op sub piv pi 2048
 write signal cell3 piv
 op sub i i 1
-jump 453 greaterThan pi 4096
-jump 443 lessThan i nninputs
+jump 425 greaterThan pi 4096
+jump 415 lessThan i nninputs
 write 1 cell2 7
 write 1 cell2 6
 read suc cell2 6
-jump 459 equal suc 100
+jump 431 equal suc 100
 write 500 cell1 0
 stop
 write 150 cell2 6
 read suc cell2 7
-jump 460 notEqual suc 2
+jump 432 notEqual suc 2
 read wpage cell9 1
 read n1 cell9 2
 write wpage cell2 1
@@ -469,8 +441,8 @@ write 1 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 470 equal suc 1
-jump 475 equal suc 200
+jump 442 equal suc 1
+jump 447 equal suc 200
 write 500 cell1 0
 stop
 read n2 cell4 0
@@ -483,15 +455,15 @@ write 1 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read power cell9 0
-jump 487 notEqual sqrt 1
+jump 459 notEqual sqrt 1
 op sqrt power power b
 op add power power globals
 op sub error power needscore
-jump 491 greaterThan minscore globals
+jump 463 greaterThan minscore globals
 op mul error error -1
 read suc cell2 0
-jump 491 equal suc 1
-jump 537 equal suc 200
+jump 463 equal suc 1
+jump 509 equal suc 200
 write 500 cell1 0
 stop
 set whil whiles
@@ -499,69 +471,69 @@ set pwl 0
 set psl 2
 set i1 n1
 set i2 n2
-jump 506 lessThan pwl 2048
-jump 508 lessThan pwl 4096
-jump 514 lessThan pwl 4096
-jump 517 lessThan pwl 4096
+jump 478 lessThan pwl 2048
+jump 480 lessThan pwl 4096
+jump 486 lessThan pwl 4096
+jump 489 lessThan pwl 4096
 jump -1 always pwl 4096
 read w cell4 pwl
-jump 519 always pwl 2048
+jump 491 always pwl 2048
 op sub pwlv pwl 2048
 read w cell5 pwlv
-jump 519 always pwl 2048
+jump 491 always pwl 2048
 op sub pwlv pwl 4096
 read w cell6 pwlv
-jump 519 always pwl 2048
+jump 491 always pwl 2048
 op sub pwlv pwl 6144
 read w cell7 pwlv
-jump 519 always pwl 2048
+jump 491 always pwl 2048
 op sub pwlv pwl 8192
 read w cell8 pwlv
-jump 524 lessThan psl 2048
-jump 526 lessThan psl 4096
-jump 529 lessThan psl 6144
-jump 532 lessThan psl 8192
-jump 535 always psl 8192
+jump 496 lessThan psl 2048
+jump 498 lessThan psl 4096
+jump 501 lessThan psl 6144
+jump 504 lessThan psl 8192
+jump 507 always psl 8192
 read signal cell9 psl
-jump 537 always psl 8192
+jump 509 always psl 8192
 op sub pslv psl 2048
 read signal cell10 pslv
-jump 537 always psl 8192
+jump 509 always psl 8192
 op sub pslv psl 4096
 read signal cell11 pslv
-jump 537 always psl 8192
+jump 509 always psl 8192
 op sub pslv psl 6144
 read signal cell12 pslv
-jump 537 always psl 8192
+jump 509 always psl 8192
 op sub pslv psl 8192
 read signal cell13 pslv
 op mul delta error signal
 op mul delta delta speed
 op add w w delta
-jump 545 lessThan pwl 2048
-jump 547 lessThan pwl 4096
-jump 550 lessThan pwl 6144
-jump 553 lessThan pwl 8192
-jump 556 always pwl 2048
+jump 517 lessThan pwl 2048
+jump 519 lessThan pwl 4096
+jump 522 lessThan pwl 6144
+jump 525 lessThan pwl 8192
+jump 528 always pwl 2048
 write w cell4 pwl
-jump 558 always pwl 2048
+jump 530 always pwl 2048
 op sub pwlv pwl 2048
 write w cell5 pwlv
-jump 558 always pwl 2048
+jump 530 always pwl 2048
 op sub pwlv pwl 4096
 write w cell6 pwlv
-jump 558 always pwl 2048
+jump 530 always pwl 2048
 op sub pwlv pwl 6144
 write w cell7 pwlv
-jump 558 always pwl 2048
+jump 530 always pwl 2048
 op sub pwlv pwl 8192
 write w cell8 pwlv
 op add pwl pwl 1
 op add psl psl 1
 op sub i2 i2 1
-jump 501 greaterThan i2 0
+jump 473 greaterThan i2 0
 op sub i1 i1 1
-jump 500 greaterThan i1 0
+jump 472 greaterThan i1 0
 write wpage cell2 1
 write wnum cell2 2
 write 0 cell2 3
@@ -569,27 +541,27 @@ write 2 cell2 4
 write 1 cell2 5
 write 1 cell2 0
 read suc cell2 0
-jump 570 equal suc 1
-jump 575 equal suc 200
+jump 542 equal suc 1
+jump 547 equal suc 200
 write 500 cell1 0
 stop
 op sub whil whil 1
-jump 588 greaterThan whil 0
+jump 560 greaterThan whil 0
 write 1 cell2 7
 read suc cell2 7
-jump 578 equal suc 1
-jump 586 notEqual suc 2
+jump 550 equal suc 1
+jump 558 notEqual suc 2
 op sub nnl nnl 1
-jump 585 greaterThan nnl 0
+jump 557 greaterThan nnl 0
 op add fileuse fileuse 1
-jump 415 always nnl 0
-jump 462 always x false
+jump 387 always nnl 0
+jump 434 always x false
 write 500 cell1 0
 stop
 write 3 cell2 7
 read suc cell2 7
-jump 589 equal suc 3
-jump 593 notEqual suc 2
-jump 497 always x false
+jump 561 equal suc 3
+jump 565 notEqual suc 2
+jump 469 always x false
 write 500 cell1 0
 stop
