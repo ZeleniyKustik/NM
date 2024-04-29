@@ -363,7 +363,7 @@ jump 364 notEqual i nninputs
 jump 364 lessThan i 1
 jump 369 equal suc nninputs
 print "Ошибка системы (ML)[]\n"
-print "Нейросеть сломана"
+print "Датасет сломан"
 printflush message1
 write 500 cell1 0
 stop
