@@ -19,7 +19,7 @@ set automlr 0
 set automlnum automlr
 set autocses 0
 set start 1
-wait 3
+wait 4
 write 1 cell4 1
 write 2 cell4 2
 write sesrange cell4 3
