@@ -25,11 +25,11 @@ jump 6 notEqual floor n1
 set pram 3
 op add q n1 pram
 set pi 8
-jump 31 lessThan pi 2048
+jump 30 greaterThan pi 2048
+read input cell1 pi
+jump 32 always x false
 op sub pv pi 2048
 read input cell2 pv
-jump 32 always x false
-read input cell1 pi
 jump 42 lessThan pram 2048
 jump 44 lessThan pram 4096
 jump 47 lessThan pram 6144
