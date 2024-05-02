@@ -107,29 +107,19 @@ set lons 0
 op add outpln pram n1
 read input cell3 pram
 op add pram pram 1
-jump 119 lessThan p 2048
-jump 121 lessThan p 4096
-jump 124 lessThan p 6144
-jump 127 lessThan p 8192
-jump 130 lessThan p 10240
+op div tag p 2048
+op floor tag tag 2048
+op mul m tag 2048
+op sub pv p m
+op add tag tag 7
+jump 120 lessThan p 10240
 print "Ошибка системы (NS)[]\n"
 print "Выход за пределы памяти NSr"
 printflush message1
 write 500 cell1 6
 stop
-read w cell8 p
-jump 132 always w 6144
-op sub pv p 2048
-read w cell9 pv
-jump 132 always w 6144
-op sub pv p 4096
-read w cell10 pv
-jump 132 always w 6144
-op sub pv p 6144
-read w cell11 pv
-jump 132 always w 6144
-op sub pv p 8192
-read w cell12 pv
+getlink cell tag
+read w cell pv
 op add p p 1
 op mul i input w
 op add lons lons i
@@ -147,11 +137,11 @@ jump 104 lessThan pramo pramos
 write s2 cell3 0
 op sqrt s2 s2 1
 op add pramo pramo 1
-jump 155 equal mode 0
+jump 145 equal mode 0
 write 2 cell1 7
 read mode cell1 7
-jump 151 equal mode 2
-jump 155 equal mode 1
+jump 141 equal mode 2
+jump 145 equal mode 1
 jump 81 equal mode 3
 set pram 3
 op add prams pram n2
@@ -162,7 +152,7 @@ op add pramol pramol 1
 op mul signal signal s2
 write signal cell3 pram
 op add pram pram 1
-jump 159 lessThanEq pram prams
+jump 149 lessThanEq pram prams
 op sub layers layers 1
 set n1 n2
 jump 82 greaterThan layers 1
@@ -173,10 +163,10 @@ op add pram pram 1
 write out cell1 pout
 op add pout pout 1
 op sub n1 n1 1
-jump 178 greaterThan pout 2047
-jump 170 greaterThan n1 0
-jump 181 always x false
+jump 168 greaterThan pout 2047
+jump 160 greaterThan n1 0
+jump 171 always x false
 write 400 cell1 6
 set pout 8
-jump 170 greaterThan n1 0
+jump 160 greaterThan n1 0
 write 200 cell1 6
