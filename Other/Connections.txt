@@ -23,7 +23,7 @@ DS1/32 = cell7
 ML:{
 
 MLc = cell1
-NSMc = cell2; cell3
+NSc = cell2; cell3
 MLCB = cell4; cell5; cell6; cell7; cell8
 NSr = cell9; cell10; cell11; cell12; cell13
 NN1/16 = cell14
