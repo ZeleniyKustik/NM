@@ -1,9 +1,9 @@
 
 NS;{
 
-NSc = cell1; cell2
-NSr = cell3; cell4; cell5; cell6; cell7
-NN = cell8 - cell23
+NSc = cell1
+NSr = cell2 - cell9
+NN = cell10 - cell46
 
 }
 
@@ -11,11 +11,11 @@ NN = cell8 - cell23
 T:{
 
 I = cell1
-NSc = cell2; cell3
-MLc = cell4
-O = cell5
-NN1/16 = cell6
-DS1/32 = cell7
+NSc = cell2
+MLc = cell3
+O = cell4
+NN1/16 = cell5
+DS1/32 = cell6
 
 }
 
@@ -23,10 +23,10 @@ DS1/32 = cell7
 ML:{
 
 MLc = cell1
-NSc = cell2; cell3
-MLCB = cell4; cell5; cell6; cell7; cell8
-NSr = cell9; cell10; cell11; cell12; cell13
-NN1/16 = cell14
-DS1/32 = cell15
+NSc = cell2
+MLCB = cell3 - cell9
+NSr = cell10 - cell17
+NN = cell18 - cell54
+DS = cell55 - cell70
 
 }
