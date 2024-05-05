@@ -1,12 +1,3 @@
-M:{
-
-Mc = cell1
-MLCB = cell2; cell3; cell4; cell5; cell6;
-NN = cell7 - cell22
-DS = cell23 - cell54
-
-}
-
 
 NS;{
 
