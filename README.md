@@ -41,7 +41,7 @@ NM:
 | | EN | RU |
 | --- | --- | --- |
 | I | The memory block into which the request is entered | Блок памяти в который вводится запрос |
-| O | A block of memory from which a massive response is usually outpu | Блок памяти из которого обычно выводится массивный ответ |
+| O | A block of memory from which a massive response is usually output | Блок памяти из которого обычно выводится массивный ответ |
 | NN | The array in which the neural network is stored | Массив в котором хранится нейронная сеть |
 | DS | The array in which the Dataset is stored | Массив в котором хранится Датасет |
 | NSc | This is a block for communicating with NS | Это блок для общения с NS |
