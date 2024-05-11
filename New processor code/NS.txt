@@ -21,3 +21,61 @@ read n1 cell10 5
 op floor floor n1 b
 jump 6 lessThan floor 1
 jump 6 notEqual floor n1
+set NSrp 3
+op add NSrp-end NSrp n1
+set inp-p 2
+read input cell1 inp-p
+op add inp-p inp-p 1
+op div link NSrp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv NSrp m
+op add link link 1
+getlink cell link
+write input cell1 pv
+op add NSrp NSrp 1
+jump 49 greaterThanEq NSrp NSrp-end
+jump 26 lessThan Inp-p 2048
+write 300 cell1 0
+read suc cell1 0
+jump 39 equal suc 300
+jump 25 equal suc 1
+print "Ошибка ввода (NS)[]\n"
+print "Вы не правильно ответили на запрос"
+print "[]\nNSMc: ожидалось 300[]\n"
+print "Ячейка: 0"
+printflush message1
+write 500 cell1 0
+stop
+set p 6
+set NSrp 3
+op div link p 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv p m
+op add link link 9
+getlink cell link
+read n2 cell pv
+op add NSrp-end NSrp n2
+set acum 0
+op add p p 1
+op div link p 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv p m
+op add link link 9
+getlink cell link
+read w cell pv
+op add p p 1
+op div link NSrp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv p m
+op add link link 1
+getlink cell link
+read input cell pv
+op add NSrp NSrp 1
+op mul out input w
+op add acum acum out
+jump 60 lessThan NSrp NSrp-end
+write 200 cell1 0
