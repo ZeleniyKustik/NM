@@ -1,4 +1,4 @@
-jump 38 equal start 1
+jump 39 equal start 1
 print "Инициализация NM: запущена (T)"
 print "[]\n[]\n"
 print "Made by: [#45ff64] Zeleniy_Kustik"
@@ -6,7 +6,7 @@ print "[]\n[]\n"
 print "https://github.com/Zeleniykustik"
 printflush message1
 set seson 0
-set sesrange 1
+set ses-range 1
 set minscore 0
 set needscore 0
 set speed 0.01
@@ -19,13 +19,14 @@ set automlr 0
 set automlnum automlr
 set autocses 0
 set start 1
-wait 4
+wait 6
 write 1 cell3 1
 write 2 cell3 2
+write ses-range cell3 3
 write 1 cell3 0
-read suc cell1 0
-jump 25 equal suc 1
-jump 32 equal suc 200
+read suc cell3 0
+jump 26 equal suc 1
+jump 33 equal suc 200
 print "Инициализация NM: Ошибка (T)"
 printflush message1
 write 500 cell1 0
@@ -37,20 +38,20 @@ print "[]\n[]\n"
 print "https://github.com/Zeleniykustik"
 printflush message1
 read on cell1 0
-jump 38 notEqual on 1
+jump 39 notEqual on 1
 read group cell1 1
 read command cell1 2
-jump 76 equal group 2
-jump 52 equal group 1
-jump 83 equal group 3
-jump 94 equal group 4
+jump 77 equal group 2
+jump 53 equal group 1
+jump 84 equal group 3
+jump 95 equal group 4
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Номер группы команд"
 printflush message1
 write 500 cell1 0
 stop
-jump 102 equal command 1
+jump 103 equal command 1
 jump -1 equal command 2
 jump -1 equal command 3
 jump -1 equal command 4
@@ -104,8 +105,8 @@ read rand cell1 3
 write rand cell3 3
 read layers cell1 4
 op floor floor layers b
-jump 108 lessThan floor 2
-jump 114 equal floor layers
+jump 109 lessThan floor 2
+jump 115 equal floor layers
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указано[]\n"
 print "Число слоёв"
@@ -118,21 +119,21 @@ op add p-end p layers
 read n cell1 p
 write n cell3 p
 op add p p 1
-jump 122 greaterThanEq p 2048
-jump 117 lessThan p p-end
+jump 123 greaterThanEq p 2048
+jump 118 lessThan p p-end
 write 1 cell3 1
 write 1 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 125 equal suc 1
-jump 136 equal suc 200
-jump 133 notEqual suc 300
+jump 126 equal suc 1
+jump 137 equal suc 200
+jump 134 notEqual suc 300
 print "Ошибка системы (T)[]\n"
 print "Ошбка генерации сети"
 printflush message1
 stop
 set p 5
 op sub p-end p-end 2043
-jump 117 always suc 300
+jump 118 always suc 300
 write 200 cell1 0
 end
