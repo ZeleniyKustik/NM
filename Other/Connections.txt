@@ -1,5 +1,5 @@
 
-NS;{
+NS:{
 
 NSc = cell1
 NSr = cell2 - cell9
