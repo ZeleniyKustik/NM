@@ -3,7 +3,7 @@ read on cell1 0
 jump 1 notEqual on 1
 jump 6 always seson 1
 read on cell1 0
-jump 177 notEqual on 1
+jump 178 notEqual on 1
 read group cell1 1
 read command cell1 2
 jump 27 equal group 2
@@ -173,8 +173,34 @@ write 500 cell1 0
 stop
 set seson 1
 set sesnum 0
+set kloop 0
 write 200 cell1 0
 end
 read suc cell2 0
-jump -1 equal suc 100
+jump 181 equal suc 100
+end
+read inputs cell18 5
+set MLrp 0
+set NSrp 3
+op div link NSrp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv NSrp m
+op add link link 9
+getlink cell link
+read signal-ns cell pv
+op add NSrp NSrp 1
+op div link MLrp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv MLrp m
+op add link link 2
+getlink cell link
+read signal-ml cell pv
+op add signal signal-ml signal-ns
+write signal cell pv
+op add MLrp MLrp 1
+jump 184 lessThan MLrp inputs
+op add kloop kloop 1
+write 150 cell2 0
 end
