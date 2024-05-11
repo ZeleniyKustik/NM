@@ -1,0 +1,138 @@
+jump 38 equal start 1
+print "Инициализация NM: запущена (T)"
+print "[]\n[]\n"
+print "Made by: [#45ff64] Zeleniy_Kustik"
+print "[]\n[]\n"
+print "https://github.com/Zeleniykustik"
+printflush message1
+set seson 0
+set sesrange 1
+set minscore 0
+set needscore 0
+set speed 0.01
+set minsignal 2
+set goodnuml 2
+set badnuml 2
+set sqrt 1
+set automl 0
+set automlr 0
+set automlnum automlr
+set autocses 0
+set start 1
+wait 4
+write 1 cell3 1
+write 2 cell3 2
+write 1 cell3 0
+read suc cell1 0
+jump 25 equal suc 1
+jump 32 equal suc 200
+print "Инициализация NM: Ошибка (T)"
+printflush message1
+write 500 cell1 0
+stop
+print "Инициализация NM: Завершена (T)"
+print "[]\n[]\n"
+print "Made by: [#45ff64] Zeleniy_Kustik"
+print "[]\n[]\n"
+print "https://github.com/Zeleniykustik"
+printflush message1
+read on cell1 0
+jump 38 notEqual on 1
+read group cell1 1
+read command cell1 2
+jump 76 equal group 2
+jump 52 equal group 1
+jump 83 equal group 3
+jump 94 equal group 4
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер группы команд"
+printflush message1
+write 500 cell1 0
+stop
+jump 102 equal command 1
+jump -1 equal command 2
+jump -1 equal command 3
+jump -1 equal command 4
+jump -1 equal command 5
+jump -1 equal command 6
+jump -1 equal command 7
+jump -1 equal command 8
+jump -1 equal command 9
+jump -1 equal command 10
+jump -1 equal command 11
+jump -1 equal command 12
+jump -1 equal command 13
+jump -1 equal command 14
+jump -1 equal command 15
+jump -1 equal command 16
+jump -1 equal command 17
+jump -1 equal command 18
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+stop
+jump -1 equal command 1
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+stop
+jump -1 equal command 1
+jump -1 equal command 2
+jump -1 equal command 3
+jump -1 equal command 4
+jump -1 equal command 5
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+stop
+jump -1 equal command 1
+jump -1 equal command 2
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+stop
+read rand cell1 3
+write rand cell3 3
+read layers cell1 4
+op floor floor layers b
+jump 108 lessThan floor 2
+jump 114 equal floor layers
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указано[]\n"
+print "Число слоёв"
+printflush message1
+write 500 cell1 0
+stop
+write layers cell3 4
+set p 5
+op add p-end p layers
+read n cell1 p
+write n cell3 p
+op add p p 1
+jump 122 greaterThanEq p 2048
+jump 117 lessThan p p-end
+write 1 cell3 1
+write 1 cell3 2
+write 1 cell3 0
+read suc cell3 0
+jump 125 equal suc 1
+jump 136 equal suc 200
+jump 133 notEqual suc 300
+print "Ошибка системы (T)[]\n"
+print "Ошбка генерации сети"
+printflush message1
+stop
+set p 5
+op sub p-end p-end 2043
+jump 117 always suc 300
+write 200 cell1 0
+end
