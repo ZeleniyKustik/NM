@@ -1,0 +1,23 @@
+read on cell1 0
+jump 0 notEqual on 1
+read ml cell1 1
+read suc cell10 0
+jump 13 equal suc 2
+set errorpage 0
+print "Ошибка системы (NS)[]\n"
+print "Нейронная сеть сломана :([]\n"
+print "NN: "
+print errorpage
+printflush message1
+write 500 cell1 0
+stop
+set errorpahe 3
+read layers cell10 3
+op floor floor layers b
+jump 6 lessThan floor 2
+jump 6 notEqual floor layers
+set errorpage 5
+read n1 cell10 5
+op floor floor n1 b
+jump 6 lessThan floor 1
+jump 6 notEqual floor n1
