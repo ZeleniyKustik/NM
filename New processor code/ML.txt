@@ -1,0 +1,180 @@
+jump 4 equal seson 1
+read on cell1 0
+jump 1 notEqual on 1
+jump 6 always seson 1
+read on cell1 0
+jump 177 notEqual on 1
+read group cell1 1
+read command cell1 2
+jump 27 equal group 2
+jump 38 equal group 3
+jump 17 equal group 1
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Номер группы команд"
+printflush message1
+write 500 cell1 0
+stop
+jump 46 equal command 1
+jump 125 equal command 2
+jump 138 equal command 3
+jump 142 equal command 4
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+stop
+jump 148 equal command 1
+jump -1 equal command 2
+jump -1 equal command 3
+jump -1 equal command 4
+jump -1 equal command 5
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+stop
+jump -1 equal command 1
+jump -1 equal command 2
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 cell1 0
+stop
+read true-rand cell1 3
+jump 54 greaterThanEq true-rand 0
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указано[]\n"
+print "Число для рандомизации"
+printflush message1
+write 500 cell1 0
+stop
+op mul rand true-rand 2
+read layers cell1 4
+op floor floor layers 2
+jump 59 lessThan floor 2
+jump 65 equal floor layers
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указано[]\n"
+print "Число слоёв для генерации"
+printflush message1
+write 500 cell1 0
+stop
+set p 6
+write 0 cell18 0
+write 0 cell18 1
+write 0 cell18 2
+write layers cell18 3
+write layers cell18 4
+read n1 cell1 5
+write n1 cell18 5
+set pn 6
+jump 86 lessThan pn 2048
+write 300 cell1 0
+read suc cell1 0
+jump 76 equal suc 300
+jump 85 equal suc 1
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Ответ для герации сети"
+printflush message1
+write 500 cell1 0
+stop
+set pn 6
+read n2 cell1 pn
+op add pn pn 1
+op mul all-w n1 n2
+op div link p 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv p m
+op add link link 17
+getlink cell link
+write n2 cell pv
+op add p p 1
+op add p-end p all-w
+op rand w rand p
+op sub w w true-rand
+op div link p 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv p m
+op add link link 17
+getlink cell link
+write w cell pv
+op add p p 1
+jump 98 lessThan p p-end
+set n1 n2
+op sub layers layers 1
+jump 74 greaterThan layers 1
+op div link p 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv p m
+op add link link 17
+getlink cell link
+write -1 cell pv
+op add p p 1
+write p cell18 2
+write n2 cell18 4
+write 2 cell18 0
+write 200 cell1 0
+end
+read trash cell1 3
+op floor floor trash b
+jump 129 lessThan trash 1
+jump 135 equal trash floor
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указано[]\n"
+print "Ограничение по сессиям"
+printflush message1
+write 500 cell1 0
+stop
+set ses-range trash
+write 200 cell1 0
+end
+write seson cell1 3
+write ses-range cell1 4
+write 200 cell1 0
+end
+set seson 0
+set ses-range 1
+write 0 cell18 0
+write 0 cell55 0
+write 200 cell1 0
+end
+read suc cell55 0
+jump 163 equal suc 8
+read 8 cell18 0
+read 0 cell18 1
+read inputs cell18 5
+read inputs cell18 2
+read suc cell55 0
+jump 163 equal suc 8
+set seson 0
+set sesnum 0
+print "Ошибка системы (ML)[]\n"
+print "Что-то не так с блоком DS"
+printflush message1
+write 500 cell1 0
+stop
+read inputs_NN cell18 5
+read inputs_DS cell55 2
+jump 173 equal inputs_NN inputs_DS
+set seson 0
+set sesnum 0
+print "Ошибка системы (ML)[]\n"
+print "Файл датасета не потходит для сети"
+printflush message1
+write 500 cell1 0
+stop
+set seson 1
+set sesnum 0
+write 200 cell1 0
+end
+read suc cell2 0
+jump -1 equal suc 100
+end
