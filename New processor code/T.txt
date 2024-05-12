@@ -279,3 +279,14 @@ read data cell6 4
 write data cell1 8
 write 200 cell1 0
 end
+read suc cell5 0
+jump 285 equal suc 8
+write 0 cell1 3
+jump 286 always x false
+write 1 cell1 3
+read data cell5 1
+write data cell1 4
+read data cell5 2
+write data cell1 5
+write 200 cell1 0
+end
