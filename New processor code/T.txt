@@ -57,9 +57,9 @@ jump 144 equal command 4
 jump 147 equal command 5
 jump 159 equal command 6
 jump 173 equal command 7
-jump 186 equal command 8
-jump 199 equal command 9
-jump -1 equal command 10
+jump 187 equal command 8
+jump 200 equal command 9
+jump 226 equal command 10
 jump -1 equal command 11
 jump -1 equal command 12
 jump -1 equal command 13
@@ -172,8 +172,9 @@ set ses-range data
 write 200 cell1 0
 end
 read data cell1 3
-jump 176 lessThan data 1
-jump 183 equal data floor
+op floor floor data b
+jump 177 lessThan data 1
+jump 184 equal data floor
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указано[]\n"
 print "Количество проходов на слой[]\n"
@@ -185,8 +186,8 @@ set whilelayer data
 write 200 cell1 0
 end
 read data cell1 3
-jump 196 equal data 1
-jump 196 equal data 0
+jump 197 equal data 1
+jump 197 equal data 0
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Режим корня[]\n"
@@ -199,8 +200,8 @@ write 200 cell1 0
 end
 read data-1 cell1 3
 read data-2 cell1 4
-jump 210 equal data-1 1
-jump 210 equal data-1 0
+jump 211 equal data-1 1
+jump 211 equal data-1 0
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Режим автоматического обучения[]\n"
@@ -209,8 +210,8 @@ printflush message1
 write 500 cell1 0
 stop
 op floor floor data-2 b
-jump 213 lessThan floor 1
-jump 221 equal floor data-2
+jump 214 lessThan floor 1
+jump 222 equal floor data-2
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указано[]\n"
 print "Количество сессий[]\n"
@@ -221,5 +222,19 @@ write 500 cell1 0
 stop
 set automl data-1
 set automlr data-2
+write 200 cell1 0
+end
+read data cell1 3
+jump 237 equal data 1
+jump 237 equal data 0
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Режим автоматического создания[]\n"
+print "сессии[]\n"
+print "Нужны числа 1 или 0"
+printflush message1
+write 500 cell1 0
+stop
+set autocses data
 write 200 cell1 0
 end
