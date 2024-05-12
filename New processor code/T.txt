@@ -73,7 +73,7 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump -1 equal command 1
+jump 328 equal command 1
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Номер команды"
@@ -346,6 +346,44 @@ op sub p-end p-end 2045
 set NScp 3
 set p-inp 3
 jump 332 always x false
-jump -1 notEqual autocses 1
-jump -1 equal seson 1
-write result cell1 0
+jump 351 equal autocses 1
+jump 365 equal seson 1
+jump 363 always autocses 1
+jump 353 equal seson 0
+jump 365 always seson 0
+write 2 cell3 1
+write 1 cell3 2
+write 1 cell3 0
+read suc cell3 0
+jump 356 equal suc 1
+jump 361 equal suc 200
+write 500 cell1 0
+stop
+set seson 1
+jump 365 always suc 200
+write 150 cell2 0
+write 0 cell2 0
+read suc cell2 0
+jump 365 equal suc 150
+jump 371 equal suc 200
+jump 371 equal suc 400
+write 500 cell1 0
+stop
+set NScp 3
+read outs cell5 4
+op add p-end outs 3
+read out cell2 NScp
+write out cell1 NScp
+op add NSrp NSrp 1
+jump -1 greaterThanEq NSrp p-end
+jump 374 lessThan NSrp 2048
+write 1 cell2 0
+read suc cell2 0
+jump 380 equal suc 1
+jump 372 equal suc 200
+jump 387 notEqual suc 400
+op sub p-end p-end 2045
+set NScp 3
+jump 374 always x false
+write 500 cell1 0
+stop
