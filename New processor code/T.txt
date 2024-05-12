@@ -60,8 +60,8 @@ jump 173 equal command 7
 jump 187 equal command 8
 jump 200 equal command 9
 jump 226 equal command 10
-jump -1 equal command 11
-jump -1 equal command 12
+jump 240 equal command 11
+jump 264 equal command 12
 jump -1 equal command 13
 jump -1 equal command 14
 jump -1 equal command 15
@@ -236,5 +236,46 @@ printflush message1
 write 500 cell1 0
 stop
 set autocses data
+write 200 cell1 0
+end
+read suc cell6 0
+jump 244 equal suc 2
+write 0 cell1 3
+jump 245 always x false
+write 1 cell1 3
+read suc cell5 0
+jump 249 equal suc 8
+write 0 cell1 4
+jump 250 always x false
+write 1 cell1 4
+write seson cell1 5
+write autocses cell1 6
+write automl cell1 7
+write sqrt cell1 8
+write mimscore cell1 9
+write needscore cell1 10
+write speed cell1 11
+write needsignal cell1 12
+write ses-range cell1 13
+write whilelayer cell1 14
+write automlr cell1 15
+write automlnum cell1 16
+write 200 cell1 0
+end
+read suc cell6 0
+jump 268 equal suc 2
+write 0 cell1 3
+jump 269 always suc 2
+write 1 cell1 3
+read data cell6 1
+write data cell1 4
+read data cell6 2
+write data cell1 5
+read data cell6 3
+write data cell1 6
+read data cell6 5
+write data cell1 7
+read data cell6 4
+write data cell1 8
 write 200 cell1 0
 end
