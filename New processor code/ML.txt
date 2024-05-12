@@ -26,8 +26,8 @@ printflush message1
 write 500 cell1 0
 stop
 jump 148 equal command 1
-jump -1 equal command 2
-jump -1 equal command 3
+jump 207 equal command 2
+jump 270 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
 print "Ошибка системы (ML)[]\n"
@@ -166,14 +166,14 @@ read inputs_NN cell18 5
 read inputs_DS cell55 2
 jump 174 equal inputs_NN inputs_DS
 set seson 0
-set sesnum 0
+set sesnum 1
 print "Ошибка системы (ML)[]\n"
 print "Файл датасета не потходит для сети"
 printflush message1
 write 500 cell1 0
 stop
 set seson 1
-set sesnum 0
+set sesnum 1
 set kloop 0
 write 200 cell1 0
 end
@@ -204,4 +204,79 @@ op add MLrp MLrp 1
 jump 185 lessThan MLrp inputs
 op add kloop kloop 1
 write 150 cell2 0
+end
+read score cell1 3
+read suc cell55 0
+set errorpage 0
+jump 217 equal suc 8
+print "Ошибка системы (ML)[]\n"
+print "Датасет сломан в ячейке: "
+print errorpage
+printflush message1
+write 500 cell1 0
+stop
+set errorpage 1
+read sessions cell55 1
+op floor floor sessions b
+jump 211 lessThan floor 0
+jump 211 notEqual floor sessions
+jump 225 notEqual sessions 0
+set sessions 1
+write 1 cell55 1
+set errorpage 2
+read inputs_DS cell55 2
+read inputs_NN cell18 5
+jump 211 notEqual inputs_DS inputs_NN
+jump 231 lessThan sesnum sesrange
+set sesnum 1
+set inputs inputs_DS
+op add k inputs 1
+op sub ses-b sesnum 1
+op mul DSp sesnum k
+op add DSp DSp 3
+op div link DSp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv DSp m
+op add link link 54
+getlink cell link
+write score cell pv
+op add DSp DSp 1
+set MLrp 0
+op div link MLrp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv MLrp m
+op add link link 2
+getlink cell link
+read input cell pv
+op add MLrp MLrp 1
+op div input input kloop
+op div link DSp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv DSp m
+op add link link 54
+getlink cell link
+write input cell pv
+op add DSp DSp 1
+jump 245 lessThan MLrp inputs
+jump 265 lessThan sessions sesrange
+jump 266 always x false
+op add sessions sessions 1
+write sessions cell55 1
+op add sesnum sesnum 1
+write 200 cell1 0
+end
+set MLrp 0
+op div link MLrp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv MLrp m
+op add link link 2
+getlink cell link
+read 0 cell pv
+op add MLrp MLrp 1
+jump 271 lessThan MLrp 16384
+write 200 cell1 0
 end
