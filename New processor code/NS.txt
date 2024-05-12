@@ -42,7 +42,18 @@ jump 39 equal suc 300
 jump 25 equal suc 1
 print "Ошибка ввода (NS)[]\n"
 print "Вы не правильно ответили на запрос"
-print "[]\nNSMc: ожидалось 300[]\n"
+print "[]\nNSMc: ожидалось 1[]\n"
+print "Ячейка: 0"
+printflush message1
+write 500 cell1 0
+stop
+write 100 cell1 0
+read suc cell1 0
+jump 50 equal suc 100
+jump 60 equal suc 150
+print "Ошибка системы (NS)[]\n"
+print "Не правильно ответили на запрос"
+print "[]\nNSMc: ожидалось 150[]\n"
 print "Ячейка: 0"
 printflush message1
 write 500 cell1 0
@@ -77,5 +88,5 @@ read input cell pv
 op add NSrp NSrp 1
 op mul out input w
 op add acum acum out
-jump 60 lessThan NSrp NSrp-end
+jump 71 lessThan NSrp NSrp-end
 write 200 cell1 0
