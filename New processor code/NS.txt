@@ -23,7 +23,7 @@ jump 6 lessThan floor 1
 jump 6 notEqual floor n1
 set NSrp 3
 op add NSrp-end NSrp n1
-set inp-p 2
+set inp-p 3
 read input cell1 inp-p
 op add inp-p inp-p 1
 op div link NSrp 2048
