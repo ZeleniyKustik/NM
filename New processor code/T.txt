@@ -375,7 +375,7 @@ op add p-end outs 3
 read out cell2 NScp
 write out cell1 NScp
 op add NSrp NSrp 1
-jump -1 greaterThanEq NSrp p-end
+jump 389 greaterThanEq NSrp p-end
 jump 374 lessThan NSrp 2048
 write 1 cell2 0
 read suc cell2 0
@@ -387,3 +387,5 @@ set NScp 3
 jump 374 always x false
 write 500 cell1 0
 stop
+write 200 cell1 0
+end
