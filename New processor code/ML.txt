@@ -150,9 +150,9 @@ read suc cell55 0
 jump 164 equal suc 8
 write 8 cell55 0
 write 0 cell55 1
-write 0 cell55 3
+write 0 cell55 2
 read inputs cell18 5
-write inputs cell55 3
+write inputs cell55 2
 read suc cell55 0
 jump 164 equal suc 8
 set seson 0
