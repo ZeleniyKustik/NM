@@ -40,34 +40,33 @@ read on cell1 0
 jump 38 notEqual on 1
 read group cell1 1
 read command cell1 2
-jump 76 equal group 2
+jump 75 equal group 2
 jump 52 equal group 1
-jump 83 equal group 3
-jump 94 equal group 4
+jump 82 equal group 3
+jump 93 equal group 4
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Номер группы команд"
 printflush message1
 write 500 cell1 0
 stop
-jump 102 equal command 1
-jump 138 equal command 2
-jump 143 equal command 3
-jump 146 equal command 4
-jump 151 equal command 5
-jump 166 equal command 6
-jump 183 equal command 7
-jump 200 equal command 8
-jump 217 equal command 9
-jump 244 equal command 10
-jump 259 equal command 11
-jump 283 equal command 12
-jump 300 equal command 13
-jump 311 equal command 14
-jump -1 equal command 15
-jump -1 equal command 16
-jump -1 equal command 17
-jump -1 equal command 18
+jump 101 equal command 1
+jump 137 equal command 2
+jump 142 equal command 3
+jump 145 equal command 4
+jump 150 equal command 5
+jump 165 equal command 6
+jump 182 equal command 7
+jump 199 equal command 8
+jump 216 equal command 9
+jump 243 equal command 10
+jump 258 equal command 11
+jump 282 equal command 12
+jump 299 equal command 13
+jump 310 equal command 14
+jump 318 equal command 15
+jump 321 equal command 16
+jump 324 equal command 17
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Номер команды"
@@ -104,8 +103,8 @@ read rand cell1 3
 write rand cell3 3
 read layers cell1 4
 op floor floor layers b
-jump 108 lessThan floor 2
-jump 114 equal floor layers
+jump 107 lessThan floor 2
+jump 113 equal floor layers
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указано[]\n"
 print "Число слоёв"
@@ -118,22 +117,22 @@ op add p-end p layers
 read n cell1 p
 write n cell3 p
 op add p p 1
-jump 122 greaterThanEq p 2048
-jump 117 lessThan p p-end
+jump 121 greaterThanEq p 2048
+jump 116 lessThan p p-end
 write 1 cell3 1
 write 1 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 125 equal suc 1
-jump 136 equal suc 200
-jump 133 notEqual suc 300
+jump 124 equal suc 1
+jump 135 equal suc 200
+jump 132 notEqual suc 300
 print "Ошибка системы (T)[]\n"
 print "Ошбка генерации сети"
 printflush message1
 stop
 set p 5
 op sub p-end p-end 2043
-jump 117 always suc 300
+jump 116 always suc 300
 write 200 cell1 0
 end
 read minscore cell1 3
@@ -148,9 +147,9 @@ read speed cell1 3
 write 200 cell1 0
 end
 read data cell1 9
-jump 152 always write-all 0
+jump 151 always write-all 0
 read data cell1 3
-jump 160 greaterThan data 0
+jump 159 greaterThan data 0
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Желаемый сигнал слоя[]\n"
@@ -159,15 +158,15 @@ printflush message1
 write 500 cell1 0
 stop
 set needsignal data
-jump 164 notEqual write-all 0
+jump 163 notEqual write-all 0
 write 200 cell1 0
 end
 read data cell1 10
-jump 167 always write-all 0
+jump 166 always write-all 0
 read data cell1 3
-jump 170 lessThan data 1
+jump 169 lessThan data 1
 op floor floor data b
-jump 177 equal data floor
+jump 176 equal data floor
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указано[]\n"
 print "Ограничение по сессиям[]\n"
@@ -176,15 +175,15 @@ printflush message1
 write 500 cell1 0
 stop
 set ses-range data
-jump 181 notEqual write-all 0
+jump 180 notEqual write-all 0
 write 200 cell1 0
 end
 read data cell1 11
-jump 184 always data 1
+jump 183 always data 1
 read data cell1 3
 op floor floor data b
-jump 187 lessThan data 1
-jump 194 equal data floor
+jump 186 lessThan data 1
+jump 193 equal data floor
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указано[]\n"
 print "Количество проходов на слой[]\n"
@@ -193,14 +192,14 @@ printflush message1
 write 500 cell1 0
 stop
 set whilelayer data
-jump 198 notEqual write-all 0
+jump 197 notEqual write-all 0
 write 200 cell1 0
 end
 read data cell1 5
-jump 201 always data 1
+jump 200 always data 1
 read data cell1 3
-jump 210 equal data 1
-jump 210 equal data 0
+jump 209 equal data 1
+jump 209 equal data 0
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Режим корня[]\n"
@@ -209,16 +208,16 @@ printflush message1
 write 500 cell1 0
 stop
 set sqrt data
-jump 214 notEqual write-all 0
+jump 213 notEqual write-all 0
 write 200 cell1 0
 end
 read data-1 cell1 4
 read data-2 cell1 10
-jump 219 always data-1 1
+jump 218 always data-1 1
 read data-1 cell1 3
 read data-2 cell1 4
-jump 228 equal data-1 1
-jump 228 equal data-1 0
+jump 227 equal data-1 1
+jump 227 equal data-1 0
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Режим автоматического обучения[]\n"
@@ -227,8 +226,8 @@ printflush message1
 write 500 cell1 0
 stop
 op floor floor data-2 b
-jump 231 lessThan floor 1
-jump 239 equal floor data-2
+jump 230 lessThan floor 1
+jump 238 equal floor data-2
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указано[]\n"
 print "Количество сессий[]\n"
@@ -239,12 +238,12 @@ write 500 cell1 0
 stop
 set automl data-1
 set automlr data-2
-jump 244 notEqual write-all 0
+jump 243 notEqual write-all 0
 write 200 cell1 0
 end
 read data cell1 3
-jump 255 equal data 1
-jump 255 equal data 0
+jump 254 equal data 1
+jump 254 equal data 0
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Режим автоматического создания[]\n"
@@ -254,18 +253,18 @@ printflush message1
 write 500 cell1 0
 stop
 set autocses data
-jump 316 notEqual write-all 0
+jump 315 notEqual write-all 0
 write 200 cell1 0
 end
 read suc cell6 0
-jump 263 equal suc 2
+jump 262 equal suc 2
 write 0 cell1 3
-jump 264 always x false
+jump 263 always x false
 write 1 cell1 3
 read suc cell5 0
-jump 268 equal suc 8
+jump 267 equal suc 8
 write 0 cell1 4
-jump 269 always x false
+jump 268 always x false
 write 1 cell1 4
 write seson cell1 5
 write autocses cell1 6
@@ -282,9 +281,9 @@ write automlnum cell1 16
 write 200 cell1 0
 end
 read suc cell6 0
-jump 287 equal suc 2
+jump 286 equal suc 2
 write 0 cell1 3
-jump 288 always suc 2
+jump 287 always suc 2
 write 1 cell1 3
 read data cell6 1
 write data cell1 4
@@ -299,9 +298,9 @@ write data cell1 8
 write 200 cell1 0
 end
 read suc cell5 0
-jump 304 equal suc 8
+jump 303 equal suc 8
 write 0 cell1 3
-jump 305 always x false
+jump 304 always x false
 write 1 cell1 3
 read data cell5 1
 write data cell1 4
@@ -313,7 +312,17 @@ set write-all 1
 read minscore cell1 6
 read needscore cell1 7
 read speed cell1 8
-jump 149 always x false
+jump 148 always x false
 set write-all 0
 write 200 cell1 0
+end
+write 0 cell6 0
+write 200 cell1 0
+end
+write 0 cell5 0
+write 200 cell1 0
+end
+write 0 cell6 0
+write 0 cell5 0
+set start 0
 end
