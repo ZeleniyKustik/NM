@@ -58,7 +58,7 @@ jump 147 equal command 5
 jump 159 equal command 6
 jump 173 equal command 7
 jump 186 equal command 8
-jump -1 equal command 9
+jump 199 equal command 9
 jump -1 equal command 10
 jump -1 equal command 11
 jump -1 equal command 12
@@ -195,5 +195,31 @@ printflush message1
 write 500 cell1 0
 stop
 set sqrt data
+write 200 cell1 0
+end
+read data-1 cell1 3
+read data-2 cell1 4
+jump 210 equal data-1 1
+jump 210 equal data-1 0
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Режим автоматического обучения[]\n"
+print "Нужны числа 1 или 0"
+printflush message1
+write 500 cell1 0
+stop
+op floor floor data-2 b
+jump 213 lessThan floor 1
+jump 221 equal floor data-2
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указано[]\n"
+print "Количество сессий[]\n"
+print "для автоматического обучения[]\n"
+print "Нужны целые числа больше 0"
+printflush message1
+write 500 cell1 0
+stop
+set automl data-1
+set automlr data-2
 write 200 cell1 0
 end
