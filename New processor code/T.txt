@@ -1,4 +1,4 @@
-jump 39 equal start 1
+jump 38 equal start 1
 print "Инициализация NM: запущена (T)"
 print "[]\n[]\n"
 print "Made by: [#45ff64] Zeleniy_Kustik"
@@ -10,9 +10,8 @@ set ses-range 1
 set minscore 0
 set needscore 0
 set speed 0.01
-set minsignal 2
-set goodnuml 2
-set badnuml 2
+set needsignal 2
+set whilelayer 2
 set sqrt 1
 set automl 0
 set automlr 0
@@ -25,8 +24,8 @@ write 2 cell3 2
 write ses-range cell3 3
 write 1 cell3 0
 read suc cell3 0
-jump 26 equal suc 1
-jump 33 equal suc 200
+jump 25 equal suc 1
+jump 32 equal suc 200
 print "Инициализация NM: Ошибка (T)"
 printflush message1
 write 500 cell1 0
@@ -38,27 +37,27 @@ print "[]\n[]\n"
 print "https://github.com/Zeleniykustik"
 printflush message1
 read on cell1 0
-jump 39 notEqual on 1
+jump 38 notEqual on 1
 read group cell1 1
 read command cell1 2
-jump 77 equal group 2
-jump 53 equal group 1
-jump 84 equal group 3
-jump 95 equal group 4
+jump 76 equal group 2
+jump 52 equal group 1
+jump 83 equal group 3
+jump 94 equal group 4
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указан[]\n"
 print "Номер группы команд"
 printflush message1
 write 500 cell1 0
 stop
-jump 103 equal command 1
-jump -1 equal command 2
-jump -1 equal command 3
-jump -1 equal command 4
-jump -1 equal command 5
-jump -1 equal command 6
-jump -1 equal command 7
-jump -1 equal command 8
+jump 102 equal command 1
+jump 138 equal command 2
+jump 141 equal command 3
+jump 144 equal command 4
+jump 147 equal command 5
+jump 159 equal command 6
+jump 173 equal command 7
+jump 186 equal command 8
 jump -1 equal command 9
 jump -1 equal command 10
 jump -1 equal command 11
@@ -105,8 +104,8 @@ read rand cell1 3
 write rand cell3 3
 read layers cell1 4
 op floor floor layers b
-jump 109 lessThan floor 2
-jump 115 equal floor layers
+jump 108 lessThan floor 2
+jump 114 equal floor layers
 print "Ошибка ввода (T)[]\n"
 print "Неправильно указано[]\n"
 print "Число слоёв"
@@ -119,21 +118,82 @@ op add p-end p layers
 read n cell1 p
 write n cell3 p
 op add p p 1
-jump 123 greaterThanEq p 2048
-jump 118 lessThan p p-end
+jump 122 greaterThanEq p 2048
+jump 117 lessThan p p-end
 write 1 cell3 1
 write 1 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 126 equal suc 1
-jump 137 equal suc 200
-jump 134 notEqual suc 300
+jump 125 equal suc 1
+jump 136 equal suc 200
+jump 133 notEqual suc 300
 print "Ошибка системы (T)[]\n"
 print "Ошбка генерации сети"
 printflush message1
 stop
 set p 5
 op sub p-end p-end 2043
-jump 118 always suc 300
+jump 117 always suc 300
+write 200 cell1 0
+end
+read minscore cell1 3
+write 200 cell1 0
+end
+read needscore cell1 3
+write 200 cell1 0
+end
+read speed cell1 3
+write 200 cell1 0
+end
+read data cell1 3
+jump 156 greaterThan data 0
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Желаемый сигнал слоя[]\n"
+print "Нужны числа больше 0"
+printflush message1
+write 500 cell1 0
+stop
+set needsignal data
+write 200 cell1 0
+end
+read data cell1 3
+jump 163 lessThan data 1
+op floor floor data b
+jump 170 equal data floor
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указано[]\n"
+print "Ограничение по сессиям[]\n"
+print "Нужны целые числа больше 0"
+printflush message1
+write 500 cell1 0
+stop
+set ses-range data
+write 200 cell1 0
+end
+read data cell1 3
+jump 176 lessThan data 1
+jump 183 equal data floor
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указано[]\n"
+print "Количество проходов на слой[]\n"
+print "Нужны целые числа больше 0"
+printflush message1
+write 500 cell1 0
+stop
+set whilelayer data
+write 200 cell1 0
+end
+read data cell1 3
+jump 196 equal data 1
+jump 196 equal data 0
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Режим корня[]\n"
+print "Нужны числа 1 или 0"
+printflush message1
+write 500 cell1 0
+stop
+set sqrt data
 write 200 cell1 0
 end
