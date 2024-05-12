@@ -334,8 +334,18 @@ read input cell1 p-inp
 op add p-inp p-inp 1
 write input cell2 NScp
 op add NScp NScp 1
-jump -1 greaterThanEq p-inp p-end
-jump 332 lessThan p-inp 2048
+jump 338 greaterThanEq p-inp 2048
+jump 332 greaterThanEq p-inp p-end
+write 0 cell2 1
+write 1 cell2 0
+read suc cell2 0
+jump 340 equal suc 1
+jump 344 equal suc 300
+jump 348 equal suc 100
 op sub p-end p-end 2045
+set NScp 3
 set p-inp 3
 jump 332 always x false
+jump -1 notEqual autocses 1
+jump -1 equal seson 1
+write result cell1 0
