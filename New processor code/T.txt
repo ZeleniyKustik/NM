@@ -326,3 +326,16 @@ write 0 cell6 0
 write 0 cell5 0
 set start 0
 end
+read inputs cell6 5
+set NScp 3
+set p-inp 3
+op add p-end p-inp inputs
+read input cell1 p-inp
+op add p-inp p-inp 1
+write input cell2 NScp
+op add NScp NScp 1
+jump -1 greaterThanEq p-inp p-end
+jump 332 lessThan p-inp 2048
+op sub p-end p-end 2045
+set p-inp 3
+jump 332 always x false
