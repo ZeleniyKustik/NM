@@ -80,9 +80,9 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump 391 equal command 1
-jump 401 equal command 2
-jump 413 equal command 3
+jump 390 equal command 1
+jump 400 equal command 2
+jump 412 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
 print "Ошибка ввода (T)[]\n"
@@ -347,10 +347,10 @@ set NScp 3
 set p-inp 3
 jump 332 always x false
 jump 351 equal autocses 1
-jump 365 equal seson 1
+jump 364 equal seson 1
 jump 363 always autocses 1
 jump 353 equal seson 0
-jump 365 always seson 0
+jump 364 always seson 0
 write 2 cell3 1
 write 1 cell3 2
 write 1 cell3 0
@@ -360,13 +360,12 @@ jump 361 equal suc 200
 write 500 cell1 0
 stop
 set seson 1
-jump 365 always suc 200
+jump 364 always suc 200
 write 150 cell2 0
-write 0 cell2 0
 read suc cell2 0
-jump 365 equal suc 150
-jump 371 equal suc 200
-jump 371 equal suc 400
+jump 364 equal suc 150
+jump 370 equal suc 200
+jump 370 equal suc 400
 write 500 cell1 0
 stop
 set NScp 3
@@ -375,16 +374,16 @@ op add p-end outs 3
 read out cell2 NScp
 write out cell1 NScp
 op add NSrp NSrp 1
-jump 389 greaterThanEq NSrp p-end
-jump 374 lessThan NSrp 2048
+jump 388 greaterThanEq NSrp p-end
+jump 373 lessThan NSrp 2048
 write 1 cell2 0
 read suc cell2 0
-jump 380 equal suc 1
-jump 372 equal suc 200
-jump 387 notEqual suc 400
+jump 379 equal suc 1
+jump 371 equal suc 200
+jump 386 notEqual suc 400
 op sub p-end p-end 2045
 set NScp 3
-jump 374 always x false
+jump 373 always x false
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -393,8 +392,8 @@ write 2 cell3 1
 write 1 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 394 equal suc 1
-jump 399 equal suc 200
+jump 393 equal suc 1
+jump 398 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -405,8 +404,8 @@ write 2 cell3 2
 write score cell3 3
 write 1 cell3 0
 read suc cell3 0
-jump 406 equal suc 1
-jump 411 equal suc 200
+jump 405 equal suc 1
+jump 410 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -415,8 +414,8 @@ write 2 cell3 1
 write 3 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 416 equal suc 1
-jump 421 equal suc 200
+jump 415 equal suc 1
+jump 420 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
