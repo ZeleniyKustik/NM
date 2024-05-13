@@ -11,7 +11,7 @@ print errorpage
 printflush message1
 write 500 cell1 0
 stop
-set errorpahe 3
+set errorpage 3
 read layers cell10 3
 op floor floor layers b
 jump 6 lessThan floor 2
@@ -35,7 +35,7 @@ getlink cell link
 write input cell1 pv
 op add NSrp NSrp 1
 jump 49 greaterThanEq NSrp NSrp-end
-jump 26 lessThan Inp-p 2048
+jump 26 lessThan inp-p 2048
 write 300 cell1 0
 read suc cell1 0
 jump 39 equal suc 300
@@ -58,8 +58,8 @@ print "Ячейка: 0"
 printflush message1
 write 500 cell1 0
 stop
-set p 6
-set NSrp 3
+set p 5
+op add p p 1
 op div link p 2048
 op floor link link 2048
 op mul m link 2048
@@ -68,8 +68,13 @@ op add link link 9
 getlink cell link
 read n2 cell pv
 op add NSrp-end NSrp n2
+op mul all-w n1 n2
+op add p-out n1 n2
+op add p-out p-out 3
+set NSrp 3
+op add NSrp-end2 NSrp all-w
+set max 0
 set acum 0
-op add p p 1
 op div link p 2048
 op floor link link 2048
 op mul m link 2048
@@ -88,5 +93,16 @@ read input cell pv
 op add NSrp NSrp 1
 op mul out input w
 op add acum acum out
-jump 71 lessThan NSrp NSrp-end
+jump 77 lessThan NSrp NSrp-end
+op abs trash acum b
+op max max acum max
+op div link p-out 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv p-out m
+op add link link 1
+getlink cell link
+write acum cell pv
+jump 73 lessThan NSrp NSrp-end2
 write 200 cell1 0
+end
