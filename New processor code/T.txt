@@ -372,7 +372,7 @@ set NScp 3
 read outs cell5 4
 op add p-end outs 3
 read out cell2 NScp
-write out cell1 NScp
+write out cell4 NScp
 op add NSrp NSrp 1
 jump 388 greaterThanEq NSrp p-end
 jump 373 lessThan NSrp 2048
