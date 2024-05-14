@@ -67,14 +67,22 @@ op add link link 9
 getlink cell link
 read n2 cell pv
 op add p p 1
-op add NSrp-end NSrp n2
-op mul all-w n1 n2
-op add p-out n1 n2
-op add p-out p-out 3
-set NSrp 3
-op add NSrp-end2 NSrp all-w
+op mul n-all n1 n2
+op add ple p n-all
 set max 0
+set NSrp 3
+op add NSr-nl 3 n1
+set NSr-inp 3
 set acum 0
+op add pne p n1
+op div link NSr-inp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv NSr-inp m
+op add link link 1
+getlink cell link
+read signal cell pv
+op add NSr-inp NSr-inp 1
 op div link p 2048
 op floor link link 2048
 op mul m link 2048
@@ -83,27 +91,18 @@ op add link link 9
 getlink cell link
 read w cell pv
 op add p p 1
-op div link NSrp 2048
-op floor link link 2048
-op mul m link 2048
-op sub pv NSrp m
-op add link link 1
-getlink cell link
-read input cell pv
-op add NSrp NSrp 1
-op mul out input w
+op mul out signal w
 op add acum acum out
-stop
-jump 77 lessThan NSrp NSrp-end
+jump 77 lessThan p pne
 op abs trash acum b
-op max max acum max
-op div link p-out 2048
+op max max trash max
+op div link NSr-nl 2048
 op floor link link 2048
 op mul m link 2048
-op sub pv p-out m
+op sub pv NSr-nl m
 op add link link 1
 getlink cell link
 write acum cell pv
-jump 73 lessThan NSrp p-out
+op add NSr-nl NSr-nl 1
+jump 74 lessThan p ple
 write 200 cell1 0
-end
