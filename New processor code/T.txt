@@ -373,8 +373,8 @@ read out cell2 NSc-p
 op add NSc-p NSc-p 1
 write out cell4 pout
 op add pout pout 1
-jump 387 greaterThanEq pout p-end
-jump 371 lessThan pout 2048
+jump 387 greaterThanEq NSc-p p-end
+jump 371 lessThan NSc-p 2048
 write 1 cell2 0
 read suc cell2 0
 jump 378 equal suc 1
