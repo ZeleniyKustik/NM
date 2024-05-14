@@ -74,6 +74,7 @@ op add ple p n-all
 set NSrp 3
 op add NSr-nl 3 n1
 set Copy-p NSr-nl
+set s2 0
 set NSr-inp 3
 set acum 0
 op add pne p n1
@@ -95,7 +96,7 @@ read w cell pv
 op add p p 1
 op mul out signal w
 op add acum acum out
-jump 79 lessThan p pne
+jump 80 lessThan p pne
 op div link NSr-nl 2048
 op floor link link 2048
 op mul m link 2048
@@ -108,15 +109,17 @@ op sub b a 1
 op add c a 1
 op div signal b c
 write signal cell pv
+op pow trash signal 2
+op add s2 s2 trash
 op abs trash signal b
 op max max trash max
 op add NSr-nl NSr-nl 1
-jump 76 lessThan p ple
+jump 77 lessThan p ple
 op sub layers layers 1
 write s2 cell2 0
 write p-n2 cell2 1
 write n1 cell2 2
-jump 141 lessThan layers 2
+jump 144 lessThan layers 2
 set p-write 3
 op add Copy-e Copy-p n2
 op div link Copy-p 2048
@@ -136,7 +139,7 @@ getlink cell link
 op div signal signal max
 write signal cell pv
 op add p-write p-write 1
-jump 121 lessThan Copy-p Copy-e
+jump 124 lessThan Copy-p Copy-e
 set n1 n2
 jump 61 always Copy-p Copy-e
 op add start-p 3 n1
@@ -152,12 +155,12 @@ read signal cell pv
 op add start-p start-p 1
 write signal cell1 out-p
 op add out-p out-p 1
-jump 167 greaterThanEq start-p end-p
-jump 144 lessThan out-p 2048
+jump 170 greaterThanEq start-p end-p
+jump 147 lessThan out-p 2048
 write 400 cell1 0
 read suc cell1 0
-jump 157 equal suc 400
-jump 143 equal suc 1
+jump 160 equal suc 400
+jump 146 equal suc 1
 print "Ошибка системы (NS)[]\n"
 print "Не правильно ответили на запрос"
 print "[]\nNSMc: ожидалось 1[]\n"
