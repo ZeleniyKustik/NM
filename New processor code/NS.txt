@@ -32,7 +32,7 @@ op mul m link 2048
 op sub pv NSrp m
 op add link link 1
 getlink cell link
-write input cell1 pv
+write input cell pv
 op add NSrp NSrp 1
 jump 49 greaterThanEq NSrp NSrp-end
 jump 26 lessThan inp-p 2048
@@ -58,8 +58,7 @@ print "Ячейка: 0"
 printflush message1
 write 500 cell1 0
 stop
-set p 5
-op add p p 1
+set p 6
 op div link p 2048
 op floor link link 2048
 op mul m link 2048
@@ -67,6 +66,7 @@ op sub pv p m
 op add link link 9
 getlink cell link
 read n2 cell pv
+op add p p 1
 op add NSrp-end NSrp n2
 op mul all-w n1 n2
 op add p-out n1 n2
@@ -86,13 +86,14 @@ op add p p 1
 op div link NSrp 2048
 op floor link link 2048
 op mul m link 2048
-op sub pv p m
+op sub pv NSrp m
 op add link link 1
 getlink cell link
 read input cell pv
 op add NSrp NSrp 1
 op mul out input w
 op add acum acum out
+stop
 jump 77 lessThan NSrp NSrp-end
 op abs trash acum b
 op max max acum max
@@ -103,6 +104,6 @@ op sub pv p-out m
 op add link link 1
 getlink cell link
 write acum cell pv
-jump 73 lessThan NSrp NSrp-end2
+jump 73 lessThan NSrp p-out
 write 200 cell1 0
 end
