@@ -330,8 +330,8 @@ read inputs cell6 5
 set p-inp 3
 op add p-end p-inp inputs
 read input cell1 p-inp
-op add p-inp p-inp 1
 write input cell2 p-inp
+op add p-inp p-inp 1
 jump 336 greaterThanEq p-inp 2048
 jump 331 lessThan p-inp p-end
 write 0 cell2 1
