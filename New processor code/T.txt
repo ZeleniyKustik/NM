@@ -80,9 +80,9 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump 387 equal command 1
-jump 397 equal command 2
-jump 409 equal command 3
+jump 389 equal command 1
+jump 399 equal command 2
+jump 411 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
 print "Ошибка ввода (T)[]\n"
@@ -366,21 +366,23 @@ jump 367 equal suc 400
 write 500 cell1 0
 stop
 set pout 0
+set NSc-p 3
 read outs cell5 4
 op add p-end 3 outs
-read out cell2 pout
+read out cell2 NSc-p
+op add NSc-p NSc-p 1
 write out cell4 pout
 op add pout pout 1
-jump 385 greaterThanEq pout p-end
-jump 370 lessThan pout 2048
+jump 387 greaterThanEq pout p-end
+jump 371 lessThan pout 2048
 write 1 cell2 0
 read suc cell2 0
-jump 376 equal suc 1
-jump 368 equal suc 200
-jump 383 notEqual suc 400
+jump 378 equal suc 1
+jump 369 equal suc 200
+jump 385 notEqual suc 400
 op sub p-end p-end 2045
-set NScp 3
-jump 370 always x false
+set NSc-p 3
+jump 371 always x false
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -389,8 +391,8 @@ write 2 cell3 1
 write 1 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 390 equal suc 1
-jump 395 equal suc 200
+jump 392 equal suc 1
+jump 397 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -401,8 +403,8 @@ write 2 cell3 2
 write score cell3 3
 write 1 cell3 0
 read suc cell3 0
-jump 402 equal suc 1
-jump 407 equal suc 200
+jump 404 equal suc 1
+jump 409 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -411,8 +413,8 @@ write 2 cell3 1
 write 3 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 412 equal suc 1
-jump 417 equal suc 200
+jump 414 equal suc 1
+jump 419 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
