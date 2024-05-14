@@ -135,13 +135,12 @@ write lons cell3 pramo
 op add pramo pramo 1
 jump 104 lessThan pramo pramos
 write s2 cell3 0
-op sqrt s2 s2 1
 op add pramo pramo 1
-jump 145 equal mode 0
+jump 144 equal mode 0
 write 2 cell1 7
 read mode cell1 7
-jump 141 equal mode 2
-jump 145 equal mode 1
+jump 140 equal mode 2
+jump 144 equal mode 1
 jump 81 equal mode 3
 set pram 3
 op add prams pram n2
@@ -152,7 +151,7 @@ op add pramol pramol 1
 op mul signal signal s2
 write signal cell3 pram
 op add pram pram 1
-jump 149 lessThanEq pram prams
+jump 148 lessThanEq pram prams
 op sub layers layers 1
 set n1 n2
 jump 82 greaterThan layers 1
@@ -163,10 +162,10 @@ op add pram pram 1
 write out cell1 pout
 op add pout pout 1
 op sub n1 n1 1
-jump 168 greaterThan pout 2047
-jump 160 greaterThan n1 0
-jump 171 always x false
+jump 167 greaterThan pout 2047
+jump 159 greaterThan n1 0
+jump 170 always x false
 write 400 cell1 6
 set pout 8
-jump 160 greaterThan n1 0
+jump 159 greaterThan n1 0
 write 200 cell1 6
