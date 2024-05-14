@@ -72,6 +72,7 @@ op add ple p n-all
 set max 0
 set NSrp 3
 op add NSr-nl 3 n1
+set Copy-p NSr-nl
 set NSr-inp 3
 set acum 0
 op add pne p n1
@@ -93,7 +94,7 @@ read w cell pv
 op add p p 1
 op mul out signal w
 op add acum acum out
-jump 77 lessThan p pne
+jump 78 lessThan p pne
 op abs trash acum b
 op max max trash max
 op div link NSr-nl 2048
@@ -104,5 +105,28 @@ op add link link 1
 getlink cell link
 write acum cell pv
 op add NSr-nl NSr-nl 1
-jump 74 lessThan p ple
+jump 75 lessThan p ple
+op sub layers layers 1
+jump 131 lessThan layers 2
+set p-write 3
+op add Copy-e Copy-p n2
+op div link Copy-p 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv Copy-p m
+op add link link 1
+getlink cell link
+read signal cell pv
+op add Copy-p Copy-p 1
+op div link p-write 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv p-write m
+op add link link 1
+getlink cell link
+write signal cell pv
+op add p-write p-write 1
+jump 112 lessThan Copy-p Copy-e
+set n1 n2
+jump 61 always Copy-p Copy-e
 write 200 cell1 0
