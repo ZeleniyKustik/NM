@@ -96,6 +96,8 @@ op add p p 1
 op mul out signal w
 op add acum acum out
 jump 79 lessThan p pne
+op abs trash signal b
+op max max trash max
 op div link NSr-nl 2048
 op floor link link 2048
 op mul m link 2048
@@ -103,20 +105,18 @@ op sub pv NSr-nl m
 op add link link 1
 getlink cell link
 op mul a 2 acum
-op pow a 2.7182818284 a
+op pow a 2.71828 a
 op sub b a 1
 op add c a 1
 op div signal b c
 write signal cell pv
 op add NSr-nl NSr-nl 1
-op abs trash signal b
-op max max trash max
 jump 76 lessThan p ple
 op sub layers layers 1
 write s2 cell2 0
-write pn2 cell2 1
+write p-n2 cell2 1
 write n1 cell2 2
-jump 142 lessThan layers 2
+jump 141 lessThan layers 2
 set p-write 3
 op add Copy-e Copy-p n2
 op div link Copy-p 2048
@@ -139,7 +139,7 @@ op add p-write p-write 1
 jump 121 lessThan Copy-p Copy-e
 set n1 n2
 jump 61 always Copy-p Copy-e
-set start-p 3
+op add start-p 3 n1
 op add end-p start-p n2
 set out-p 3
 op div link start-p 2048
@@ -152,7 +152,7 @@ read signal cell pv
 op add start-p start-p 1
 write signal cell1 out-p
 op add out-p out-p 1
-jump 167 lessThan start-p end-p
+jump 167 greaterThanEq start-p end-p
 jump 144 lessThan out-p 2048
 write 400 cell1 0
 read suc cell1 0
