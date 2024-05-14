@@ -418,3 +418,4 @@ jump 419 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
+end
