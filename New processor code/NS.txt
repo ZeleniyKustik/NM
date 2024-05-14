@@ -96,8 +96,6 @@ op add p p 1
 op mul out signal w
 op add acum acum out
 jump 79 lessThan p pne
-op abs trash signal b
-op max max trash max
 op div link NSr-nl 2048
 op floor link link 2048
 op mul m link 2048
@@ -110,6 +108,8 @@ op sub b a 1
 op add c a 1
 op div signal b c
 write signal cell pv
+op abs trash signal b
+op max max trash max
 op add NSr-nl NSr-nl 1
 jump 76 lessThan p ple
 op sub layers layers 1
