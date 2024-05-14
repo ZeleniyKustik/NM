@@ -129,7 +129,7 @@ op pow e2 2.71828 lons2
 op sub em e2 1
 op add ep e2 1
 op div lons em ep
-op pow s2l lons 2
+op abs s2l lons ep
 op max s2 s2 s2l
 write lons cell3 pramo
 op add pramo pramo 1
