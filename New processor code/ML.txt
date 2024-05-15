@@ -274,7 +274,7 @@ op mul m link 2048
 op sub pv MLrp m
 op add link link 2
 getlink cell link
-read 0 cell pv
+write 0 cell pv
 op add MLrp MLrp 1
 jump 270 lessThan MLrp inputs_NN
 write 200 cell1 0
@@ -316,9 +316,9 @@ read sqrt cell1 8
 jump 318 equal sqrt 1
 jump 318 equal sqrt 0
 jump 300 always squrt 0
-read n1 cell18 5
+read NN-inputs cell18 5
 read DS-inputs cell55 2
-jump 331 equal n1 DS-inputs
+jump 331 equal NN-inputs DS-inputs
 print "Ошибка системы (ML)[]\n"
 print "Количество нейронов в входном[]\n"
 print "слое не совподает с количеством"
@@ -329,7 +329,7 @@ print "[]\n не совместимы"
 printflush message1
 write 500 cell1 0
 stop
-op floor floor n1 b
+op floor floor NN-inputs b
 set errorpage 5
 jump 335 lessThan floor 2
 jump 342 equal floor n1
@@ -345,7 +345,7 @@ read suc cell18 0
 jump 335 notEqual suc 2
 set errorpage 3
 read layers cell18 3
-op floor floor NN-inputs b
+op floor floor layers b
 jump 335 lessThan layers 2
 jump 335 notEqual floor layers
 set errorpage 6
@@ -365,4 +365,42 @@ printflush message1
 write 500 cell1 0
 stop
 set mode 1
-set dsn 0
+set dsn 1
+op add k NN-inputs 1
+op sub ses-b dsn 1
+op mul DSp sesnum k
+op add DSp DSp 3
+op div link DSp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv DSp m
+op add link link 54
+getlink cell link
+read score cell pv
+jump 382 equal mode 1
+jump 387 equal mode 2
+stop
+jump 387 greaterThanEq score minscore
+op add dsn dsn 1
+jump 369 lessThanEq dsn sesds
+set mode 2
+jump 367 always x false
+set NSr-p 3
+op add p-end DSp NN-inputs
+op div link DSp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv DSp m
+op add link link 54
+getlink cell link
+read input cell pv
+op add DSp DSp 1
+op div link NSr-p 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv NSr-p m
+op add link link 9
+getlink cell link
+write input cell1 pv
+op add NSr-p NSr-p 1
+jump 389 lessThan DSp p-end
