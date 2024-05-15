@@ -27,8 +27,8 @@ write 500 cell1 0
 stop
 jump 148 equal command 1
 jump 207 equal command 2
-jump 271 equal command 3
-jump 284 equal command 4
+jump 281 equal command 3
+jump 294 equal command 4
 jump -1 equal command 5
 print "Ошибка системы (ML)[]\n"
 print "Неправельно указан[]\n"
@@ -266,8 +266,18 @@ jump 266 always x false
 op add sessions sessions 1
 write sessions cell55 1
 op add sesnum sesnum 1
-write 200 cell1 0
 set kloop 0
+set MLrp 0
+op div link MLrp 2048
+op floor link link 2048
+op mul m link 2048
+op sub pv MLrp m
+op add link link 2
+getlink cell link
+read 0 cell pv
+op add MLrp MLrp 1
+jump 270 lessThan MLrp inputs_NN
+write 200 cell1 0
 end
 set MLrp 0
 op div link MLrp 2048
@@ -278,7 +288,7 @@ op add link link 2
 getlink cell link
 read 0 cell pv
 op add MLrp MLrp 1
-jump 272 lessThan MLrp 16384
+jump 282 lessThan MLrp 16384
 set kloop 0
 write 200 cell1 0
 end
@@ -287,7 +297,7 @@ read needscore cell1 4
 read speed cell1 5
 read needsignal cell1 6
 set errorpage 6
-jump 298 greaterThanEq needsignal 0
+jump 308 greaterThanEq needsignal 0
 print "Ошибка ввода (ML)[]\n"
 print "Неправельно указаны[]\n"
 print "Параметры для запуска обучения[]\n"
@@ -298,17 +308,17 @@ write 500 cell1 0
 stop
 read loopls cell1 7
 set errorpage 7
-jump 290 lessThan loopls 1
+jump 300 lessThan loopls 1
 op floor floor loopls b
-jump 290 notEqual floor loopls
+jump 300 notEqual floor loopls
 set errorpage 8
 read sqrt cell1 8
-jump 308 equal sqrt 1
-jump 308 equal sqrt 0
-jump 290 always squrt 0
+jump 318 equal sqrt 1
+jump 318 equal sqrt 0
+jump 300 always squrt 0
 read n1 cell18 5
 read DS-inputs cell55 2
-jump 321 equal n1 DS-inputs
+jump 331 equal n1 DS-inputs
 print "Ошибка системы (ML)[]\n"
 print "Количество нейронов в входном[]\n"
 print "слое не совподает с количеством"
@@ -321,8 +331,8 @@ write 500 cell1 0
 stop
 op floor floor n1 b
 set errorpage 5
-jump 325 lessThan floor 2
-jump 332 equal floor n1
+jump 335 lessThan floor 2
+jump 342 equal floor n1
 print "Ошибка системы (ML)[]\n"
 print "Нейросеть сломана[]\n"
 print "В ячейке: "
@@ -332,13 +342,13 @@ write 500 cell1 0
 stop
 set errorpage 0
 read suc cell18 0
-jump 325 notEqual suc 2
+jump 335 notEqual suc 2
 set errorpage 3
 read layers cell18 3
 op floor floor NN-inputs b
-jump 325 lessThan layers 2
-jump 325 notEqual floor layers
+jump 335 lessThan layers 2
+jump 335 notEqual floor layers
 set errorpage 6
 read n2 cell18 6
-jump 325 lessThan n2 0
-jump 325 notEqual floor n2
+jump 335 lessThan n2 0
+jump 335 notEqual floor n2
