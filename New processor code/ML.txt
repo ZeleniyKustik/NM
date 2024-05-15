@@ -352,3 +352,17 @@ set errorpage 6
 read n2 cell18 6
 jump 335 lessThan n2 0
 jump 335 notEqual floor n2
+set errorpage 1
+read sesds cell55 1
+op floor floor sesds b
+jump 359 lessThan sesds 0
+jump 366 equal sesds floor
+print "Ошибка системы (ML)[]\n"
+print "Датасет сломан[]\n"
+print "В ячейке: "
+print sesds
+printflush message1
+write 500 cell1 0
+stop
+set mode 1
+set dsn 0
