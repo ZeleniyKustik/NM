@@ -81,9 +81,9 @@ print "Номер команды"
 printflush message1
 write 500 cell1 0
 stop
-jump 390 equal command 1
-jump 400 equal command 2
-jump 417 equal command 3
+jump 391 equal command 1
+jump 401 equal command 2
+jump 418 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
 print "Ошибка ввода (T)[]\n"
@@ -271,7 +271,7 @@ write seson cell1 5
 write autocses cell1 6
 write automl cell1 7
 write sqrt cell1 8
-write mimscore cell1 9
+write minscore cell1 9
 write needscore cell1 10
 write speed cell1 11
 write needsignal cell1 12
@@ -362,8 +362,9 @@ jump 362 always suc 200
 write 150 cell2 0
 read suc cell2 0
 jump 362 equal suc 150
-jump 368 equal suc 200
-jump 368 equal suc 400
+jump 369 equal suc 200
+jump 369 equal suc 400
+jump 362 equal suc 100
 write 500 cell1 0
 stop
 read outs cell5 4
@@ -374,16 +375,16 @@ read out cell2 NSc-p
 op add NSc-p NSc-p 1
 write out cell4 pout
 op add pout pout 1
-jump 388 greaterThanEq NSc-p p-end
-jump 372 lessThan NSc-p 2048
+jump 389 greaterThanEq NSc-p p-end
+jump 373 lessThan NSc-p 2048
 write 1 cell2 0
 read suc cell2 0
-jump 379 equal suc 1
-jump 368 equal suc 200
-jump 386 notEqual suc 400
+jump 380 equal suc 1
+jump 369 equal suc 200
+jump 387 notEqual suc 400
 op sub p-end p-end 2045
 set NSc-p 3
-jump 370 always x false
+jump 371 always x false
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -392,8 +393,8 @@ write 2 cell3 1
 write 1 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 393 equal suc 1
-jump 398 equal suc 200
+jump 394 equal suc 1
+jump 399 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
@@ -404,39 +405,39 @@ write 2 cell3 2
 write score cell3 3
 write 1 cell3 0
 read suc cell3 0
-jump 405 equal suc 1
-jump 410 equal suc 200
+jump 406 equal suc 1
+jump 411 equal suc 200
 write 500 cell1 0
 stop
-jump 415 notEqual automl 1
-op add automlnum automlnum 1
-jump 415 greaterThan automlnum 0
+jump 416 notEqual automl 1
+op sub automlnum automlnum 1
+jump 416 greaterThan automlnum 0
 set automlnum automlr
-jump 427 always automlnum automlr
+jump 428 always automlnum automlr
 write 200 cell1 0
 end
 write 2 cell3 1
 write 3 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 420 equal suc 1
-jump 425 equal suc 200
+jump 421 equal suc 1
+jump 426 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
 end
-write 2 cell1 1
-write 4 cell1 2
-write minscore cell1 3
-write needscore cell1 4
-write speed cell1 5
-write needsignal cell1 6
-write whilelayer cell1 7
-write sqrt cell1 8
-write 1 cell1 0
+write 2 cell3 1
+write 4 cell3 2
+write minscore cell3 3
+write needscore cell3 4
+write speed cell3 5
+write needsignal cell3 6
+write whilelayer cell3 7
+write sqrt cell3 8
+write 1 cell3 0
 read suc cell1 0
-jump 436 equal suc 1
-jump 441 equal suc 200
+jump 437 equal suc 1
+jump 442 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
