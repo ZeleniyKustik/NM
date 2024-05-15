@@ -404,3 +404,25 @@ getlink cell link
 write input cell1 pv
 op add NSr-p NSr-p 1
 jump 389 lessThan DSp p-end
+write 1 cell2 1
+write 1 cell2 0
+read suc cell2 0
+jump 408 equal suc 1
+set errorpage 0
+jump 419 equal suc 100
+print "Ошибка системы (ML)[]\n"
+print "Не правильно ответили на запрос"
+print "Ячейка: "
+print errorpage
+printflush message1
+write 500 cell1 0
+stop
+write 150 cell2 0
+read suc cell2 1
+jump 420 equal suc 1
+jump 425 equal suc 2
+set errorpage 1
+jump 412 always x false
+read s2 cell10 0
+read p cell10 1
+read n1 cell10 2
