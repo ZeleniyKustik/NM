@@ -83,7 +83,7 @@ write 500 cell1 0
 stop
 jump 390 equal command 1
 jump 400 equal command 2
-jump 412 equal command 3
+jump 417 equal command 3
 jump -1 equal command 4
 jump -1 equal command 5
 print "Ошибка ввода (T)[]\n"
@@ -408,15 +408,35 @@ jump 405 equal suc 1
 jump 410 equal suc 200
 write 500 cell1 0
 stop
+jump 415 notEqual automl 1
+op add automlnum automlnum 1
+jump 415 greaterThan automlnum 0
+set automlnum automlr
+jump 427 always automlnum automlr
 write 200 cell1 0
 end
 write 2 cell3 1
 write 3 cell3 2
 write 1 cell3 0
 read suc cell3 0
-jump 415 equal suc 1
-jump 420 equal suc 200
+jump 420 equal suc 1
+jump 425 equal suc 200
 write 500 cell1 0
 stop
 write 200 cell1 0
 end
+write 2 cell1 1
+write 4 cell1 2
+write minscore cell1 3
+write needscore cell1 4
+write speed cell1 5
+write needsignal cell1 6
+write whilelayer cell1 7
+write sqrt cell1 8
+write 1 cell1 0
+read suc cell1 0
+jump 436 equal suc 1
+jump 441 equal suc 200
+write 500 cell1 0
+stop
+write 200 cell1 0
