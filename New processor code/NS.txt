@@ -72,7 +72,6 @@ op add p p 1
 set max 0
 op add NSr-nl 3 n1
 op add ple NSr-nl n2
-op add ple ple 0
 set Copy-p NSr-nl
 set s2 0
 set NSr-inp 3
@@ -96,7 +95,7 @@ read w cell pv
 op add p p 1
 op mul out signal w
 op add acum acum out
-jump 80 lessThan NSr-inp pne
+jump 79 lessThan NSr-inp pne
 op div link NSr-nl 2048
 op floor link link 2048
 op mul m link 2048
@@ -114,16 +113,16 @@ op add s2 s2 trash
 op abs trash signal b
 op max max trash max
 op add NSr-nl NSr-nl 1
-jump 77 lessThan NSr-nl ple
-jump 134 notEqual ml 1
+jump 76 lessThan NSr-nl ple
+jump 133 notEqual ml 1
 write s2 cell2 0
 write p-n2 cell2 1
 write n1 cell2 2
 write 2 cell1 1
 read suc cell1 2
-jump 122 equal suc 2
-jump 132 equal suc 3
-jump 134 equal suc 1
+jump 121 equal suc 2
+jump 131 equal suc 3
+jump 133 equal suc 1
 print "Ошибка системы (NS)[]\n"
 print "Не правильно ответили на запрос"
 print "[]\nNSMc: ожидалось 1 или 3[]\n"
@@ -133,7 +132,7 @@ stop
 set p p-n2
 jump 70 always suc 3
 op sub layers layers 1
-jump 158 lessThan layers 2
+jump 157 lessThan layers 2
 set p-write 3
 op add Copy-e Copy-p n2
 op div link Copy-p 2048
@@ -153,10 +152,10 @@ getlink cell link
 op div signal signal max
 write signal cell pv
 op add p-write p-write 1
-jump 138 lessThan Copy-p Copy-e
+jump 137 lessThan Copy-p Copy-e
 set n1 n2
 jump 62 always Copy-p Copy-e
-jump 185 equal ml 1
+jump 184 equal ml 1
 op add start-p 3 n1
 op add end-p start-p n2
 set out-p 3
@@ -170,12 +169,12 @@ read signal cell pv
 op add start-p start-p 1
 write signal cell1 out-p
 op add out-p out-p 1
-jump 185 greaterThanEq start-p end-p
-jump 162 lessThan out-p 2048
+jump 184 greaterThanEq start-p end-p
+jump 161 lessThan out-p 2048
 write 400 cell1 0
 read suc cell1 0
-jump 175 equal suc 400
-jump 161 equal suc 1
+jump 174 equal suc 400
+jump 160 equal suc 1
 print "Ошибка системы (NS)[]\n"
 print "Не правильно ответили на запрос"
 print "[]\nNSMc: ожидалось 1[]\n"
