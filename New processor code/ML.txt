@@ -315,7 +315,7 @@ set errorpage 8
 read sqrt cell1 8
 jump 318 equal sqrt 1
 jump 318 equal sqrt 0
-jump 300 always squrt 0
+jump 300 always x 0
 read NN-inputs cell18 5
 read DS-inputs cell55 2
 jump 331 equal NN-inputs DS-inputs
@@ -331,8 +331,8 @@ write 500 cell1 0
 stop
 op floor floor NN-inputs b
 set errorpage 5
-jump 335 lessThan floor 2
-jump 342 equal floor n1
+jump 335 lessThan floor 1
+jump 342 equal floor NN-inputs
 print "Ошибка системы (ML)[]\n"
 print "Нейросеть сломана[]\n"
 print "В ячейке: "
@@ -385,7 +385,7 @@ op add dsn dsn 1
 jump 369 lessThanEq dsn sesds
 set mode 2
 jump 367 always x false
-jump 486 greaterThanEq dsn sesds
+jump 487 greaterThanEq dsn sesds
 set NSr-p 3
 op add p-end DSp NN-inputs
 op div link DSp 2048
@@ -413,7 +413,7 @@ set errorpage 0
 jump 420 equal suc 100
 print "Ошибка системы (ML)[]\n"
 print "Не правильно ответили на запрос"
-print "Ячейка: "
+print "[]\nЯчейка: "
 print errorpage
 printflush message1
 write 500 cell1 0
@@ -423,11 +423,12 @@ set layer-i layers
 set iter-layer 0
 read suc cell2 1
 jump 423 equal suc 1
-jump 428 equal suc 2
+jump 423 equal suc 3
+jump 429 equal suc 2
 set errorpage 1
 jump 413 always x false
 read s2 cell10 0
-jump 431 notEqual sqrt 1
+jump 432 notEqual sqrt 1
 op sqrt s2 s2 b
 read p cell10 1
 read n1 cell10 2
@@ -440,7 +441,7 @@ getlink cell link
 read n2 cell pv
 op add p p 1
 set iter-n1 0
-set ple n2
+set p-le n2
 set NSr-inp 3
 op add p-ne 3 n1
 op div link p 2048
@@ -458,9 +459,9 @@ op add link link 9
 getlink cell link
 read input cell pv
 op add NSr-inp NSr-inp 1
-jump 463 equal mode 1
+jump 464 equal mode 1
 op sub error 0 s2
-jump 464 always mode 1
+jump 465 always mode 1
 op sub error needsignal s2
 op mul trash error input
 op mul dw trash speed
@@ -473,10 +474,10 @@ op add link link 17
 getlink cell link
 write w cell pv
 op add p p 1
-jump 445 lessThan NSr-inp p-ne
+jump 446 lessThan NSr-inp p-ne
 op add iter-n1 iter-n1 1
-jump 443 lessThan iter-n1 p-le
-jump 484 lessThan iter-layer loopls
+jump 444 lessThan iter-n1 p-le
+jump 485 lessThan iter-layer loopls
 write 1 cell2 1
 op sub iter-layer iter-layer 1
 jump 422 greaterThanEq iter-layer 2
