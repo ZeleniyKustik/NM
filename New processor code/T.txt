@@ -177,7 +177,7 @@ write 500 cell1 0
 stop
 set ses-range data
 write 1 cell3 1
-write 3 cell3 2
+write 2 cell3 2
 write ses-range cell3 3
 write 1 cell3 0
 read suc cell3 0
