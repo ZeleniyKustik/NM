@@ -288,7 +288,7 @@ op mul m link 2048
 op sub pv MLrp m
 op add link link 2
 getlink cell link
-read 0 cell pv
+write 0 cell pv
 op add MLrp MLrp 1
 jump 284 lessThan MLrp 16384
 set kloop 0
