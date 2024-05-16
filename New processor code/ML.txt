@@ -27,8 +27,8 @@ write 500 cell1 0
 stop
 jump 148 equal command 1
 jump 207 equal command 2
-jump 281 equal command 3
-jump 294 equal command 4
+jump 280 equal command 3
+jump 293 equal command 4
 jump -1 equal command 5
 print "Ошибка системы (ML)[]\n"
 print "Неправельно указан[]\n"
@@ -231,9 +231,8 @@ jump 231 lessThan sesnum sesrange
 set sesnum 1
 set inputs inputs_DS
 op add k inputs 1
-op sub ses-b sesnum 1
 op mul DSp sesnum k
-op add DSp DSp 3
+op add DSp DSp 1
 op div link DSp 2048
 op floor link link 2048
 op mul m link 2048
@@ -260,9 +259,9 @@ op add link link 54
 getlink cell link
 write input cell pv
 op add DSp DSp 1
-jump 245 lessThan MLrp inputs
-jump 265 lessThan sessions sesrange
-jump 266 always x false
+jump 244 lessThan MLrp inputs
+jump 264 lessThan sessions sesrange
+jump 265 always x false
 op add sessions sessions 1
 write sessions cell55 1
 op add sesnum sesnum 1
@@ -276,7 +275,7 @@ op add link link 2
 getlink cell link
 write 0 cell pv
 op add MLrp MLrp 1
-jump 270 lessThan MLrp inputs_NN
+jump 269 lessThan MLrp inputs_NN
 write 200 cell1 0
 end
 set MLrp 0
@@ -288,7 +287,7 @@ op add link link 2
 getlink cell link
 read 0 cell pv
 op add MLrp MLrp 1
-jump 282 lessThan MLrp 16384
+jump 281 lessThan MLrp 16384
 set kloop 0
 write 200 cell1 0
 end
@@ -297,7 +296,7 @@ read needscore cell1 4
 read speed cell1 5
 read needsignal cell1 6
 set errorpage 6
-jump 308 greaterThanEq needsignal 0
+jump 307 greaterThanEq needsignal 0
 print "Ошибка ввода (ML)[]\n"
 print "Неправельно указаны[]\n"
 print "Параметры для запуска обучения[]\n"
@@ -308,17 +307,17 @@ write 500 cell1 0
 stop
 read loopls cell1 7
 set errorpage 7
-jump 300 lessThan loopls 1
+jump 299 lessThan loopls 1
 op floor floor loopls b
-jump 300 notEqual floor loopls
+jump 299 notEqual floor loopls
 set errorpage 8
 read sqrt cell1 8
-jump 318 equal sqrt 1
-jump 318 equal sqrt 0
-jump 300 always x 0
+jump 317 equal sqrt 1
+jump 317 equal sqrt 0
+jump 299 always x 0
 read NN-inputs cell18 5
 read DS-inputs cell55 2
-jump 331 equal NN-inputs DS-inputs
+jump 330 equal NN-inputs DS-inputs
 print "Ошибка системы (ML)[]\n"
 print "Количество нейронов в входном[]\n"
 print "слое не совподает с количеством"
@@ -331,8 +330,8 @@ write 500 cell1 0
 stop
 op floor floor NN-inputs b
 set errorpage 5
-jump 335 lessThan floor 1
-jump 342 equal floor NN-inputs
+jump 334 lessThan floor 1
+jump 341 equal floor NN-inputs
 print "Ошибка системы (ML)[]\n"
 print "Нейросеть сломана[]\n"
 print "В ячейке: "
@@ -342,21 +341,21 @@ write 500 cell1 0
 stop
 set errorpage 0
 read suc cell18 0
-jump 335 notEqual suc 2
+jump 334 notEqual suc 2
 set errorpage 3
 read layers cell18 3
 op floor floor layers b
-jump 335 lessThan layers 2
-jump 335 notEqual floor layers
+jump 334 lessThan layers 2
+jump 334 notEqual floor layers
 set errorpage 6
 read n2 cell18 6
-jump 335 lessThan n2 0
-jump 335 notEqual floor n2
+jump 334 lessThan n2 0
+jump 334 notEqual floor n2
 set errorpage 1
 read sesds cell55 1
 op floor floor sesds b
-jump 359 lessThan sesds 0
-jump 366 equal sesds floor
+jump 358 lessThan sesds 0
+jump 365 equal sesds floor
 print "Ошибка системы (ML)[]\n"
 print "Датасет сломан[]\n"
 print "В ячейке: "
@@ -367,9 +366,8 @@ stop
 set mode 1
 set dsn 1
 op add k NN-inputs 1
-op sub ses-b dsn 1
-op mul DSp sesnum k
-op add DSp DSp 3
+op mul DSp dsn k
+op add DSp DSp 1
 op div link DSp 2048
 op floor link link 2048
 op mul m link 2048
@@ -377,15 +375,19 @@ op sub pv DSp m
 op add link link 54
 getlink cell link
 read score cell pv
-jump 382 equal mode 1
-jump 387 equal mode 2
+jump 380 equal mode 1
+jump 386 equal mode 2
 stop
-jump 388 greaterThanEq score minscore
+jump 384 greaterThan dsn sesds
 op add dsn dsn 1
-jump 369 lessThanEq dsn sesds
+jump 389 greaterThanEq score minscore
+jump 367 always score minscore
 set mode 2
-jump 367 always x false
-jump 487 greaterThanEq dsn sesds
+jump 366 always x false
+jump 489 greaterThanEq dsn sesds
+op add dsn dsn 1
+jump 367 lessThan score minscore
+set layer-i layers
 set NSr-p 3
 op add p-end DSp NN-inputs
 op div link DSp 2048
@@ -404,13 +406,13 @@ op add link link 9
 getlink cell link
 write input cell1 pv
 op add NSr-p NSr-p 1
-jump 390 lessThan DSp p-end
+jump 392 lessThan DSp p-end
 write 1 cell2 1
 write 1 cell2 0
 read suc cell2 0
-jump 409 equal suc 1
+jump 411 equal suc 1
 set errorpage 0
-jump 420 equal suc 100
+jump 422 equal suc 100
 print "Ошибка системы (ML)[]\n"
 print "Не правильно ответили на запрос"
 print "[]\nЯчейка: "
@@ -419,16 +421,15 @@ printflush message1
 write 500 cell1 0
 stop
 write 150 cell2 0
-set layer-i layers
 set iter-layer 0
 read suc cell2 1
-jump 423 equal suc 1
-jump 423 equal suc 3
-jump 429 equal suc 2
+jump 424 equal suc 1
+jump 424 equal suc 3
+jump 430 equal suc 2
 set errorpage 1
-jump 413 always x false
+jump 415 always x false
 read s2 cell10 0
-jump 432 notEqual sqrt 1
+jump 433 notEqual sqrt 1
 op sqrt s2 s2 b
 read p cell10 1
 read n1 cell10 2
@@ -459,9 +460,9 @@ op add link link 9
 getlink cell link
 read input cell pv
 op add NSr-inp NSr-inp 1
-jump 464 equal mode 1
+jump 465 equal mode 1
 op sub error 0 s2
-jump 465 always mode 1
+jump 466 always mode 1
 op sub error needsignal s2
 op mul trash error input
 op mul dw trash speed
@@ -474,15 +475,16 @@ op add link link 17
 getlink cell link
 write w cell pv
 op add p p 1
-jump 446 lessThan NSr-inp p-ne
+jump 447 lessThan NSr-inp p-ne
 op add iter-n1 iter-n1 1
-jump 444 lessThan iter-n1 p-le
-jump 485 lessThan iter-layer loopls
+jump 445 lessThan iter-n1 p-le
+op add iter-layer iter-layer 1
+jump 487 lessThan iter-layer loopls
 write 1 cell2 1
-op sub iter-layer iter-layer 1
-jump 422 greaterThanEq iter-layer 2
+op sub layer-i layer-i 1
+jump 424 greaterThanEq layer-i 2
 op add dsn dsn 1
-jump 369 always x false
+jump 367 always x false
 write 3 cell2 1
-jump 423 always x false
+jump 424 always x false
 write 200 cell1 0
