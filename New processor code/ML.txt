@@ -227,7 +227,7 @@ set errorpage 2
 read inputs_DS cell55 2
 read inputs_NN cell18 5
 jump 211 notEqual inputs_DS inputs_NN
-jump 231 lessThan sesnum sesrange
+jump 231 lessThan sesnum ses-range
 set sesnum 1
 set inputs inputs_DS
 op add k inputs 1
@@ -260,7 +260,7 @@ getlink cell link
 write input cell pv
 op add DSp DSp 1
 jump 244 lessThan MLrp inputs
-jump 264 lessThan sessions sesrange
+jump 264 lessThan sessions ses-range
 jump 265 always x false
 op add sessions sessions 1
 write sessions cell55 1
