@@ -15,6 +15,7 @@ to train neural networks, as its more popular counterpart is back propagation
 it requires more memory and calculations. It would also be nice to experiment with this relatively new algorithm.
 NM uses a conventional perceptron as the architecture of a neural network (MLP). 
 Only 1 activation function is supported (Hyperbalic tangent).
+
 This is my first project to reach such scales. Please don't be too strict.
 
 In the future it is planned to make NM2 with support for RNN, Back propogation, KAN. 
