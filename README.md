@@ -24,7 +24,7 @@ More precise network configuration is planned.
 For example:
 
 Simple configuration:
-Number of layers: 3
+Number of layers: 4
 
 Number of neurons in a layer: 4
 Use weights or bezier curves: Weights
@@ -78,7 +78,7 @@ NM в качестве архитектуры нейросети использ�
 На пример:
 
 Простая настройка:
-Количество слоёв: 3
+Количество слоёв: 4
 
 Количество нейронов в слое: 4
 Использовать веса или кривые безье: веса
