@@ -1,0 +1,422 @@
+set p-inp 3
+jump 39 equal start 1
+print "Инициализация NM: запущена (T)"
+print "[]\n[]\n"
+print "Made by: [#45ff64] Zeleniy_Kustik"
+print "[]\n[]\n"
+print "https://github.com/Zeleniykustik"
+printflush message1
+set seson 0
+set ses-range 1
+set minscore 0
+set needscore 0
+set speed 0.01
+set needsignal 2
+set whilelayer 2
+set sqrt 1
+set automl 0
+set automlr 0
+set automlnum automlr
+set autocses 0
+set start 1
+wait 10
+write 1 bank3 1
+write 2 bank3 2
+write ses-range bank3 3
+write 1 bank3 0
+read suc bank3 0
+jump 26 equal suc 1
+jump 33 equal suc 200
+print "Инициализация NM: Ошибка (T)"
+printflush message1
+write 500 bank1 0
+stop
+print "Инициализация NM: Завершена (T)"
+print "[]\n[]\n"
+print "Made by: [#45ff64] Zeleniy_Kustik"
+print "[]\n[]\n"
+print "https://github.com/Zeleniykustik"
+printflush message1
+read on bank1 0
+jump 39 notEqual on 1
+read group bank1 1
+read command bank1 2
+jump 76 equal group 2
+jump 53 equal group 1
+jump 83 equal group 3
+jump 94 equal group 4
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер группы команд"
+printflush message1
+write 500 bank1 0
+stop
+jump 102 equal command 1
+jump 138 equal command 2
+jump 143 equal command 3
+jump 146 equal command 4
+jump 151 equal command 5
+jump 166 equal command 6
+jump 183 equal command 7
+jump 200 equal command 8
+jump 217 equal command 9
+jump 244 equal command 10
+jump 259 equal command 11
+jump 283 equal command 12
+jump 300 equal command 13
+jump 311 equal command 14
+jump 319 equal command 15
+jump 322 equal command 16
+jump 325 equal command 17
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 bank1 0
+stop
+jump 329 equal command 1
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 bank1 0
+stop
+jump 390 equal command 1
+jump 400 equal command 2
+jump 412 equal command 3
+jump -1 equal command 4
+jump -1 equal command 5
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 bank1 0
+stop
+jump -1 equal command 1
+jump -1 equal command 2
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 bank1 0
+stop
+read rand bank1 3
+write rand bank3 3
+read layers bank1 4
+op floor floor layers b
+jump 108 lessThan floor 2
+jump 114 equal floor layers
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указано[]\n"
+print "Число слоёв"
+printflush message1
+write 500 bank1 0
+stop
+write layers bank3 4
+set p 5
+op add p-end p layers
+read n bank1 p
+write n bank3 p
+op add p p 1
+jump 122 greaterThanEq p 512
+jump 117 lessThan p p-end
+write 1 bank3 1
+write 1 bank3 2
+write 1 bank3 0
+read suc bank3 0
+jump 125 equal suc 1
+jump 136 equal suc 200
+jump 133 notEqual suc 300
+print "Ошибка системы (T)[]\n"
+print "Ошбка генерации сети"
+printflush message1
+stop
+set p 5
+op sub p-end p-end 497
+jump 117 always suc 300
+write 200 bank1 0
+end
+read minscore bank1 3
+write 200 bank1 0
+end
+read minscore bank1 3
+end
+read needscore bank1 3
+write 200 bank1 0
+end
+read speed bank1 3
+write 200 bank1 0
+end
+read data bank1 9
+jump 152 always write-all 0
+read data bank1 3
+jump 160 greaterThan data 0
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Желаемый сигнал слоя[]\n"
+print "Нужны числа больше 0"
+printflush message1
+write 500 bank1 0
+stop
+set needsignal data
+jump 164 notEqual write-all 0
+write 200 bank1 0
+end
+read data bank1 10
+jump 167 always write-all 0
+read data bank1 3
+jump 170 lessThan data 1
+op floor floor data b
+jump 177 equal data floor
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указано[]\n"
+print "Ограничение по сессиям[]\n"
+print "Нужны целые числа больше 0"
+printflush message1
+write 500 bank1 0
+stop
+set ses-range data
+jump 181 notEqual write-all 0
+write 200 bank1 0
+end
+read data bank1 11
+jump 184 always data 1
+read data bank1 3
+op floor floor data b
+jump 187 lessThan data 1
+jump 194 equal data floor
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указано[]\n"
+print "Количество проходов на слой[]\n"
+print "Нужны целые числа больше 0"
+printflush message1
+write 500 bank1 0
+stop
+set whilelayer data
+jump 198 notEqual write-all 0
+write 200 bank1 0
+end
+read data bank1 5
+jump 201 always data 1
+read data bank1 3
+jump 210 equal data 1
+jump 210 equal data 0
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Режим корня[]\n"
+print "Нужны числа 1 или 0"
+printflush message1
+write 500 bank1 0
+stop
+set sqrt data
+jump 214 notEqual write-all 0
+write 200 bank1 0
+end
+read data-1 bank1 4
+read data-2 bank1 10
+jump 219 always data-1 1
+read data-1 bank1 3
+read data-2 bank1 4
+jump 228 equal data-1 1
+jump 228 equal data-1 0
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Режим автоматического обучения[]\n"
+print "Нужны числа 1 или 0"
+printflush message1
+write 500 bank1 0
+stop
+op floor floor data-2 b
+jump 231 lessThan floor 1
+jump 239 equal floor data-2
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указано[]\n"
+print "Количество сессий[]\n"
+print "для автоматического обучения[]\n"
+print "Нужны целые числа больше 0"
+printflush message1
+write 500 bank1 0
+stop
+set automl data-1
+set automlr data-2
+jump 244 notEqual write-all 0
+write 200 bank1 0
+end
+read data bank1 3
+jump 255 equal data 1
+jump 255 equal data 0
+print "Ошибка ввода (T)[]\n"
+print "Неправильно указан[]\n"
+print "Режим автоматического создания[]\n"
+print "сессии[]\n"
+print "Нужны числа 1 или 0"
+printflush message1
+write 500 bank1 0
+stop
+set autocses data
+jump 316 notEqual write-all 0
+write 200 bank1 0
+end
+read suc bank6 0
+jump 263 equal suc 2
+write 0 bank1 3
+jump 264 always x false
+write 1 bank1 3
+read suc bank5 0
+jump 268 equal suc 8
+write 0 bank1 4
+jump 269 always x false
+write 1 bank1 4
+write seson bank1 5
+write autocses bank1 6
+write automl bank1 7
+write sqrt bank1 8
+write mimscore bank1 9
+write needscore bank1 10
+write speed bank1 11
+write needsignal bank1 12
+write ses-range bank1 13
+write whilelayer bank1 14
+write automlr bank1 15
+write automlnum bank1 16
+write 200 bank1 0
+end
+read suc bank6 0
+jump 287 equal suc 2
+write 0 bank1 3
+jump 288 always suc 2
+write 1 bank1 3
+read data bank6 1
+write data bank1 4
+read data bank6 2
+write data bank1 5
+read data bank6 3
+write data bank1 6
+read data bank6 5
+write data bank1 7
+read data bank6 4
+write data bank1 8
+write 200 bank1 0
+end
+read suc bank5 0
+jump 304 equal suc 8
+write 0 bank1 3
+jump 305 always x false
+write 1 bank1 3
+read data bank5 1
+write data bank1 4
+read data bank5 2
+write data bank1 5
+write 200 bank1 0
+end
+set write-all 1
+read minscore bank1 6
+read needscore bank1 7
+read speed bank1 8
+jump 149 always x false
+set write-all 0
+write 200 bank1 0
+end
+write 0 bank6 0
+write 200 bank1 0
+end
+write 0 bank5 0
+write 200 bank1 0
+end
+write 0 bank6 0
+write 0 bank5 0
+set start 0
+end
+read inputs bank5 5
+set p-inp 3
+op add p-end 3 inputs
+read input bank1 p-inp
+write input bank2 p-inp
+op add p-inp p-inp 1
+jump 337 greaterThanEq p-inp 512
+jump 332 lessThan p-inp p-end
+write 0 bank2 1
+write 1 bank2 0
+read suc bank2 0
+jump 339 equal suc 1
+jump 343 equal suc 300
+jump 346 equal suc 100
+op sub p-end p-end 499
+set p-inp 3
+jump 332 always x false
+jump 349 equal autocses 1
+jump 362 equal seson 1
+jump 361 always autocses 1
+jump 351 equal seson 0
+jump 362 always seson 0
+write 2 bank3 1
+write 1 bank3 2
+write 1 bank3 0
+read suc bank3 0
+jump 354 equal suc 1
+jump 359 equal suc 200
+write 500 bank1 0
+stop
+set seson 1
+jump 362 always suc 200
+write 150 bank2 0
+read suc bank2 0
+jump 362 equal suc 150
+jump 368 equal suc 200
+jump 368 equal suc 400
+write 500 bank1 0
+stop
+read outs bank5 4
+op add p-end 3 outs
+set pout 0
+set NSc-p 3
+read out bank2 NSc-p
+op add NSc-p NSc-p 1
+write out bank4 pout
+op add pout pout 1
+jump 388 greaterThanEq NSc-p p-end
+jump 372 lessThan NSc-p 512
+write 1 bank2 0
+read suc bank2 0
+jump 379 equal suc 1
+jump 368 equal suc 200
+jump 386 notEqual suc 400
+op sub p-end p-end 499
+set NSc-p 3
+jump 370 always x false
+write 500 bank1 0
+stop
+write 200 bank1 0
+end
+write 2 bank3 1
+write 1 bank3 2
+write 1 bank3 0
+read suc bank3 0
+jump 393 equal suc 1
+jump 398 equal suc 200
+write 500 bank1 0
+stop
+write 200 bank1 0
+end
+read score bank1 3
+write 2 bank3 1
+write 2 bank3 2
+write score bank3 3
+write 1 bank3 0
+read suc bank3 0
+jump 405 equal suc 1
+jump 410 equal suc 200
+write 500 bank1 0
+stop
+write 200 bank1 0
+end
+write 2 bank3 1
+write 3 bank3 2
+write 1 bank3 0
+read suc bank3 0
+jump 415 equal suc 1
+jump 420 equal suc 200
+write 500 bank1 0
+stop
+write 200 bank1 0
+end
