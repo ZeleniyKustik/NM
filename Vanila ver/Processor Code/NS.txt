@@ -1,0 +1,185 @@
+read on bank1 0
+jump 0 notEqual on 1
+read ml bank1 1
+read suc bank10 0
+jump 13 equal suc 2
+set errorpage 0
+print "Ошибка системы (NS)[]\n"
+print "Нейронная сеть сломана :([]\n"
+print "NN: "
+print errorpage
+printflush message1
+write 500 bank1 0
+stop
+set errorpage 3
+read layers bank10 3
+op floor floor layers b
+jump 6 lessThan floor 2
+jump 6 notEqual floor layers
+set errorpage 5
+read n1 bank10 5
+op floor floor n1 b
+jump 6 lessThan floor 1
+jump 6 notEqual floor n1
+set NSrp 3
+jump 50 equal ml 1
+op add NSrp-end 3 n1
+set inp-p 3
+read input bank1 inp-p
+op add inp-p inp-p 1
+op div link NSrp 512
+op floor link link 512
+op mul m link 512
+op sub pv NSrp m
+op add link link 1
+getlink cell link
+write input cell pv
+op add NSrp NSrp 1
+jump 50 greaterThanEq NSrp NSrp-end
+jump 27 lessThan inp-p 512
+write 300 bank1 0
+read suc bank1 0
+jump 40 equal suc 300
+jump 26 equal suc 1
+print "Ошибка ввода (NS)[]\n"
+print "Вы не правильно ответили на запрос"
+print "[]\nNSMc: ожидалось 1[]\n"
+print "Ячейка: 0"
+printflush message1
+write 500 bank1 0
+stop
+write 100 bank1 0
+read suc bank1 0
+jump 51 equal suc 100
+jump 61 equal suc 150
+print "Ошибка системы (NS)[]\n"
+print "Не правильно ответили на запрос"
+print "[]\nNSMc: ожидалось 150[]\n"
+print "Ячейка: 0"
+printflush message1
+write 500 bank1 0
+stop
+set p 6
+op div link p 512
+op floor link link 512
+op mul m link 512
+op sub pv p m
+op add link link 9
+getlink cell link
+read n2 cell pv
+set p-n2 p
+op add p p 1
+set max 0
+op add NSr-nl 3 n1
+op add ple NSr-nl n2
+set Copy-p NSr-nl
+set s2 0
+set NSr-inp 3
+set acum 0
+op add pne 3 n1
+op div link NSr-inp 512
+op floor link link 512
+op mul m link 512
+op sub pv NSr-inp m
+op add link link 1
+getlink cell link
+read signal cell pv
+op add NSr-inp NSr-inp 1
+op div link p 512
+op floor link link 512
+op mul m link 512
+op sub pv p m
+op add link link 9
+getlink cell link
+read w cell pv
+op add p p 1
+op mul out signal w
+op add acum acum out
+jump 79 lessThan NSr-inp pne
+op div link NSr-nl 512
+op floor link link 512
+op mul m link 512
+op sub pv NSr-nl m
+op add link link 1
+getlink cell link
+op mul a 2 acum
+op pow a 2.71828 a
+op sub b a 1
+op add c a 1
+op div signal b c
+write signal cell pv
+op pow trash signal 2
+op add s2 s2 trash
+op abs trash signal b
+op max max trash max
+op add NSr-nl NSr-nl 1
+jump 76 lessThan NSr-nl ple
+jump 133 notEqual ml 1
+write s2 bank2 0
+write p-n2 bank2 1
+write n1 bank2 2
+write 2 bank1 1
+read suc bank1 2
+jump 121 equal suc 2
+jump 131 equal suc 3
+jump 133 equal suc 1
+print "Ошибка системы (NS)[]\n"
+print "Не правильно ответили на запрос"
+print "[]\nNSMc: ожидалось 1 или 3[]\n"
+printflush message1
+write 500 bank1 0
+stop
+set p p-n2
+jump 70 always suc 3
+op sub layers layers 1
+jump 157 lessThan layers 2
+set p-write 3
+op add Copy-e Copy-p n2
+op div link Copy-p 512
+op floor link link 512
+op mul m link 512
+op sub pv Copy-p m
+op add link link 1
+getlink cell link
+read signal cell pv
+op add Copy-p Copy-p 1
+op div link p-write 512
+op floor link link 512
+op mul m link 512
+op sub pv p-write m
+op add link link 1
+getlink cell link
+op div signal signal max
+write signal cell pv
+op add p-write p-write 1
+jump 137 lessThan Copy-p Copy-e
+set n1 n2
+jump 62 always Copy-p Copy-e
+jump 184 equal ml 1
+op add start-p 3 n1
+op add end-p start-p n2
+set out-p 3
+op div link start-p 512
+op floor link link 512
+op mul m link 512
+op sub pv start-p m
+op add link link 1
+getlink cell link
+read signal cell pv
+op add start-p start-p 1
+write signal bank1 out-p
+op add out-p out-p 1
+jump 184 greaterThanEq start-p end-p
+jump 161 lessThan out-p 512
+write 400 bank1 0
+read suc bank1 0
+jump 174 equal suc 400
+jump 160 equal suc 1
+print "Ошибка системы (NS)[]\n"
+print "Не правильно ответили на запрос"
+print "[]\nNSMc: ожидалось 1[]\n"
+print "Ячейка: 0"
+printflush message1
+write 500 bank1 0
+stop
+write 200 bank1 0
