@@ -1,32 +1,32 @@
 
 NS:{
 
-NSc = cell1
-NSr = cell2 - cell9
-NN = cell10 - cell46
+NSc = Bank1
+NSr = Bank2 - Bank33
+NN = Bank34 - Bank193
 
 }
 
 
 T:{
 
-I = cell1
-NSc = cell2
-MLc = cell3
-O = cell4
-NN1/16 = cell5
-DS1/32 = cell6
+I = Bank1
+NSc = Bank2
+MLc = Bank3
+O = Bank4
+NN1/16 = Bank5
+DS1/32 = Bank6
 
 }
 
 
 ML:{
 
-MLc = cell1
-NSc = cell2
-MLCB = cell3 - cell9
-NSr = cell10 - cell17
-NN = cell18 - cell54
-DS = cell55 - cell70
+MLc = Bank1
+NSc = Bank2
+MLCB = Bank3 - Bank30
+NSr = Bank31 - Bank62
+NN = Bank63 - Bank222
+DS = Bank223 - Bank286
 
 }
