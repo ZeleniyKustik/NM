@@ -1,0 +1,487 @@
+jump 4 equal seson 1
+read on bank1 0
+jump 1 notEqual on 1
+jump 6 always seson 1
+read on bank1 0
+jump 179 notEqual on 1
+read group bank1 1
+read command bank1 2
+jump 27 equal group 2
+jump 38 equal group 3
+jump 17 equal group 1
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Номер группы команд"
+printflush message1
+write 500 bank1 0
+stop
+jump 46 equal command 1
+jump 125 equal command 2
+jump 138 equal command 3
+jump 142 equal command 4
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 bank1 0
+stop
+jump 148 equal command 1
+jump 207 equal command 2
+jump 281 equal command 3
+jump 294 equal command 4
+jump -1 equal command 5
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 bank1 0
+stop
+jump -1 equal command 1
+jump -1 equal command 2
+print "Ошибка системы (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Номер команды"
+printflush message1
+write 500 bank1 0
+stop
+read true-rand bank1 3
+jump 54 greaterThanEq true-rand 0
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указано[]\n"
+print "Число для рандомизации"
+printflush message1
+write 500 bank1 0
+stop
+op mul rand true-rand 2
+read layers bank1 4
+op floor floor layers 2
+jump 59 lessThan floor 2
+jump 65 equal floor layers
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указано[]\n"
+print "Число слоёв для генерации"
+printflush message1
+write 500 bank1 0
+stop
+set p 6
+write 0 bank18 0
+write 0 bank18 1
+write 0 bank18 2
+write layers bank18 3
+write layers bank18 4
+read n1 bank1 5
+write n1 bank18 5
+set pn 6
+jump 86 lessThan pn 512
+write 300 bank1 0
+read suc bank1 0
+jump 76 equal suc 300
+jump 85 equal suc 1
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указан[]\n"
+print "Ответ для герации сети"
+printflush message1
+write 500 bank1 0
+stop
+set pn 6
+read n2 bank1 pn
+op add pn pn 1
+op mul all-w n1 n2
+op div link p 512
+op floor link link 512
+op mul m link 512
+op sub pv p m
+op add link link 17
+getlink cell link
+write n2 cell pv
+op add p p 1
+op add p-end p all-w
+op rand w rand p
+op sub w w true-rand
+op div link p 512
+op floor link link 512
+op mul m link 512
+op sub pv p m
+op add link link 17
+getlink cell link
+write w cell pv
+op add p p 1
+jump 98 lessThan p p-end
+set n1 n2
+op sub layers layers 1
+jump 74 greaterThan layers 1
+op div link p 512
+op floor link link 512
+op mul m link 512
+op sub pv p m
+op add link link 17
+getlink cell link
+write -1 cell pv
+op add p p 1
+write p bank18 2
+write n2 bank18 4
+write 2 bank18 0
+write 200 bank1 0
+end
+read trash bank1 3
+op floor floor trash b
+jump 129 lessThan trash 1
+jump 135 equal trash floor
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указано[]\n"
+print "Ограничение по сессиям"
+printflush message1
+write 500 bank1 0
+stop
+set ses-range trash
+write 200 bank1 0
+end
+write seson bank1 3
+write ses-range bank1 4
+write 200 bank1 0
+end
+set seson 0
+set ses-range 1
+write 0 bank18 0
+write 0 bank223 0
+write 200 bank1 0
+end
+read suc bank223 0
+jump 164 equal suc 8
+write 8 bank223 0
+write 0 bank223 1
+write 0 bank223 2
+read inputs bank18 5
+write inputs bank223 2
+read suc bank223 0
+jump 164 equal suc 8
+set seson 0
+set sesnum 0
+print "Ошибка системы (ML)[]\n"
+print "Что-то не так с блоком DS"
+printflush message1
+write 500 bank1 0
+stop
+read inputs_NN bank18 5
+read inputs_DS bank223 2
+jump 174 equal inputs_NN inputs_DS
+set seson 0
+set sesnum 1
+print "Ошибка системы (ML)[]\n"
+print "Файл датасета не потходит для сети"
+printflush message1
+write 500 bank1 0
+stop
+set seson 1
+set sesnum 1
+set kloop 0
+write 200 bank1 0
+end
+read suc bank2 0
+jump 182 equal suc 100
+end
+read inputs bank18 5
+set MLrp 0
+set NSrp 3
+op div link NSrp 512
+op floor link link 512
+op mul m link 512
+op sub pv NSrp m
+op add link link 9
+getlink cell link
+read signal-ns cell pv
+op add NSrp NSrp 1
+op div link MLrp 512
+op floor link link 512
+op mul m link 512
+op sub pv MLrp m
+op add link link 2
+getlink cell link
+read signal-ml cell pv
+op add signal signal-ml signal-ns
+write signal cell pv
+op add MLrp MLrp 1
+jump 185 lessThan MLrp inputs
+op add kloop kloop 1
+write 150 bank2 0
+end
+read score bank1 3
+read suc bank223 0
+set errorpage 0
+jump 217 equal suc 8
+print "Ошибка системы (ML)[]\n"
+print "Датасет сломан в ячейке: "
+print errorpage
+printflush message1
+write 500 bank1 0
+stop
+set errorpage 1
+read sessions bank223 1
+op floor floor sessions b
+jump 211 lessThan floor 0
+jump 211 notEqual floor sessions
+jump 225 notEqual sessions 0
+set sessions 1
+write 1 bank223 1
+set errorpage 2
+read inputs_DS bank223 2
+read inputs_NN bank18 5
+jump 211 notEqual inputs_DS inputs_NN
+jump 231 lessThan sesnum sesrange
+set sesnum 1
+set inputs inputs_DS
+op add k inputs 1
+op sub ses-b sesnum 1
+op mul DSp sesnum k
+op add DSp DSp 3
+op div link DSp 512
+op floor link link 512
+op mul m link 512
+op sub pv DSp m
+op add link link 54
+getlink cell link
+write score cell pv
+op add DSp DSp 1
+set MLrp 0
+op div link MLrp 512
+op floor link link 512
+op mul m link 512
+op sub pv MLrp m
+op add link link 2
+getlink cell link
+read input cell pv
+op add MLrp MLrp 1
+op div input input kloop
+op div link DSp 512
+op floor link link 512
+op mul m link 512
+op sub pv DSp m
+op add link link 54
+getlink cell link
+write input cell pv
+op add DSp DSp 1
+jump 245 lessThan MLrp inputs
+jump 265 lessThan sessions sesrange
+jump 266 always x false
+op add sessions sessions 1
+write sessions bank223 1
+op add sesnum sesnum 1
+set kloop 0
+set MLrp 0
+op div link MLrp 512
+op floor link link 512
+op mul m link 512
+op sub pv MLrp m
+op add link link 2
+getlink cell link
+write 0 cell pv
+op add MLrp MLrp 1
+jump 270 lessThan MLrp inputs_NN
+write 200 bank1 0
+end
+set MLrp 0
+op div link MLrp 512
+op floor link link 512
+op mul m link 512
+op sub pv MLrp m
+op add link link 2
+getlink cell link
+read 0 cell pv
+op add MLrp MLrp 1
+jump 282 lessThan MLrp 16384
+set kloop 0
+write 200 bank1 0
+end
+read minscore bank1 3
+read needscore bank1 4
+read speed bank1 5
+read needsignal bank1 6
+set errorpage 6
+jump 308 greaterThanEq needsignal 0
+print "Ошибка ввода (ML)[]\n"
+print "Неправельно указаны[]\n"
+print "Параметры для запуска обучения[]\n"
+print "В ячейке: "
+print errorpage
+printflush message1
+write 500 bank1 0
+stop
+read loopls bank1 7
+set errorpage 7
+jump 300 lessThan loopls 1
+op floor floor loopls b
+jump 300 notEqual floor loopls
+set errorpage 8
+read sqrt bank1 8
+jump 318 equal sqrt 1
+jump 318 equal sqrt 0
+jump 300 always squrt 0
+read NN-inputs bank18 5
+read DS-inputs bank223 2
+jump 331 equal NN-inputs DS-inputs
+print "Ошибка системы (ML)[]\n"
+print "Количество нейронов в входном[]\n"
+print "слое не совподает с количеством"
+print "[]\n входных нейронов в данных для"
+print "[]\n обучения."
+print "[]\n Нейросеть и датасет"
+print "[]\n не совместимы"
+printflush message1
+write 500 bank1 0
+stop
+op floor floor NN-inputs b
+set errorpage 5
+jump 335 lessThan floor 2
+jump 342 equal floor n1
+print "Ошибка системы (ML)[]\n"
+print "Нейросеть сломана[]\n"
+print "В ячейке: "
+print errorpage
+printflush message1
+write 500 bank1 0
+stop
+set errorpage 0
+read suc bank18 0
+jump 335 notEqual suc 2
+set errorpage 3
+read layers bank18 3
+op floor floor layers b
+jump 335 lessThan layers 2
+jump 335 notEqual floor layers
+set errorpage 6
+read n2 bank18 6
+jump 335 lessThan n2 0
+jump 335 notEqual floor n2
+set errorpage 1
+read sesds bank223 1
+op floor floor sesds b
+jump 359 lessThan sesds 0
+jump 366 equal sesds floor
+print "Ошибка системы (ML)[]\n"
+print "Датасет сломан[]\n"
+print "В ячейке: "
+print sesds
+printflush message1
+write 500 bank1 0
+stop
+set mode 1
+set dsn 1
+op add k NN-inputs 1
+op sub ses-b dsn 1
+op mul DSp sesnum k
+op add DSp DSp 3
+op div link DSp 512
+op floor link link 512
+op mul m link 512
+op sub pv DSp m
+op add link link 54
+getlink cell link
+read score cell pv
+jump 382 equal mode 1
+jump 387 equal mode 2
+stop
+jump 388 greaterThanEq score minscore
+op add dsn dsn 1
+jump 369 lessThanEq dsn sesds
+set mode 2
+jump 367 always x false
+jump 486 greaterThanEq dsn sesds
+set NSr-p 3
+op add p-end DSp NN-inputs
+op div link DSp 512
+op floor link link 512
+op mul m link 512
+op sub pv DSp m
+op add link link 54
+getlink cell link
+read input cell pv
+op add DSp DSp 1
+op div link NSr-p 512
+op floor link link 512
+op mul m link 512
+op sub pv NSr-p m
+op add link link 9
+getlink cell link
+write input bank1 pv
+op add NSr-p NSr-p 1
+jump 390 lessThan DSp p-end
+write 1 bank2 1
+write 1 bank2 0
+read suc bank2 0
+jump 409 equal suc 1
+set errorpage 0
+jump 420 equal suc 100
+print "Ошибка системы (ML)[]\n"
+print "Не правильно ответили на запрос"
+print "Ячейка: "
+print errorpage
+printflush message1
+write 500 bank1 0
+stop
+write 150 bank2 0
+set layer-i layers
+set iter-layer 0
+read suc bank2 1
+jump 423 equal suc 1
+jump 428 equal suc 2
+set errorpage 1
+jump 413 always x false
+read s2 bank10 0
+jump 431 notEqual sqrt 1
+op sqrt s2 s2 b
+read p bank10 1
+read n1 bank10 2
+op div link p 512
+op floor link link 512
+op mul m link 512
+op sub pv p m
+op add link link 17
+getlink cell link
+read n2 cell pv
+op add p p 1
+set iter-n1 0
+set ple n2
+set NSr-inp 3
+op add p-ne 3 n1
+op div link p 512
+op floor link link 512
+op mul m link 512
+op sub pv p m
+op add link link 17
+getlink cell link
+read w cell pv
+op div link NSr-inp 512
+op floor link link 512
+op mul m link 512
+op sub pv NSr-inp m
+op add link link 9
+getlink cell link
+read input cell pv
+op add NSr-inp NSr-inp 1
+jump 463 equal mode 1
+op sub error 0 s2
+jump 464 always mode 1
+op sub error needsignal s2
+op mul trash error input
+op mul dw trash speed
+op add w w dw
+op div link p 512
+op floor link link 512
+op mul m link 512
+op sub pv p m
+op add link link 17
+getlink cell link
+write w cell pv
+op add p p 1
+jump 445 lessThan NSr-inp p-ne
+op add iter-n1 iter-n1 1
+jump 443 lessThan iter-n1 p-le
+jump 484 lessThan iter-layer loopls
+write 1 bank2 1
+op sub iter-layer iter-layer 1
+jump 422 greaterThanEq iter-layer 2
+op add dsn dsn 1
+jump 369 always x false
+write 3 bank2 1
+jump 423 always x false
+write 200 bank1 0
