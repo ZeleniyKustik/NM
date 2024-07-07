@@ -1,0 +1,32 @@
+
+NS:{
+
+NSc = cell1
+NSr = cell2 - cell9
+NN = cell10 - cell46
+
+}
+
+
+T:{
+
+I = cell1
+NSc = cell2
+MLc = cell3
+O = cell4
+NN1/16 = cell5
+DS1/32 = cell6
+
+}
+
+
+ML:{
+
+MLc = cell1
+NSc = cell2
+MLCB = cell3 - cell9
+NSr = cell10 - cell17
+NN = cell18 - cell54
+DS = cell55 - cell70
+
+}
