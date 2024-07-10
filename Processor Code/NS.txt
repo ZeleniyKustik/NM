@@ -103,7 +103,7 @@ op sub pv NSr-nl m
 op add link link 1
 getlink cell link
 op mul a 2 acum
-op pow a 2.71828 a
+op pow a @e a
 op sub b a 1
 op add c a 1
 op div signal b c
