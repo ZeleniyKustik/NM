@@ -130,7 +130,7 @@ NM:
 | NSc | This is a block for communicating with NS | Это блок для общения с NS |
 | MLc | This is a block for communicating with ML | Это блок для общения с ML |
 | NSr | This is NS RAM for neural network simulation | Это оперативная память NS для симуляции нейронных сетей |
-| MLCB | This is the clipboard and RAM ML | Это буфер обмена и оперативная память ML |
+| MLr | This is the clipboard and RAM ML | Это буфер обмена и оперативная память ML |
 | | | |
 | T | The processor is a terminal that verifies the correctness of the request and automates the input of some variables for training | Процессор терминал, проверяющий правильность запроса и автоматизирующий ввод некоторых переменных для обучения |
 | ML | The processor responsible for machine learning and working with data | Процессор отвечающий за машинное обучение и работу с данными |
